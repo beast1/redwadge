@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 65px;
+  
+  &__container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  
+  &__desc {
+    @include font-p($gray);
+    
+    display: flex;
+    margin-right: 8px;
+  }
+  
+  &__item {
+    @include un-link;
+    @include font-other($gray, 14px);
+    @include margin-right(3px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+    border: 1px solid $gray-lighten;
+    
+    &--current {
+      color: $color-action-main;
+    }
+    
+    &--disabled {
+      display: none;
+    }
+  }
+}

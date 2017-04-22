@@ -1,0 +1,32 @@
+{% include 'breadcrumbs' %}
+
+<div class="main">
+  <div class="basket">
+    <span class="basket__counter">У Вас <span class="basket__counter-value">3 товара</span> в корзине</span>
+    <div class="basket__list">
+      <div class="basket__settings">
+        <span class="basket__setting-item">Название</span>
+        <span class="basket__setting-item">Цена</span>
+        <span class="basket__setting-item">Колличество</span>
+        <span class="basket__setting-item">Сумма</span>
+      </div>
+
+      {% include 'basket-item' %}
+
+    </div>
+    <div class="basket__controls">
+      <div class="basket__fieldset">
+        <a href="" class="basket__back-btn"></a>
+        <span class="basket__action-disc">Продолжить покупки</span>
+      </div>
+      <div class="basket__targets">
+        <a class="basket__sub-target" href="#">Купить в 1 клик</a>
+        <a class="basket__target" href="#">Оформить заявку</a>
+      </div>
+      <div class="basket__fieldset">
+        <span class="basket__action-disc">Общая сумма:  </span>
+        <span class="basket__final-price">2550 RUB</span>
+      </div>
+    </div>
+  </div>
+</div>

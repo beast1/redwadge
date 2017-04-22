@@ -1,0 +1,29 @@
+.subscribe {
+  display: flex;
+  
+  &--top {
+    margin-bottom: 50px;
+  }
+  
+  &__input {
+    @include un-input;
+    @include font-other($color-main, 15px);
+    
+    width: 220px;
+    padding: 10px 20px 7px 0;
+    border-bottom: 1px dashed $gray;
+  }
+  
+  &__submit {
+    @include un-btn;
+    
+    position: relative;
+    bottom: -2px;
+    left: -13px;
+    
+    width: 60px;
+    height: 35px;
+    border-radius: 17px;
+    background-color: $color-action-main;
+  }
+}

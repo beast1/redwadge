@@ -1,0 +1,120 @@
+.page-footer {
+  &__wrapper {
+    @include wrapper;
+  }
+  
+  //temporary
+  background: 
+    linear-gradient(to bottom, $color-second-transen 0, $color-second-transen 225px, $color-second-trans 225px),
+    url("../img/bg-footer.jpg") center center;
+  
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    //temporary
+//    background-color: yellowgreen;
+  }
+  
+  &__subscribe-title {
+    @include font-h2($color-main);
+    margin: 55px 0 18px;
+  }
+  
+  &__subscribe-disc {
+    @include font-p($gray);
+    margin-bottom: 35px;
+  }
+  
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 40px;
+    
+//    background-color: $color-second-trans;
+  }
+  
+  &__main-col {
+    min-width: 245px;
+  }
+  
+  &__col-title {
+    @include font-h3($color-main);
+    
+    margin: 0 0 15px 0;
+  }
+  
+  &__logo {
+    //temporary 
+    display: flex;
+    width: 209px;
+    height: 38px;
+    
+    border: 1px solid red;
+  }
+  
+  &__promo {
+    @include font-p($gray);
+    
+    display: flex;
+    max-width: 245px;
+    
+    line-height: 22px;
+  }
+  
+  &__blog-post {
+    @include font-p($gray);
+    
+    display: flex;
+    max-width: 265px;
+    margin: 0 0 8px 0;
+    
+    line-height: 22px;
+  }
+  
+  &__blog-link {
+    @include un-link;
+    @include font-other($color-main, 13px);
+  }
+  
+  &__menu-list {
+    @include un-list;
+  }
+  
+  &__menu-item {
+    margin: 8px 0;
+  }
+  
+  &__menu-link {
+    @include un-link;
+    @include font-p($gray);
+  }
+  
+  .social {
+    margin-bottom: 25px;
+  }
+  
+  &__subscribe-title--slim {
+    @include font-other($color-main, 14px);
+    
+    display: flex;
+    margin-bottom: 15px;
+    
+    font-weight: 700;
+  }
+  
+  &__copyright {
+    @include separator(-1px, auto);
+    @include font-other($color-main, 14px);
+    
+    font-weight: 300;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    
+//    background-color: $color-second-trans;
+  }
+}

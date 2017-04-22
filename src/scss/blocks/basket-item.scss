@@ -1,0 +1,30 @@
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+  &__preview {
+    
+    //temporary
+    width: 130px;
+    height: 130px;
+    background-color: #555;
+  }
+  
+  &__name {
+    @include font-h3($color-second);
+  }
+  
+  &__price {
+    @include font-h3($color-second);
+  }
+  
+  &__common-price {
+    @include font-h3($color-second);
+  }
+  
+  &__remove {
+    @include radial(25px);
+  }
+}
