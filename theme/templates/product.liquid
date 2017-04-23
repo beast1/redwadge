@@ -1,7 +1,58 @@
 {% include 'breadcrumbs' %}
 
 
-<div class="main">
+<div class="page-main">
+  <div class="product">
+    <div class="product__preview">
+      <div class="slider">
+        <div class="slider__main">
+          <div class="slider__controls  slider__controls--left"></div>
+          <div class="slider__controls  slider__controls--right"></div>
+        </div>
+        <ul class="slider__demos">
+          <li class="slider__demos-item"></li>
+          <li class="slider__demos-item"></li>
+          <li class="slider__demos-item"></li>
+          <li class="slider__demos-item"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="product__content">
+      <div class="product__fieldset">
+        <span class="product__title">Табак Wadge Lemon Pie 200 грамм</span>
+        <p class="product__disc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        </p>
+      </div>
+      <div class="product__fieldset">
+        <span class="product__price">850 RUB</span>
+        <ul class="product__price-levels">
+          <li class="product__price-floor">850 RUB: 1-9 шт.</li>
+          <li class="product__price-floor">800 RUB: 10-99 шт.</li>
+          <li class="product__price-floor">690 RUB: более 100 шт.</li>
+        </ul>
+      </div>
+      <div class="product__fieldset">
+        <div class="product__controls">
+          <div class="counter">
+            <button class="counter__count-down" type="button"></button>
+            <input class="counter__output" id="adults-count" type="text" value="1">
+            <button class="counter__count-up" class="count-up" type="button"></button>
+          </div>
+          <button class="product__target">В корзину</button>
+        </div>
+        <span class="product__social">
+          Поделиться:
+          <p class="social">
+            <a class="social__item  social__item--vk" href="#"></a>
+            <a class="social__item  social__item--facebook" href="#"></a>
+            <a class="social__item  social__item--instagram" href="#"></a>
+            <a class="social__item  social__item--twitter" href="#"></a>
+          </p>
+        </span>
+      </div>
+    </div>
+  </div>
   
   {% include 'text-field' %}
   

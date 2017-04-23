@@ -1,0 +1,15 @@
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  
+  &__fieldset {
+    width: 48%;
+  }
+  
+  &__title {
+    @include font-h2($color-second);
+    
+    display: flex;
+    margin: 40px 0 20px;
+  }
+}

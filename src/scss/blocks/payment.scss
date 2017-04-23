@@ -1,0 +1,34 @@
+.payment {
+  width: 100%;
+  padding: 20px 30px;
+  border: 1px solid $gray-light;
+  
+  &__settings-item {
+    @include font-other($gray, 12px);
+    
+    padding-bottom: 30px;
+    
+    text-transform: uppercase;
+  }
+  
+  &__item > * {
+    @include font-p($gray);
+    
+    padding: 8px 0;
+  }
+  
+  &__full-price > * {
+    @include font-other($color-second, 16px);
+    
+    padding-top: 37px;
+    
+    font-weight: 700;
+  }
+  
+  &__item-counter {
+    margin-left: 5px;
+    
+    color: $color-second;
+    font-weight: 700;
+  }
+}

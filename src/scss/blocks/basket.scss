@@ -8,6 +8,7 @@
   
   &__settings {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 0;
   }
@@ -16,6 +17,11 @@
     @include font-other($gray, 14px);
     
     text-transform: uppercase;
+    
+    //temporary
+    &:nth-of-type(1) {
+      margin-left: 220px;
+    }
   }
   
   &__basket-list {

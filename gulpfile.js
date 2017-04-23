@@ -132,6 +132,7 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('theme/media'))
     .pipe(browserSync.reload({stream: true}))
 });
 
@@ -176,12 +177,13 @@ gulp.task('watchSrc', ['browser-sync', 'scripts'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass'], browserSync.reload);
   gulp.watch('src/*.html', browserSync.reload);
   gulp.watch('src/js/**/*.js', browserSync.reload);
+  return InsalesUploader.stream()
 });
 
 gulp.task('buildTheme', ['clean', 'img', 'sass'], function() {
   var buildCss = gulp.src('src/css/main.css')
-//    .pipe(cssnano())
-//    .pipe(rename({suffix: '.min'}))
+    .pipe(cssnano())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('theme/media'));
 });
 

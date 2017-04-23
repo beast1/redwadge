@@ -1,6 +1,88 @@
 {% include 'breadcrumbs' %}
 
 
-<div class="main">
-  
+<div class="page-main">
+  <div class="checkout">
+    <form class="checkout__fieldset  form">
+      <span class="checkout__title">Оформление заказа</span>
+      
+      <div class="form__row">
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label  form__label--require" for="checkout__first-name">Имя</label>
+          <input class="form__input" id="checkout__first-name" type="text">
+        </div>
+
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label  form__label--require" for="checkout__second-name">Фамилия</label>
+          <input class="form__input" id="checkout__second-name" type="text">
+        </div>
+      </div>
+      
+      <div class="form__row">
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label" for="checkout__email">E-mail</label>
+          <input class="form__input" id="checkout__email" type="text">
+        </div>
+
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label  form__label--require" for="checkout__phone">Телефон</label>
+          <input class="form__input" id="checkout__phone" type="text">
+        </div>
+      </div>
+      
+      <div class="form__row">
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label  form__label--require" for="checkout__country">Страна</label>
+          <input class="form__input" id="checkout__county" type="text">
+        </div>
+
+        <div class="form__item  form__item--1-of-2">
+          <label class="form__label  form__label--require" for="checkout__city">Город</label>
+          <input class="form__input" id="checkout__city" type="text">
+        </div>
+      </div>
+      
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="checkout__adress">Адрес</label>
+        <input class="form__input" id="checkout__adress" type="text">
+      </div>
+      
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="checkout__mail-index">Почтовый индекс</label>
+        <input class="form__input" id="checkout__mail-index" type="text">
+      </div>
+      
+      <div class="form__item">
+        <label class="form__label" for="checkout__massage">Заметка</label>
+        <textarea class="form__input  form__input--textarea" id="checkout__massage" name="checkout__massage" cols="40" rows="20"></textarea>
+      </div>
+      
+      <button class="form__submit">Отправить заявку</button>
+    </form>
+    <div class="checkout__fieldset">
+      <span class="checkout__title">Ваш заказ</span>
+      <table class="checkout__payment payment">
+        <tr class="payment__settings">
+          <td class="payment__settings-item">Название продукта</td>
+          <td class="payment__settings-item">Сумма</td>
+        </tr>
+        <tr class="payment__item">
+          <td class="payment__item-name">Табак Wadge Lemon Pie 200 гр<span class="payment__item-counter">×1</span></td>
+          <td class="payment__item-price">850 RUB</td>
+        </tr>
+        <tr class="payment__item">
+          <td class="payment__item-name">Табак Wadge Apple Pie 200 гр<span class="payment__item-counter">×1</span></td>
+          <td class="payment__item-price">850 RUB</td>
+        </tr>
+        <tr class="payment__item">
+          <td class="payment__item-name">Табак Wadge Apple Pie 200 гр<span class="payment__item-counter">×1</span></td>
+          <td class="payment__item-price">850 RUB</td>
+        </tr>
+        <tr class="payment__full-price">
+          <td>Общая сумма:</td>
+          <td>2550 RUB</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>

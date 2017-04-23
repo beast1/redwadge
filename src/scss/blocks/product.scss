@@ -1,0 +1,70 @@
+.product {
+  display: flex;
+  
+  //temporary
+  border: 1px dashed black;
+  
+  &__content {
+    margin-left: 95px;
+  }
+  
+  &__title {
+    @include font-h2($color-second);
+    
+    margin-bottom: 30px;
+    
+    font-size: 25px;
+  }
+  
+  &__disc {
+    @include font-p($gray);
+    
+    margin-bottom: 55px;
+    
+    font-size: 16px;
+  }
+  
+  &__price {
+    @include font-other($color-action-main, 25px);
+    
+    display: flex;
+    
+    margin-bottom: 25px;
+  }
+  
+  &__price-levels {
+    @include un-list;
+    
+    margin-bottom: 60px;
+  }
+  
+  &__price-floor {
+    @include font-other($gray, 16px);
+    @include margin-bottom(10px);
+  }
+  
+  &__controls {
+    display: flex;
+    margin-bottom: 35px;
+  }
+  
+  &__target {
+    @include btn($color-action-main, 16px);
+    @include font-other($color-main, 12px);
+    
+    height: 32px;
+    padding: 10px 25px 10px 45px;
+    margin-left: 15px;
+  }
+  
+  &__social {
+    @include font-p($gray);
+    
+    display: flex;
+    align-items: center;
+  }
+  
+  .social {
+    margin-left: 15px;
+  }
+}

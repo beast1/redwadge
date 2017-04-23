@@ -1,0 +1,63 @@
+.slider {
+  position: relative;
+  
+  display: flex;
+  
+  background-color: $transparent;
+  
+  //temporary
+  outline: 1px dashed black;
+  
+  &--offset-top {
+    top: -45px;
+  }
+  
+  &__controls {
+    @include radial(60px);
+    
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    
+    margin-top: -30px;
+    
+    background-color: $color-main;
+    
+    &--left {
+      left: 0;
+      margin-left: -30px;
+    }
+    
+    &--right {
+      right: 0;
+      margin-right: -30px;
+    }
+  }
+  
+  &__main {
+    position: relative;
+    
+    //temporary
+    width: 320px;
+    height: 440px;
+    border: 1px dashed black;
+  }
+  
+  &__demos {
+    @include un-list;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 155px;
+  }
+  
+  &__demos-item {
+    margin: 10px 0;
+    
+    //temporary
+    width: 80px;
+    height: 90px;
+    background-color: #444;
+  }
+}

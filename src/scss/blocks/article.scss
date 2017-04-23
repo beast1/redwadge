@@ -1,0 +1,67 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  
+  &__preview {
+    width: 100%;
+    margin-bottom: 60px;
+    
+    //temporary
+    height: 530px;
+    background-color: lightblue;
+  }
+  
+  &__title {
+    @include font-h2($color-second);
+    
+    margin-bottom: 30px;
+  }
+  
+  .date--slim {
+    margin-bottom: 55px;
+  }
+  
+  &__phar {
+    @include font-p($gray);
+  }
+  
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  &__social {
+    @include font-other($gray, 16px);
+    
+    display: flex;
+    align-items: center;
+    
+    .social {
+      margin-left: 15px;
+    }
+  }
+  
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+  }
+  
+  &__control-group {
+    display: flex;
+    align-items: center;
+    
+    *:first-child {
+      margin-right: 10px;
+    }
+  }
+  
+  &__control {
+    @include radial(25px);
+  }
+  
+  &__control-disc {
+    @include font-other($gray, 16px);
+  }
+}
