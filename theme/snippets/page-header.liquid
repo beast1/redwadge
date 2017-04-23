@@ -29,11 +29,11 @@
         </div>
       </nav>
       <div class="page-header__basket">
-        <div class="page-header__basket-icon">
-          <div class="page-header__basket-conter"></div>
-        </div>
-        <span class="page-header__basket-text  page-header__basket-text--red">2550</span>
-        <span class="page-header__basket-text">RUB</span>
+        <a class="page-header__basket-link">
+          <span class="page-header__basket-counter">{{ cart.items_count }}</span>
+        </a>
+        <span class="page-header__basket-text  page-header__basket-text--red">{{ cart.items_price | money}}</span>
+<!--        <span class="page-header__basket-text">{{ money }}</span>-->
       </div>
     </section>
   </div>

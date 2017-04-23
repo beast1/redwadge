@@ -7,7 +7,9 @@
     </div>
     <div class="catalog__list">
     
-      {% include 'card' %}
+      {% for product in products limit: 12 %}
+        {% include 'card' %}
+      {% endfor %}
     
     </div>
     

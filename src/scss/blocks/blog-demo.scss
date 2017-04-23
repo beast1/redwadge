@@ -1,4 +1,6 @@
 .blog-demo {
+  @include margin-bottom(40px);
+  
   display: flex;
   
   &__preview {

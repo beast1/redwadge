@@ -1,9 +1,11 @@
-{% include 'breadcrumbs' %}
+{% include 'page-title' %}
 
 <div class="page-main">
   <div class="blog-list">
   
-    {% include 'blog-demo' %}
+    {% for article in blog.articles limit: 4 %}
+      {% include 'blog-demo' %}
+    {% endfor %}
   
   </div>
   

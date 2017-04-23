@@ -1,13 +1,11 @@
 <div class="blog-demo">
   <div class="blog-demo__preview">
-    <span class="date--hot">12/04/17</span>
+    <span class="date--hot">{{ article.created_at | date: "%d.%m.%Y" }}</span>
   </div>
   <div class="blog-demo__content">
-    <h2 class="blog-demo__title">Заголовок новости</h2>
-    <span class="date--slim">Апрель, 12, 2017</span>
-    <p class="blog-demo__desc">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-    </p>
-    <a href="" class="blog-demo__target">Читать далее</a>
+    <h2 class="blog-demo__title">{{ article.title }}</h2>
+    <span class="date--slim">{{ article.created_at }}</span>
+    <p class="blog-demo__desc">{{ article.preview }}</p>
+    <a href="#" class="blog-demo__target">Читать далее</a>
   </div>
 </div>

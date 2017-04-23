@@ -5,7 +5,9 @@
     <div class="slider__controls  slider__controls--left"></div>
     <div class="slide__list">
       
-      {% include 'card' %}
+      {% for product in products limit: 4 %}
+        {% include 'card' %}
+      {% endfor %}
       
     </div>
     <div class="slider__controls  slider__controls--right"></div>
@@ -16,9 +18,9 @@
   <div class="blog">
     <h2 class="blog__title"></h2>
     <div class="blog-list">
-      
-      {% include 'blog-demo' %}
-      
+        {% for article in blog.articles limit: 4 %}
+          {% include 'blog-demo' %}
+        {% endfor %}
     </div>
   </div>
   

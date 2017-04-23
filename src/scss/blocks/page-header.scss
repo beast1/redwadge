@@ -110,8 +110,46 @@
     }
   }
   
+  &__basket {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__basket-link {
+    position: relative;
+    
+    display: flex;
+    width: 25px;
+    height: 30px;
+    margin-right: 13px;
+    
+    //temporary
+    background-color: #333;
+  }
+  
+  &__basket-counter {
+    @include font-other($color-main, 10px);
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    margin-right: -8.5px;
+    margin-bottom: -8.5px;
+    
+    background-color: $color-action-main;
+    border-radius: 50%;
+  }
+  
   &__basket-text {
     @include font-other($gray, 14px);
+    
+    text-transform: uppercase;
     
     &--red {
       color: $color-action-main;

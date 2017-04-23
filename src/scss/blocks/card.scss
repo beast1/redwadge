@@ -1,17 +1,22 @@
 .card {
-  @include margin-right(30px);
+//  @include margin-right(30px);
+  @include margin-bottom(40px);
   
   position: relative;
   
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 270px;
+  max-width: 270px;
   min-height: 513px;
   padding: 28px 25px 83px;
   border: 1px solid $gray-lighter;
   
   background-color: $color-main;
+  
+  &--not-avialable {
+    filter: grayscale(1);
+  }
   
   &__status {
     position: absolute;
@@ -27,7 +32,7 @@
     margin-right: auto;
   }
   
-  &__label-star {
+  &__label-hot {
     @include label($color-status-star);
     
     margin-right: auto;
@@ -55,10 +60,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 220px;
+    height: 300px;
     
-    //temporary
-    min-height: 300px;
-    border: 1px dashed #222;
+    overflow: hidden;
   }
   
   &__name {
@@ -93,5 +98,12 @@
     
     width: 125px;
     height: 32px;
+  }
+  
+  &__link {
+    @include un-link;
+    @include font-p($gray);
+    
+    margin: 0 auto;
   }
 }

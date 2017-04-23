@@ -20,11 +20,9 @@
       <div class="page-footer__main-col  page-footer__menu">
         <h3 class="page-footer__col-title">Навигация по сайту</h3>
         <ul class="page-footer__menu-list">
-          <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="#">Каталог</a></li>
-          <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="#">О нас</a></li>
-          <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="#">Новости</a></li>
-          <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="#">Доставка\оплата</a></li>
-          <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="#">Контакты</a></li>
+          {% for link in linklists.footer-nav.links limit:5 %}
+            <li class="page-footer__menu-item"><a class="page-footer__menu-link" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="page-footer__main-col">

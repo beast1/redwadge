@@ -1,0 +1,43 @@
+<!--
+<div class="card__status">
+  <div class="card__label-new"></div>
+  <div class="card__label-hot"></div>
+  <div class="card__price  card__price--limit">750 RUB</div>
+  <div class="card__price">650 RUB</div>
+</div>
+-->
+
+{% assign show_labels = false %}
+
+{% if product.properties.label or product.variants.first.old_price %}
+  {% assign show_labels = true %}
+{% endif %}
+
+{% if product.is_bundle and product.bundle_discount > 0 %}
+  {% assign show_labels = true %}
+{% endif %}
+
+{% unless product.available %}
+  {% assign show_labels = true %}
+{% endunless %}
+
+{% if product.price_varies? or product.old_price_varies? %}
+  {% assign show_labels = true %}
+{% endif %}
+
+<div class="card__status">
+
+  {% if show_labels %}
+    {% if product.properties.label %}
+      {% for characteristic in product.properties.label.characteristics %}
+        <div class="card__label-{{ characteristic.handle }}">{{ characteristic.name }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+  
+  <div class="card__price">{{ product.price | money }}</div>
+
+</div>
+
+{% assign show_labels = null %}
+{% assign bundle_component = null %}
