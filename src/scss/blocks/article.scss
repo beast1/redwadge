@@ -1,14 +1,19 @@
 .article {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
   
   &__preview {
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 60px;
     
-    //temporary
-    height: 530px;
-    background-color: lightblue;
+    overflow: hidden;
+    background-color: $gray-light;
   }
   
   &__title {
@@ -18,17 +23,26 @@
   }
   
   .date--slim {
-    margin-bottom: 55px;
+    margin-bottom: 30px;
   }
   
-  &__phar {
-    @include font-p($gray);
+  &__textset {
+    @include font-p($color-second-light);
+    
+    padding-bottom: 20px;
+    
+    line-height: 24px;
+    
+    p {
+      margin: 24px 0;
+    }
   }
   
   &__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 70px;
   }
   
   &__social {

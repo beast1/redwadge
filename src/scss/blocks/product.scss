@@ -1,8 +1,8 @@
 .product {
   display: flex;
-  
+  margin: 50px 0 20px;
   //temporary
-  border: 1px dashed black;
+//  border: 1px dashed black;
   
   &__content {
     margin-left: 95px;
@@ -28,8 +28,9 @@
     @include font-other($color-action-main, 25px);
     
     display: flex;
-    
     margin-bottom: 25px;
+    
+    text-transform: uppercase;
   }
   
   &__price-levels {

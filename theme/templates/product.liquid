@@ -7,25 +7,33 @@
       <div class="slider">
         <div class="slider__main">
           <div class="slider__controls  slider__controls--left"></div>
+          <div class="slider__main-container">
+            <img src="{{ product.first_image.original_url }}" alt="image.title" width="260">
+          </div>
           <div class="slider__controls  slider__controls--right"></div>
         </div>
         <ul class="slider__demos">
+<!--
           <li class="slider__demos-item"></li>
           <li class="slider__demos-item"></li>
           <li class="slider__demos-item"></li>
           <li class="slider__demos-item"></li>
+-->
+          {% for image in product.images limit: 4 %}
+            <li class="slider__demos-item">
+              <img src="{{ image.compact_url }}" alt="{{ image.title }}" width="70">
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
     <div class="product__content">
       <div class="product__fieldset">
-        <span class="product__title">Табак Wadge Lemon Pie 200 грамм</span>
-        <p class="product__disc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        </p>
+        <span class="product__title">{{ product.title }}</span>
+        <p class="product__disc">{{ product.description }}</p>
       </div>
       <div class="product__fieldset">
-        <span class="product__price">850 RUB</span>
+        <span class="product__price">{{ product.price | money }}</span>
         <ul class="product__price-levels">
           <li class="product__price-floor">850 RUB: 1-9 шт.</li>
           <li class="product__price-floor">800 RUB: 10-99 шт.</li>
@@ -34,12 +42,8 @@
       </div>
       <div class="product__fieldset">
         <div class="product__controls">
-          <div class="counter">
-            <button class="counter__count-down" type="button"></button>
-            <input class="counter__output" id="adults-count" type="text" value="1">
-            <button class="counter__count-up" class="count-up" type="button"></button>
-          </div>
-          <button class="product__target">В корзину</button>
+          {% include 'counter' %}
+          <button class="product__target" type="submit" data-item-add>В корзину</button>
         </div>
         <span class="product__social">
           Поделиться:{% include 'social' %}

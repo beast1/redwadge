@@ -4,12 +4,17 @@
   display: flex;
   
   &__preview {
-    //temporary
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 360px;
     height: 220px;
     flex-shrink: 0;
     
-    background-color: #333;
+    overflow: hidden;
+    background-color: $gray-light;
   }
   
   &__content {

@@ -1,0 +1,35 @@
+.text-field {
+  h2 {
+    @include font-h1($color-second);
+    
+    margin: 60px 0 65px;
+    
+    text-align: center;
+  }
+  
+  h3 {
+    @include font-h2($color-second);
+    
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  
+  p {
+    @include font-p($gray);
+    
+    margin: 20px 0;
+  }
+  
+  ul {
+    @include un-list;
+    @include font-p($gray);
+  }
+  
+  li {      
+    &::before {
+      content: "-";
+      
+      margin-right: 25px;
+    }
+  }
+}

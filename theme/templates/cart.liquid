@@ -2,7 +2,19 @@
 
 <div class="page-main">
   <div class="basket">
-    <span class="basket__counter">У Вас <span class="basket__counter-value">3 товара</span> в корзине</span>
+    <span class="basket__counter">
+      У Вас 
+      {% if cart.items_count == 0 %}
+        <span class="basket__counter-value">ни одного товара</span>
+      {% else %}
+        {% if cart.items_count == 1 %}
+          <span class="basket__counter-value">{{ cart.items_count }} товар</span>
+        {% else %}
+          <span class="basket__counter-value">{{ cart.items_count }} товара</span>
+        {% endif %}
+      {% endif %}
+       в корзине
+    </span>
     <div class="basket__list">
       <div class="basket__settings">
         <span class="basket__setting-item">Название</span>
@@ -10,14 +22,14 @@
         <span class="basket__setting-item">Колличество</span>
         <span class="basket__setting-item">Сумма</span>
       </div>
-
-      {% include 'basket-item' %}
-
+      {% for item in cart.items limit: 100 %}
+        {% include 'basket-item' %}
+      {% endfor %}
     </div>
     <div class="basket__controls">
       <div class="basket__fieldset">
-        <a href="" class="basket__back-btn"></a>
-        <span class="basket__action-disc">Продолжить покупки</span>
+        <a href="{{ collections.wadge-250-gr.url }}" class="basket__back-btn" title="{{ collections.wadge-250-gr.title }}"></a>
+        <a class="basket__action-disc" href="{{ collections.wadge-250-gr.url }}" title="{{ collections.wadge-250-gr.title }}">Продолжить покупки</a>
       </div>
       <div class="basket__targets">
         <a class="basket__sub-target" href="#">Купить в 1 клик</a>
@@ -25,7 +37,7 @@
       </div>
       <div class="basket__fieldset">
         <span class="basket__action-disc">Общая сумма:  </span>
-        <span class="basket__final-price">2550 RUB</span>
+        <span class="basket__final-price">{{ cart.items_price | money }}</span>
       </div>
     </div>
   </div>

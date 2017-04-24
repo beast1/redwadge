@@ -29,7 +29,7 @@
         </div>
       </nav>
       <div class="page-header__basket">
-        <a class="page-header__basket-link">
+        <a class="page-header__basket-link" href="{{ cart_url }}" title="Корзина">
           <span class="page-header__basket-counter">{{ cart.items_count }}</span>
         </a>
         <span class="page-header__basket-text  page-header__basket-text--red">{{ cart.items_price | money}}</span>

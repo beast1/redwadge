@@ -13,9 +13,11 @@
         <span class="page-footer__promo">Кальян с табаком WADGE – удовольствие без границ. Широкая линейка ароматной палитры и уникальных миксов.</span>
       </div>
       <div class="page-footer__main-col  page-footer__blog">
-        <h3 class="page-footer__col-title">Последние новости</h3>
-        <p class="page-footer__blog-post">Lorem ipsum dolor sit amet, consectetu.. Adipisicing elit, sed do eiusmod tempo.. Incididunt ut labore et dolore magn.. Aliqua. Ut enim ad minim veniam, qui..</p>
-        <a class="page-footer__blog-link" href="#">Все новости ></a>
+        {% for article in blogs.test.articles limit: 1 %}
+          <h3 class="page-footer__col-title">Последние новости</h3>
+          {{ article.preview }}
+          <a class="page-footer__blog-link" href="#">Все новости ></a>
+        {% endfor %}
       </div>
       <div class="page-footer__main-col  page-footer__menu">
         <h3 class="page-footer__col-title">Навигация по сайту</h3>

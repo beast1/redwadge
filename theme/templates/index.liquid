@@ -3,9 +3,9 @@
 <div class="page-main">
   <div class="slider  slider--offset-top">
     <div class="slider__controls  slider__controls--left"></div>
-    <div class="slide__list">
+    <div class="slider__list">
       
-      {% for product in products limit: 4 %}
+      {% for product in collections.wadge-250-gr.products limit: 4 %} 
         {% include 'card' %}
       {% endfor %}
       
@@ -18,7 +18,7 @@
   <div class="blog">
     <h2 class="blog__title"></h2>
     <div class="blog-list">
-        {% for article in blog.articles limit: 4 %}
+        {% for article in blogs.test.articles limit: 4 %}
           {% include 'blog-demo' %}
         {% endfor %}
     </div>

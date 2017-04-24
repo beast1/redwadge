@@ -1,11 +1,12 @@
 <div class="blog-demo">
   <div class="blog-demo__preview">
     <span class="date--hot">{{ article.created_at | date: "%d.%m.%Y" }}</span>
+    <img src="{{ article.image.original_url }}" alt="{{ article.title }}" width="360">
   </div>
   <div class="blog-demo__content">
     <h2 class="blog-demo__title">{{ article.title }}</h2>
-    <span class="date--slim">{{ article.created_at }}</span>
+    <span class="date--slim">{{ article.created_at | date: "%B, %d, %Y" }}</span>
     <p class="blog-demo__desc">{{ article.preview }}</p>
-    <a href="#" class="blog-demo__target">Читать далее</a>
+    <a class="blog-demo__target" href="{{ article.url }}" title="{{ article.title }}">Читать далее</a>
   </div>
 </div>

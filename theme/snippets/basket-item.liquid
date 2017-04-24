@@ -1,12 +1,12 @@
 <div class="basket-item">
   <div class="basket-item__preview"></div>
-  <span class="basket-item__name">Табак Wadge Lemon Pie 200 грамм</span>
-  <span class="basket-item__price">850 RUB</span>
+  <span class="basket-item__name">{{ item.title }}</span>
+  <span class="basket-item__price">{{ item.price }}</span>
   <div class="counter counter--large">
     
-    {% include 'conter--large' %}
+    {% include 'counter--large' %}
     
   </div>
-  <span class="basket-item__common-price">850 RUB</span>
-  <button class="basket-item__remove"></button>
+  <span class="basket-item__common-price">{{ item.total_price }}</span>
+  <a class="basket-item__remove" href="{{ item.url }}"></a>
 </div>

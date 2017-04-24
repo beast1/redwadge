@@ -63,14 +63,17 @@
     line-height: 22px;
   }
   
-  &__blog-post {
+  p {
     @include font-p($gray);
     
     display: flex;
     max-width: 265px;
+    max-height: 85px;
     margin: 0 0 8px 0;
     
     line-height: 22px;
+    
+    overflow: hidden;
   }
   
   &__blog-link {

@@ -1,6 +1,12 @@
 .basket {
   display: flex;
   flex-direction: column;
+  padding: 25px 0 60px;
+  
+  &__counter {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
   
   &__counter-value {
     font-weight: 700;
@@ -33,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 50px 0 60px;
+    padding-top: 50px;
   }
   
   &__fieldset {
@@ -48,6 +54,7 @@
   }
   
   &__action-disc {
+    @include un-link;
     @include font-other($gray, 16px);
   }
   
