@@ -4,10 +4,14 @@
   
   &__count-down {
     @include radial(25px);
+    
+    background: url("icon__count-down.png") no-repeat center center;
   }
   
   &__count-up {
     @include radial(25px);
+    
+    background: url("icon__count-up.png") no-repeat center center;
   }
   
   &__output {

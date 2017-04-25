@@ -1,6 +1,10 @@
 .alert {
+  background: $color-second url("bg--alert.jpg") no-repeat center 0;
+  
   &__wrapper {
     @include wrapper;
+    
+    position: relative;
 
     display: flex;
   }
@@ -9,15 +13,70 @@
     display: flex;
     flex-direction: column;
     width: 430px;
-    margin: 110px 140px 130px auto;
+    height: 475px;
+    padding-top: 110px;
+    margin-left: auto;
+    margin-right: 140px;
+  }
+  
+  &__index-target {
+    @include un-target;
+    @include btn($color-action-main, 25px);
+    @include font-other($color-main, 14px);
+    
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 50px;
+    padding-left: 55px;
+    padding-right: 45px;
+    padding-top: 16px;
+    
+    text-transform: uppercase;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: 26px;
+      top: 50%;
+      
+      width: 18px;
+      height: 24px;
+      margin-top: -12px;
+      
+      background: url("icon__cigarets.png") no-repeat center center;
+    }
+    
+    &::after {
+      content: "";
+      
+      position: absolute;
+      right: 26px;
+      top: 50%;
+      
+      width: 7px;
+      height: 13px;
+      margin-top: -6.5px;
+      
+      background: url("icon__catalog-arrow.png") no-repeat center center;
+    }
   }
   
   &__title {
     @include font-h1($color-main);
+    
+    display: inline-block;
+    margin-bottom: 15px;
   }
   
   &__sub-title {
     @include font-h2($color-action-second);
+    
+    margin-bottom: 30px;
     
     font-weight: 400;
   }
@@ -26,6 +85,7 @@
     @include font-p($color-main-dark);
     
     max-width: 425px;
+    margin: 0 0 35px;
   }
   
   &__controls {
@@ -34,7 +94,7 @@
   }
   
   &__target {
-    @include un-btn;
+    @include un-target;
     @include font-other($color-action-second, 15px);
     
     padding: 8px 40px;
@@ -45,7 +105,7 @@
     border-radius: 20px;
   }
   
-  &__controls-desc {
+  &__controls-disc {
     @include font-p($color-main);
     
     display: flex;
@@ -58,6 +118,5 @@
     @include font-p($color-action-second);
   }
   
-  //temporary
-  background-color: #333;
+
 }

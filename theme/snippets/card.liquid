@@ -10,7 +10,7 @@
   {% include 'card-status' %}
   
   <div class="card__preview">
-    <div class="card__taste"></div>
+    <div class="card__taste  card__taste--green-aple"></div>
     {% if product.images.size > 0 %}
       <a href="{{ product.url }}" title="{{ product.title | strip_html }}">
         <img src="{{ product.images.first.large_url }}" alt="{{ product.images.first.title | strip_html }}"

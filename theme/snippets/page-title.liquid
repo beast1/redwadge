@@ -1,13 +1,117 @@
-<div class="page-title">
-  <div class="page-title__wrapper">
-    <h1 class="page-title__title">Табачная карта</h1>
-    <span class="page-title__desc">Широкая линейка ароматной палитры и уникальных миксов</span>
-    <div class="page-title__controls">
-      <p class="page-title__breadcrumbs">
-        <a class="page-title__breadcrumbs-item" href="#">Главная</a>
-        <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current" href="#">Каталог</a>
-      </p>
-      <a class="page-title__back-link" href="#">Предыдущая страница</a>
+{% case template %}
+  {% when 'collection' %}
+  <div class="page-title  page-title--collection">
+    <div class="page-title__wrapper">
+      <h1 class="page-title__title">Табачная карта</h1>
+      <span class="page-title__disc">Широкая линейка ароматной палитры и уникальных миксов</span>
+      <div class="page-title__controls">
+        <p class="page-title__breadcrumbs">
+          <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+          <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Каталог</a>
+        </p>
+        <a class="page-title__back-link" href="/">Предыдущая страница</a>
+      </div>
     </div>
   </div>
-</div>
+  {% when 'search' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Результат поиска "{{ messages.search_title }}"</h1>
+        <span class="page-title__disc">Широкая линейка ароматной палитры и уникальных миксов</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Результат поиска "{{ messages.search_title }}"</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'product' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Табак WADGE</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ product.title }}</a>
+          </p>
+          <a class="page-title__back-link" href="{{ collections.wadge-250-gr.url }}">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'cart' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">{{ messages.cart_title }}</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ messages.cart_title }}</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'checkout' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Оформление заказа</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Оформление заказа</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'blog' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">{{ blog.title }}</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ blog.title }}</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'article' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Детали новости</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item" href="{{ blog.url }}">{{ blog.title }}</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ article.title }}</a>
+          </p>
+          <a class="page-title__back-link" href="{{ blog.url }}">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'page.about-us' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">О нас</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item" href="#">{{ blog.title }}</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">О нас</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+{% endcase %}

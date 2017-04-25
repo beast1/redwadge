@@ -1,14 +1,32 @@
 <div class="alert">
   <div class="alert__wrapper">
     <div class="alert__container">
-      <span class="alert__title">Поздравляем!</span>
-      <span class="alert__sub-title">Ваша заявка успешно принята</span>
-      <p class="alert__message">Благодарим за внимание к нашему интернет-магазину Wadge.ru. Ваша заявка успешно принята и в ближайшее время с вами свяжется консультант для уточнения деталей.</p>
-      <div class="alert__controls">
-        <button class="alert__target">На главную</button>
-        <span class="alert__controls-desc">или перейти в</span>
-        <a class="alert__link" href="#">каталог</a>
-      </div>
+      {% case template %}
+        {% when 'index' %}
+          <a class="alert__index-target" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+          <span class="alert__title">Доктор Вейдж</span>
+          <span class="alert__sub-title">Табак для кальяна премиум класса</span>
+          <p class="alert__message">Компания WADGE – профессиональный производитель табака премиум класса. Табачные смеси представляют собой продукцию авторской рецептуры. В основе лежит равное соотношение табачных листьев Берли (Burley) и Вирджиния (Virginia)</p>
+          <div class="alert__controls">
+            <a class="alert__target">Узнать больше</a>
+          </div>
+        {% when 'page_404' %}
+          <span class="alert__title">404</span>
+          <span class="alert__sub-title">Страница не найдена</span>
+          <p class="alert__message">Страница, которую вы ищите перенесена или отсутствует. Попробуйте вернуться назад или перейти на главную страницу.</p>
+          <div class="alert__controls">
+            <button class="alert__target">На главную</button>
+          </div>
+        {% when 'thanks' %}
+          <span class="alert__title">Поздравляем!</span>
+          <span class="alert__sub-title">Ваша заявка успешно принята</span>
+          <p class="alert__message">Благодарим за внимание к нашему интернет-магазину Wadge.ru. Ваша заявка успешно принята и в ближайшее время с вами свяжется консультант для уточнения деталей.</p>
+          <div class="alert__controls">
+            <button class="alert__target">На главную</button>
+            <span class="alert__controls-disc">или перейти в</span>
+            <a class="alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
+          </div>
+      {% endcase %}
     </div>
   </div>
 </div>

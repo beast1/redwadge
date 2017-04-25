@@ -16,12 +16,12 @@
       </div>
       <nav class="page-header__nav">
         <div class="page-header__nav-list">
-          <a class="page-header__nav-item--home" href="#">Главная</a>
+          <a class="page-header__nav-item  page-header__nav-item--home" href="/">Главная</a>
           {% for link in linklists.header-menu-left.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
           {% endfor %}
         </div>
-          <a class="page-header__logo" href="#"><img class="page-header__logo-image" src="img/logo.png" alt="WADGE"></a>
+          <a class="page-header__logo" {% if template != 'index' %}href="/"{% endif %}><img class="page-header__logo-image" src="{{ 'logo.png' | file_url }}" alt="WADGE"></a>
         <div class="page-header__nav-list">
           {% for link in linklists.header-menu-right.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>

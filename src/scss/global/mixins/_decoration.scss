@@ -31,7 +31,7 @@
     height: 1px;
     min-width: 5px;
     
-    background-image: repeating-linear-gradient(to left, transparent 0px, transparent 5px, $gray 5px, $gray 10px);
+    background-image: repeating-linear-gradient(to left, $gray 0px, $gray 3px, transparent 3px, transparent 6px, $gray 6px, $gray 9px);
   }
 }
 

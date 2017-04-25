@@ -45,20 +45,12 @@
     margin: 0 0 15px 0;
   }
   
-  &__logo {
-    //temporary 
-    display: flex;
-    width: 209px;
-    height: 38px;
-    
-    border: 1px solid red;
-  }
-  
   &__promo {
     @include font-p($gray);
     
     display: flex;
     max-width: 245px;
+    margin-top: 23px;
     
     line-height: 22px;
   }

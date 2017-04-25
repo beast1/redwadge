@@ -170,7 +170,7 @@ gulp.task('img', function() {
     svgoPlugins: [{removeViewBox: false}],
     use: [pngquant()]
   })))
-  .pipe(gulp.dest('theme/media'));
+  .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('watchSrc', ['browser-sync', 'scripts'], function() {

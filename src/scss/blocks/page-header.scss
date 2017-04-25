@@ -72,7 +72,16 @@
     
     
     &--home {
+      position: relative;
+      top: -1px;
+      
+      display: flex;
+      width: 14px;
+      height: 14px;
+      
       font-size: 0;
+      
+      background: url("icon__home.png") no-repeat center center;
     }
   }
   
@@ -83,7 +92,6 @@
     width: 232px;
     height: 42px;
     margin: 0 40px;
-    border: 1px solid red;
     
     cursor: pointer;
     
@@ -104,7 +112,7 @@
       margin-left: -55px;
       margin-top: -92px;
       
-      background: url("../img/logo__head.png") no-repeat center center;
+      background: url("logo__head.png") no-repeat center center;
       
       transition: 0.4s ease;
     }
@@ -120,11 +128,10 @@
     
     display: flex;
     width: 25px;
-    height: 30px;
+    height: 31px;
     margin-right: 13px;
     
-    //temporary
-    background-color: #333;
+    background: url("icon__basket.png") center center;
   }
   
   &__basket-counter {

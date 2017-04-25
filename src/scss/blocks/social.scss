@@ -32,33 +32,27 @@
     }
   }
   
-  &__item:nth-of-type(1) {
+  &__item.social__item--vk {
     &::before {
-//      background-image: ;
-    }
-    &:active::before {
-      opacity: 0.4;
-//      background-image: ;
+      background-image: url("icon__vk.png");
     }
   }
   
-  &__item:nth-of-type(2) {
+  &__item.social__item--facebook {
     &::before {
-//      background-image: ;
-    }
-    &:active::before {
-      opacity: 0.4;
-//      background-image: ;
+      background-image: url("icon__facebook.png");
     }
   }
   
-  &__item:nth-of-type(3) {
+  &__item.social__item--instagram {
     &::before {
-//      background-image: ;
+      background-image: url("icon__instagram.png");
     }
-    &:active::before {
-      opacity: 0.4;
-//      background-image: ;
+  }
+  
+  &__item.social__item--twitter {
+    &::before {
+      background-image: url("icon__twitter.png");
     }
   }
 }

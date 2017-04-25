@@ -9,14 +9,14 @@
     </div>
     <div class="page-footer__main">
       <div class="page-footer__main-col">
-        <a class="page-footer__logo" href="#"><img src="" alt="WADGE"></a>
+        <a class="page-footer__logo" href="#"><img src="{{ 'logo.png' | file_url }}" alt="WADGE"></a>
         <span class="page-footer__promo">Кальян с табаком WADGE – удовольствие без границ. Широкая линейка ароматной палитры и уникальных миксов.</span>
       </div>
       <div class="page-footer__main-col  page-footer__blog">
         {% for article in blogs.test.articles limit: 1 %}
           <h3 class="page-footer__col-title">Последние новости</h3>
           {{ article.preview }}
-          <a class="page-footer__blog-link" href="#">Все новости ></a>
+          <a class="page-footer__blog-link" href="{{ blogs.test.url }}">Все новости ></a>
         {% endfor %}
       </div>
       <div class="page-footer__main-col  page-footer__menu">
