@@ -4,19 +4,28 @@ $color-main-dark: #ccc;
 $color-main-trans: rgba(255, 255, 255, 0.9);
 $color-main: #ffffff;
 
-
 $color-second-transen: rgba(0, 0, 0, 0.80);
 $color-second-trans: rgba(0, 0, 0, 0.95);
 $color-second: #000000;
 $color-second-light: #111111;
 
-
+$color-action-main-dark: #db281f;
 $color-action-main: #f24941;
 
 $color-action-second: #e3cb00;
 
-$color-status-new: #72a600;
-$color-status-star: #fe962a;
+//special colors
+
+  //card status
+  $color-status-new: #72a600;
+  $color-status-star: #fe962a;
+
+  //social
+  $color-vk: #4c75a3;
+  $color-facebook: #3b5998;
+  $color-twitter: #4099ff;
+  $color-instagram: linear-gradient(-30deg, rgba(121, 0, 143, 0.78) 0%, rgba(216, 0, 255, 0.78) 0%, rgba(248, 235, 52, 0.78) 0%, rgba(247, 43, 124, 0.78) 49%, rgba(7, 39, 215, 0.78) 100%);
+  $color-youtube: #c3191d;
 
 $gray: #666666;
 $gray-light: #d3d3d3;
@@ -51,7 +60,5 @@ $font-weight--h2: 900;
 $font-weight--h3: 700;
 $font-weight--p: 400;
 
-//$margin--h1: ;
-//$margin--h2: ;
-//$margin--h3: ;
-
+//shadows
+$shadow-btn: inset 0 2px 3px rgba(0, 146, 168, 0.35);

@@ -29,6 +29,55 @@
     margin-right: 40px;
   }
   
+  &__search-input {
+    @include un-input;
+    @include font-p($gray);
+    
+    width: 228px;
+    height: 35px;
+    padding: 11px 20px 6px 1px;
+    
+    line-height: 14px;
+  }
+  
+  &__search-input-wrap {
+    position: relative;
+    z-index: 1;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      
+      height: 1px;
+      
+      background-color: $color-action-main;
+    }
+    
+    &::after {
+      content: "";
+      
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      
+      background-image: url("icon__search.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    &:hover::after {
+      background-image: url("icon__search--red.png");
+    }
+  }
+  
   .social {
     margin: 5px 0;
   }
@@ -67,11 +116,15 @@
     @include margin-right(22px);
     @include un-link;
     @include font-other($gray, 14px);
+    @include react--trs-default;
+    @include react--color($color-action-main, $color-action-main);
     
     text-transform: uppercase;
     
     
     &--home {
+      @include react--trs-default;
+      
       position: relative;
       top: -1px;
       
@@ -81,7 +134,11 @@
       
       font-size: 0;
       
-      background: url("icon__home.png") no-repeat center center;
+      background: url("icon__home--gray.png") no-repeat center center;
+      
+      &:hover {
+        background-image: url("icon__home.png");
+      }
     }
   }
   
@@ -124,6 +181,9 @@
   }
   
   &__basket-link {
+    @include react--trs-default;
+    @include react--background(url("icon__basket--red.png"), url("icon__basket--red.png"));
+    
     position: relative;
     
     display: flex;
@@ -151,6 +211,10 @@
     
     background-color: $color-action-main;
     border-radius: 50%;
+    
+    &--empty {
+      background-color: $gray;
+    }
   }
   
   &__basket-text {

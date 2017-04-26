@@ -3,6 +3,7 @@
   
   &__item {
     @include margin-right(10px);
+    @include react--trs-short;
     
     position: relative;
     
@@ -22,10 +23,10 @@
       top: 50%;
       left: 50%;
       
-      width: 14px;
-      height: 14px;
-      margin-left: -7px;
-      margin-top: -7px;
+      width: 16px;
+      height: 20px;
+      margin-left: -8px;
+      margin-top: -10px;
       
       background-repeat: no-repeat;
       background-position: center center;
@@ -33,26 +34,44 @@
   }
   
   &__item.social__item--vk {
+    @include react--background($color-vk, $color-vk);
+    
     &::before {
       background-image: url("icon__vk.png");
     }
   }
   
   &__item.social__item--facebook {
+    @include react--background($color-facebook, $color-facebook);
+    
     &::before {
       background-image: url("icon__facebook.png");
     }
   }
   
   &__item.social__item--instagram {
+    @include react--background($color-instagram, $color-instagram);
+    
+    transition: none;
+    
     &::before {
       background-image: url("icon__instagram.png");
     }
   }
   
   &__item.social__item--twitter {
+    @include react--background($color-twitter, $color-twitter);
+    
     &::before {
       background-image: url("icon__twitter.png");
+    }
+  }
+  
+  &__item.social__item--youtube {
+    @include react--background($color-youtube, $color-youtube);
+    
+    &::before {
+      background-image: url("icon__youtube.png");
     }
   }
 }

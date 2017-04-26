@@ -24,6 +24,9 @@
     @include btn($color-action-main, 25px);
     @include font-other($color-main, 14px);
     
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
+    
     position: absolute;
     top: 20px;
     left: 5px;
@@ -36,6 +39,10 @@
     padding-top: 16px;
     
     text-transform: uppercase;
+    
+    &:active {
+      box-shadow: $shadow-btn;
+    }
     
     &::before {
       content: "";
@@ -95,14 +102,23 @@
   
   &__target {
     @include un-target;
-    @include font-other($color-action-second, 15px);
+    @include font-other($color-action-second, 14px);
     
-    padding: 8px 40px;
-    border: 2px solid $color-action-second;
+    @include react--trs-default;
+    @include react--color($color-second, $color-second);
+    @include react--background($color-action-second, $color-action-second);
+    @include react--box-shadow(0 0 0 2px $color-action-second, inset 0 2px 4px fade-out($color-second, 0.5));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 28px;
     
     line-height: 19px;
+    font-weight: 400;
     
     border-radius: 20px;
+    box-shadow: 0 0 0 2px $color-action-second;
   }
   
   &__controls-disc {

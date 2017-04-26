@@ -3,7 +3,9 @@
     <section class="page-header__top-section">
       <span class="page-header__promo">Несомненный лидер кальянных табаков WADGE</span>
       <form class="page-header__search" action="" method="get">
-        <input class="page-header__search-input" id="main-search" type="text" placeholder="Поиск по сайту...">
+        <div class="page-header__search-input-wrap">
+          <input class="page-header__search-input" id="main-search" type="text" placeholder="Поиск по сайту...">
+        </div>
       </form>
       
       {% include 'social' %}
@@ -30,7 +32,7 @@
       </nav>
       <div class="page-header__basket">
         <a class="page-header__basket-link" href="{{ cart_url }}" title="Корзина">
-          <span class="page-header__basket-counter">{{ cart.items_count }}</span>
+          <span class="page-header__basket-counter  {% if cart.items_count == 0 %} page-header__basket-counter--empty {% endif %}">{{ cart.items_count }}</span>
         </a>
         <span class="page-header__basket-text  page-header__basket-text--red">{{ cart.items_price | money}}</span>
 <!--        <span class="page-header__basket-text">{{ money }}</span>-->

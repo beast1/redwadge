@@ -1,5 +1,23 @@
-@mixin react--transition($transition) {
+@mixin react--trs($transition) {
   transition: $transition;
+}
+
+@mixin react--trs-short {
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+  transition-property: all;
+}
+
+@mixin react--trs-default {
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: all;
+}
+
+@mixin react--trs-long {
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-property: all;
 }
 
 @mixin react--background($background--hover, $background--active) {

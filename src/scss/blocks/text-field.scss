@@ -1,6 +1,7 @@
 .text-field {
   h2 {
     @include font-h1($color-second);
+    @include title-cross(56px);
     
     margin: 60px 0 65px;
     

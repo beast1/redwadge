@@ -17,14 +17,14 @@
           <div class="alert__controls">
             <button class="alert__target">На главную</button>
           </div>
-        {% when 'thanks' %}
+        {% when 'order' %}
           <span class="alert__title">Поздравляем!</span>
           <span class="alert__sub-title">Ваша заявка успешно принята</span>
           <p class="alert__message">Благодарим за внимание к нашему интернет-магазину Wadge.ru. Ваша заявка успешно принята и в ближайшее время с вами свяжется консультант для уточнения деталей.</p>
           <div class="alert__controls">
             <button class="alert__target">На главную</button>
             <span class="alert__controls-disc">или перейти в</span>
-            <a class="alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
+            <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
           </div>
       {% endcase %}
     </div>

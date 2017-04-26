@@ -1,4 +1,6 @@
 .card {
+  @include react--trs-default;
+  
   position: relative;
   
   display: flex;
@@ -10,6 +12,10 @@
   border: 1px solid $gray-lighter;
   
   background-color: $color-main;
+  
+  &:hover {
+    box-shadow: 0 0 40px 0 fade-out($color-second, 0.2);
+  }
   
   &:nth-of-type(-n+8) {
     margin-bottom: 40px;
@@ -138,11 +144,18 @@
     @include btn($color-action-main, 16px);
     @include font-other($color-main, 12px);
     
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
+    
     position: relative;
     
     width: 125px;
     height: 32px;
     padding-left: 27px;
+    
+    &:active {
+      box-shadow: $shadow-btn;
+    }
     
     &::before {
       content: "";
@@ -166,6 +179,14 @@
     @include font-p($gray);
     
     margin: 0 auto;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: -17px;
+      right: -17px;
+    }
   }
 }
 

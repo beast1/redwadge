@@ -48,6 +48,9 @@
     @include un-link;
     @include font-other($color-second, 15px);
     
+    @include react--trs-default;
+    @include react--color($color-action-main, $color-action-main);
+    
     position: relative;
       
     &::after {
@@ -67,7 +70,10 @@
   
   &__back-link {
     @include un-link;
-    @include font-other($color-second, 15px)
+    @include font-other($color-second, 15px);
+    
+    @include react--trs-default;
+    @include react--color($color-action-main, $color-action-main);
       
     &::before {
       content: "<";

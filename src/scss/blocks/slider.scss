@@ -15,6 +15,8 @@
   &__controls {
     @include radial(60px);
     
+    @include react--trs-default;
+    
     position: absolute;
     top: 50%;
     z-index: 1;
@@ -25,6 +27,8 @@
     margin-top: -30px;
     
     background-color: $color-main;
+    
+    transition-property: background-image;
     
     &::before {
       content: "";
@@ -43,6 +47,10 @@
       &::before {
         background-image: url("icon__arrow-left--large.png");
       }
+      
+      &:hover::before {
+        background-image: url("icon__arrow-left--large-red.png");
+      }
     }
     
     &--right {
@@ -51,6 +59,11 @@
       
       &::before {
         background-image: url("icon__arrow-right--large.png");
+      }
+      
+      &:hover::before {
+        background-image: url("icon__arrow-left--large-red.png");
+        transform: translateY(1px) rotate(180deg);
       }
     }
   }

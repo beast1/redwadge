@@ -18,5 +18,21 @@
   
   &--slim {
     @include font-p($gray);
+    
+    &::before {
+      content: "";
+      
+      position: relative;
+      top: 1px;
+      
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      
+      background-image: url("icon__calendar.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 }

@@ -7,6 +7,6 @@
     {% include 'counter--large' %}
     
   </div>
-  <span class="basket-item__common-price">{{ item.total_price }}</span>
-  <a class="basket-item__remove" href="{{ item.url }}"></a>
+  <span class="basket-item__common-price">{{ item.total_price | money }}</span>
+  <a class="basket-item__remove" href="{{ item.url | money }}"></a>
 </div>

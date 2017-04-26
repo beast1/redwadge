@@ -26,5 +26,13 @@
   
   &__remove {
     @include radial(25px);
+    
+    @include react--trs-default;
+    
+    background: url("icon__cross--gray.png") no-repeat center center;
+    
+    &:hover {
+      background-image: url("icon__cross--red.png");
+    }
   }
 }

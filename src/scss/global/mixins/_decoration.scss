@@ -35,6 +35,38 @@
   }
 }
 
+@mixin title-cross($line-margin) {
+  text-align: center;
+  
+  display: flex;
+  align-items: center;
+  
+  &::before,
+  &::after {
+    content: "";
+   
+    position: relative;
+    top: -5px;
+
+    flex-grow: 1;
+
+    width: 20px;
+//    height: 3px;
+    border-bottom: 3px dashed $gray-lighten;
+
+//    background: repeating-linear-gradient(to left, $gray-lighten 0px, $gray-lighten 3px, transparent 3px, transparent 6px, $gray-lighten 6px, $gray-lighten 9px);
+  }
+  
+  
+  &::before {
+    margin-right: $line-margin;
+  }
+
+  &::after {
+    margin-left: $line-margin;
+  }
+}
+
 @mixin radial($size) {
   width: $size;
   height: $size;

@@ -2,16 +2,29 @@
   display: flex;
   align-items: center;
   
+  &__count-down,
+  &__count-up {
+    @include react--trs-default;
+  }
+  
   &__count-down {
     @include radial(25px);
     
     background: url("icon__count-down.png") no-repeat center center;
+    
+    &:hover {
+      background-image: url("icon__count-down--red.png");
+    }
   }
   
   &__count-up {
     @include radial(25px);
     
     background: url("icon__count-up.png") no-repeat center center;
+    
+    &:hover {
+      background-image: url("icon__count-up--red.png");
+    }
   }
   
   &__output {

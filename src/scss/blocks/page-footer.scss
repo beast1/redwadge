@@ -1,25 +1,29 @@
 .page-footer {
+  background: url("bg--footer.jpg") center center;
+
   &__wrapper {
     @include wrapper;
   }
   
-  //temporary
-  background: 
-    linear-gradient(to bottom, $color-second-transen 0, $color-second-transen 225px, $color-second-trans 225px),
-    url("../img/bg-footer.jpg") center center;
+  &__flex-wrapper:nth-of-type(1) {
+    background-color: $color-second-transen;
+  }
+  
+  &__flex-wrapper:nth-of-type(2) {
+    background-color: $color-second-trans;
+  }
   
   &__subscribe {
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    //temporary
-//    background-color: yellowgreen;
+    padding: 55px 0 50px;
   }
   
   &__subscribe-title {
     @include font-h2($color-main);
-    margin: 55px 0 18px;
+    margin-bottom: 18px;
   }
   
   &__subscribe-disc {
@@ -31,8 +35,6 @@
     display: flex;
     justify-content: space-between;
     padding: 50px 0 40px;
-    
-//    background-color: $color-second-trans;
   }
   
   &__main-col {
@@ -109,7 +111,5 @@
     justify-content: center;
     align-items: center;
     padding: 24px 0;
-    
-//    background-color: $color-second-trans;
   }
 }

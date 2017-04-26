@@ -73,6 +73,27 @@
   
   &__control {
     @include radial(25px);
+    
+    @include react--trs-default;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    &--prev {
+      background-image: url("icon__arrow-left.png");
+
+      &:hover {
+        background-image: url("icon__arrow-left--slim-red.png");
+      }
+    }
+    
+    &--next {
+      background-image: url("icon__arrow-right.png");
+
+      &:hover {
+        background-image: url("icon__arrow-right--slim-red.png");
+      }
+    }  
   }
   
   &__control-disc {
