@@ -415,6 +415,23 @@ html {
       height: 13px;
       margin-top: -6.5px;
       background: url("icon__catalog-arrow.png") no-repeat center center; }
+  .alert__index-target-text {
+    position: relative;
+    padding-bottom: 6px; }
+    .alert__index-target-text::before {
+      -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+      -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+      -webkit-transition-property: all;
+      transition-property: all;
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      border-bottom: 1px dashed #ffffff; }
   .alert__title {
     color: #ffffff;
     font-family: "Adelle Cyrillic";
@@ -725,11 +742,21 @@ html {
   .page-footer__blog-link {
     color: inherit;
     text-decoration: none;
-    color: #ffffff;
+    color: #c7c7c7;
     font-family: Lato, sans-serif;
     font-size: 13px;
     line-height: 13px;
-    font-weight: 400; }
+    font-weight: 400;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+    -webkit-transition-property: all;
+    transition-property: all; }
+    .page-footer__blog-link:hover {
+      color: #ffffff; }
+    .page-footer__blog-link:active {
+      color: #ffffff; }
   .page-footer__menu-list {
     list-style: none;
     margin: 0;
@@ -743,7 +770,17 @@ html {
     font-family: Lato;
     font-size: 14px;
     line-height: 18px;
-    font-weight: 400; }
+    font-weight: 400;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+    -webkit-transition-property: all;
+    transition-property: all; }
+    .page-footer__menu-link:hover {
+      color: #ffffff; }
+    .page-footer__menu-link:active {
+      color: #ffffff; }
   .page-footer .social {
     margin-bottom: 25px; }
   .page-footer__subscribe-title--slim {
@@ -960,6 +997,9 @@ html {
     background: #c3191d; }
   .social__item.social__item--youtube::before {
     background-image: url("icon__youtube.png"); }
+
+.social--share .social__item--youtube {
+  display: none; }
 
 .subscribe {
   display: -webkit-box;

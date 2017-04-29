@@ -9,7 +9,9 @@
 #= require jquery.tooltipster.min.js
 #= require jquery.validate.min.js
 #= require perfect-scrollbar.jquery.min.js
+#= require libs.min.js
 #= require swiper.min.js
 #= require messages_ru.js
 #= require plugin.alertify.js
 #= require main.js
+#= require script.js

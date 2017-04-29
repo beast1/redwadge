@@ -35,9 +35,15 @@
       <div class="product__fieldset">
         <span class="product__price">{{ product.price | money }}</span>
         <ul class="product__price-levels">
-          <li class="product__price-floor">850 RUB: 1-9 шт.</li>
-          <li class="product__price-floor">800 RUB: 10-99 шт.</li>
-          <li class="product__price-floor">690 RUB: более 100 шт.</li>
+          {% if product.fields.first.value != 'blank' %}
+            <li class="product__price-floor">{{ product.fields.floor_1.value }}</li>
+          {% endif %}
+          {% if product.fields.second.value != 'blank' %}
+            <li class="product__price-floor">{{ product.fields.floor_2.value }}</li>
+          {% endif %}
+          {% if product.fields.third.value != 'blank' %}
+            <li class="product__price-floor">{{ product.fields.floor_3.value }}</li>
+          {% endif %}
         </ul>
       </div>
       <div class="product__fieldset">
@@ -46,7 +52,7 @@
           <button class="product__target" type="submit" data-item-add>В корзину</button>
         </div>
         <span class="product__social">
-          Поделиться:{% include 'social' %}
+          Поделиться:{% include 'share' %}
         </span>
       </div>
     </div>

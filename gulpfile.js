@@ -136,13 +136,20 @@ gulp.task('sass', function() {
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('scripts', function() {
+gulp.task('scriptsLib', function() {
   return gulp.src([
-    'src/libs/jquery/dist/jquery.min.js',
+//    'src/libs/jquery/dist/jquery.min.js',
+    'src/libs/slick-carousel/slick/slick.min.js',
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('src/js'));
+    .pipe(gulp.dest('src/js'))
+    .pipe(gulp.dest('theme/media'));
+});
+
+gulp.task('scripts', function() {
+  return gulp.src('src/js/script.js')
+    .pipe(gulp.dest('theme/media'));
 });
 
 gulp.task('browser-sync', function() {
@@ -173,10 +180,10 @@ gulp.task('img', function() {
   .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('watchSrc', ['browser-sync', 'scripts'], function() {
+gulp.task('watchSrc', ['browser-sync', 'scriptsLib'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass'], browserSync.reload);
   gulp.watch('src/*.html', browserSync.reload);
-  gulp.watch('src/js/**/*.js', browserSync.reload);
+  gulp.watch('src/js/**/*.js', ['scripts'], browserSync.reload);
   return InsalesUploader.stream()
 });
 

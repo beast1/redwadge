@@ -40,6 +40,10 @@
     
     text-transform: uppercase;
     
+    &:hover .alert__index-target-text::before {
+//      transform: translateY(-6px);
+    }
+    
     &:active {
       box-shadow: $shadow-btn;
     }
@@ -70,6 +74,26 @@
       margin-top: -6.5px;
       
       background: url("icon__catalog-arrow.png") no-repeat center center;
+    }
+  }
+  
+  &__index-target-text {
+    position: relative;
+
+    padding-bottom: 6px;
+
+    &::before {
+      @include react--trs-default;
+
+      content: "";
+
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      border-bottom: 1px dashed $color-main;
     }
   }
   

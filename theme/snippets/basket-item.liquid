@@ -1,12 +1,12 @@
-<div class="basket-item">
+<div class="basket-item" data-product-id="{{ item.product.id }}" data-item-id="{{ item.id }}">
   <div class="basket-item__preview"></div>
   <span class="basket-item__name">{{ item.title }}</span>
-  <span class="basket-item__price">{{ item.price }}</span>
+  <span class="js-item-price  basket-item__price">{{ item.price }}</span>
   <div class="counter counter--large">
     
     {% include 'counter--large' %}
     
   </div>
   <span class="basket-item__common-price">{{ item.total_price | money }}</span>
-  <a class="basket-item__remove" href="{{ item.url | money }}"></a>
+  <button class="basket-item__remove" data-item-delete="{{ item.id }}"></button>
 </div>

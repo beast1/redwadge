@@ -72,7 +72,10 @@
   
   &__blog-link {
     @include un-link;
-    @include font-other($color-main, 13px);
+    @include font-other($gray-lighter, 13px);
+    
+    @include react--trs-default;
+    @include react--color($color-main, $color-main);
   }
   
   &__menu-list {
@@ -86,6 +89,9 @@
   &__menu-link {
     @include un-link;
     @include font-p($gray);
+    
+    @include react--trs-default;
+    @include react--color($color-main, $color-main);
   }
   
   .social {

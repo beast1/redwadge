@@ -1,5 +1,5 @@
-<div class="counter counter--large">
-  <button class="counter__count-down" type="button"></button>
-  <input class="counter__output" id="adults-count" type="text" value="{{ item.quantity }}">
-  <button class="counter__count-up" class="count-up" type="button"></button>
+<div class="counter counter--large" data-quantity>
+  <button class="counter__count-down" type="button" data-quantity-change="-1"></button>
+  <input class="counter__output" type="text" value="{{ item.quantity }}" min="1" max="1000" name="cart[quantity][{{ item.id }}]">
+  <button class="counter__count-up" class="count-up" type="button" data-quantity-change="1"></button>
 </div>
