@@ -1,63 +1,111 @@
 {% include 'page-title' %}
 
 
-<div class="page-main">
+<div class="js-product-wrapper  page-main" data-product-id="{{ product.id }}">
   <div class="product">
     <div class="product__preview">
       <div class="slider">
-        <div class="slider__main">
-          <div class="slider__controls  slider__controls--left"></div>
-          <div class="slider__main-container">
-            <img src="{{ product.first_image.original_url }}" alt="image.title" width="260">
+        <div class="gallery-main-wrapper  slider__main">
+          {% if product.images.first.title %}
+            {% assign current_title = product.images.first.title %}
+          {% else %}
+            {% assign current_title = product.title %}
+          {% endif %}
+          <div class="js-product-gallery-main  swiper-container">
+            <div class="swiper-wrapper  slider__main-container">
+              {% for image in product.images %}
+                {% if image.title %}
+                  {% assign current_title = image.title %}
+                {% else %}
+                  {% assign current_title = product.title %}
+                {% endif %}
+                <div class="swiper-slide  slider__main-item">
+                  <div class="slide-inner">
+                    <div class="image-wrapper  slider__main-image">
+                      <img src="{{ image.original_url }}" alt="{{ image.title }}" width="260">
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
           </div>
+          <div class="slider__controls  slider__controls--left"></div>
           <div class="slider__controls  slider__controls--right"></div>
         </div>
-        <ul class="slider__demos">
-<!--
-          <li class="slider__demos-item"></li>
-          <li class="slider__demos-item"></li>
-          <li class="slider__demos-item"></li>
-          <li class="slider__demos-item"></li>
--->
-          {% for image in product.images limit: 4 %}
-            <li class="slider__demos-item">
-              <img src="{{ image.compact_url }}" alt="{{ image.title }}" width="70">
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <div class="product__content">
-      <div class="product__fieldset">
-        <span class="product__title">{{ product.title }}</span>
-        <p class="product__disc">{{ product.description }}</p>
-      </div>
-      <div class="product__fieldset">
-        <span class="product__price">{{ product.price | money }}</span>
-        <ul class="product__price-levels">
-          {% if product.fields.first.value != 'blank' %}
-            <li class="product__price-floor">{{ product.fields.floor_1.value }}</li>
-          {% endif %}
-          {% if product.fields.second.value != 'blank' %}
-            <li class="product__price-floor">{{ product.fields.floor_2.value }}</li>
-          {% endif %}
-          {% if product.fields.third.value != 'blank' %}
-            <li class="product__price-floor">{{ product.fields.floor_3.value }}</li>
-          {% endif %}
-        </ul>
-      </div>
-      <div class="product__fieldset">
-        <div class="product__controls">
-          {% include 'counter' %}
-          <button class="product__target" type="submit" data-item-add>В корзину</button>
+        <div class="gallery-thumbs-wrapper  slider__demos-wrapper">
+          <div class="slider__demos-controls  slider__demos-controls--top">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+          </div>
+          <div class="slider__demos-controls  slider__demos-controls--bottom">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </div>
+          <div class="js-gallery-thumbs  gallery-thumbs  swiper-container-vertical  slider__demos">
+            <div class="swiper-wrapper  slider__demos-container">
+              {% for image in product.images %}
+                {% if image.title %}
+                  {% assign current_title = image.title %}
+                {% else %}
+                  {% assign current_title = product.title %}
+                {% endif %}
+                <div class="js-gallery-trigger  swiper-slide {% if forloop.index == 1 %} active {% endif %}  slider__demos-item-container" data-link="{{ image.url }}">
+                  <div class="slide-inner with-object-fit  slider__demos-item">
+                    <img class="slide-image  slider__demos-img" src="{{ image.large_url }}" alt="{{ image.title }}">
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
         </div>
-        <span class="product__social">
-          Поделиться:{% include 'share' %}
-        </span>
       </div>
     </div>
+    <form class="product__content" action="{{ cart_url }}">
+      <section class="product__fieldset">
+        <span class="js-product-title  product__title">{{ product.title }}</span>
+        <p class="product__descr">
+          {{ product.short_description }}<br>
+          {{ product.description }}
+        </p>
+      </section>
+      {% if product.is_bundle %}
+        <input type="hidden" name="variant_id" value="{{ product.variants.first.id }}">
+      {% else %}
+        <div class="option-selectors">
+          {% if product.show_variants? %}
+            <select class="hidden" name="variant_id" data-product-variants>
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title | escape }}</option>
+              {% endfor %}
+            </select>
+          {% else %}
+            <input type="hidden" name="variant_id" value="{{ product.variants.first.id }}">
+          {% endif %}
+        </div><!-- /.option-selectors -->
+      {% endif %}
+      <section class="product__fieldset">
+        <span class="js-product-price  product__price">{{ product.price | money }}</span>
+        <ul class="product__price-levels">
+          <li class="product__price-floor">899 РУБ: 1-9 шт.</li>
+          <li class="product__price-floor">750 РУБ: более 10 шт.</li>
+        </ul>
+      </section>
+      <section class="product__fieldset">
+        <div class="product__controls" data-compare="{{ product.id }}">
+          {% if product.available %}
+            <div class="js-counter-wrapper  product__counter">
+              {% include 'counter' %}
+            </div>
+            <button class="product__target" type="submit" data-item-add>В корзину</button>
+          {% else %}
+            <button class="js-md__open-preorder  product__target" type="button">Предзаказ</button>
+          {% endif %}
+        </div>
+        {% unless settings.product_share_hide %}
+          <span class="product__social">
+            Поделиться:{% include 'share' %}
+          </span>
+        {% endunless %}
+      </section>
+    </form>
   </div>
-  
   {% include 'text-field' %}
-  
 </div>

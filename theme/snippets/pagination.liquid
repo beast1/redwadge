@@ -1,9 +1,38 @@
+<!--
 <div class="pagination">
   <p class="pagination__container">
     <span class="pagination__desc">Страница:</span>
-    <a class="pagination__item  pagination__item--prev  pagination__item--disabled" href="#"></a>
+    <a class="pagination__item  pagination__item--prev  pagination__item--disabled" href="#">&lt;</a>
     <a class="pagination__item  pagination__item--current" href="#">1</a>
     <a class="pagination__item" href="#">2</a>
-    <a class="pagination__item  pagination__item--next" href="#"></a>
+    <a class="pagination__item  pagination__item--next" href="#">&gt;</a>
   </p>
 </div>
+-->
+{% if paginate['pages'] > 1 %}
+
+  <div class="pagination">
+    <p class="pagination__container">
+      {% if paginate.previous %}
+        <a class="pagination__item  pagination__item--prev" href="{{ paginate.previous.url }}">&lt;</a>
+      {% endif %}
+
+      {% for part in paginate.parts %}
+        {% if part.title == paginate['current_page'] %}
+          <a class="pagination__item  pagination__item--current">{{ part.title }}</a>
+        {% else %}
+
+          {% if part.is_link %}
+            <a class="pagination__item" href="{{ part.url }}">{{ part.title }}</a>
+          {% else %}
+            <a class="pagination__item">{{ part.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if paginate.next %}
+        <a class="pagination__item  pagination__item--next" href="{{ paginate.next.url }}">&gt;</a>
+      {% endif %}
+    </p>
+  </div>
+{% endif %}

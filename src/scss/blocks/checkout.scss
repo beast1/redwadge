@@ -4,6 +4,11 @@
   
   &__fieldset {
     width: 48%;
+    
+    &--generate {
+      display: flex;
+      flex-direction: column;
+    }
   }
   
   &__title {
@@ -11,5 +16,15 @@
     
     display: flex;
     margin: 40px 0 20px;
+  }
+}
+
+.checkout__fieldset {
+  #regular-client {
+    width: 100%;
+  }
+  
+  .field.fc {
+    background-color: red;
   }
 }

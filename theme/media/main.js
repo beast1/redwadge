@@ -66,8 +66,8 @@
       spaceBetween: 10,
       initialSlide: 0,
       centeredSlides: false,
-      nextButton: '.js-gallery-thumbs-next',
-      prevButton: '.js-gallery-thumbs-prev',
+      nextButton: '.slider__demos-controls--bottom',
+      prevButton: '.slider__demos-controls--top',
       slidesPerGroup: 4,
       slidesPerView: 4,
       touchRatio: 0.2,
@@ -83,6 +83,8 @@
       centeredSlides: true,
       initialSlide: 0,
       touchRatio: 0.2,
+      nextButton: '.slider__controls--right',
+      prevButton: '.slider__controls--left',
       onSlideChangeEnd: function (e) {
         console.log(e);
         $galleryTriggers.not(':eq(' + e.activeIndex + ')').removeClass('active');

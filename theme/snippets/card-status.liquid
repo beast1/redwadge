@@ -26,7 +26,6 @@
 {% endif %}
 
 <div class="card__status">
-
   {% if show_labels %}
     {% if product.properties.label %}
       {% for characteristic in product.properties.label.characteristics %}
@@ -35,8 +34,12 @@
     {% endif %}
   {% endif %}
   
-  <div class="card__price">{{ product.price | money }}</div>
-
+  {% if product.old_price %}
+    <div class="card__price  card__price--sale">{{ product.price | money }}</div>
+    <div class="card__price">{{ product.old_price | money }}</div>
+  {% else %}
+    <div class="card__price">{{ product.price | money }}</div>
+  {% endif %}
 </div>
 
 {% assign show_labels = null %}

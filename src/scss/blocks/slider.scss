@@ -6,12 +6,6 @@
   background-color: $transparent;
   border: 1px solid $gray-lighter;
   
-  &--collection {
-    top: -45px;
-    
-    border: none;
-  }
-  
   &__controls {
     @include radial(60px);
     
@@ -19,12 +13,14 @@
     
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 3995;
     
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: -30px;
+    
+    font-size: 0;
     
     background-color: $color-main;
     
@@ -45,11 +41,11 @@
       margin-left: -30px;
       
       &::before {
-        background-image: url("icon__arrow-left--large.png");
+        @include sprite-icon__arrow-left--large;
       }
       
       &:hover::before {
-        background-image: url("icon__arrow-left--large-red.png");
+        @include sprite-icon__arrow-left--large-red;
       }
     }
     
@@ -58,12 +54,11 @@
       margin-right: -30px;
       
       &::before {
-        background-image: url("icon__arrow-right--large.png");
+        @include sprite-icon__arrow-right--large;
       }
       
       &:hover::before {
-        background-image: url("icon__arrow-left--large-red.png");
-        transform: translateY(1px) rotate(180deg);
+        @include sprite-icon__arrow-right--large-red;
       }
     }
   }
@@ -77,30 +72,123 @@
     position: relative;
     
     border-right: 1px solid $gray-lighter;
+//    overflow: hidden;
   }
   
   &__main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+//    display: flex;
     width: 320px;
     height: 440px;
+//    padding: 30px;
+    
+//    overflow: hidden;
+  }
+  
+  &__main-item {
+//    flex-shrink: 0;
+  }
+  
+  &__main-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 30px;
+  }
+  
+  &__demos-controls {
+    @include radial(25px);
+    
+    @include react--trs-default;
+    
+    position: absolute;
+    left: 50%;
+    z-index: 3995;
+    
+    margin-left: -12.5px;
+    
+    background-color: $color-main;
+//    background: $color-main url("icon__arrow-left.png") no-repeat center center;
+    
+    &:hover {
+      color: $color-action-main;
+//      background-image: url("icon__arrow-left--slim-red.png");
+    }
+    
+    &--top {
+      top: -12.5px;
+      
+//      transform: rotate(90deg);
+    }
+    
+    &--bottom {
+      bottom: -12.5px;
+      
+//      transform: rotate(-90deg);
+    }
+  }
+  
+  &__demos-wrapper {
+    position: relative;
+    
+    width: 155px;
+    height: 440px;
+//    padding: 15px;
+    
+//    overflow: hidden;
+  }
+  
+  &__demos {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    right: 0;
+    bottom: 0px;
+    
+    padding: 3px 15px;
     
     overflow: hidden;
   }
   
-  &__demos {
-    @include un-list;
-    
+  &__demos-container {
+//    display: flex;
+//    justify-content: center;
+  }
+  
+  &__demos-item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 155px;
-    height: 440px;
-    padding: 10px;
-    
+    height: 110px;
+    width: 125px;
+
     overflow: hidden;
+  }
+  
+//  &__demos-item-container {
+//    &.active {
+//      img {
+//        box-shadow: 0 0 0 1px $gray-lighter;
+//      }
+//    }
+//  }
+  
+  &__demos-item {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+//    &--current {
+//      box-shadow: 0 0 0 2px red;
+//    }
+  }
+  
+  &__demos-img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
   }
 }

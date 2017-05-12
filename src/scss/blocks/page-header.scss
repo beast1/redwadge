@@ -57,24 +57,11 @@
       background-color: $color-action-main;
     }
     
-    &::after {
-      content: "";
-      
-      position: absolute;
-      right: 2px;
-      top: 50%;
-      
-      width: 16px;
-      height: 16px;
-      margin-top: -8px;
-      
-      background-image: url("icon__search.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-    
-    &:hover::after {
-      background-image: url("icon__search--red.png");
+    &:hover,
+    &:focus {
+      .fa {
+        color: $color-action-main;
+      }
     }
   }
   
@@ -98,8 +85,7 @@
     @include font-other($gray, 17px);
   }
   
-  &__nav { //Сделать по центру
-//    position: absolute;
+  &__nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,6 +110,7 @@
     
     &--home {
       @include react--trs-default;
+      @include react--color($color-action-main, $color-action-main-dark);
       
       position: relative;
       top: -1px;
@@ -134,21 +121,24 @@
       
       font-size: 0;
       
-      background: url("icon__home--gray.png") no-repeat center center;
-      
-      &:hover {
-        background-image: url("icon__home.png");
+      .fa {
+        font-size: 14px;
       }
     }
   }
   
   &__logo {
+    @include un-target;
+    @include sprite-logo;
+    
     position: relative;
     
     display: flex;
     width: 232px;
     height: 42px;
     margin: 0 40px;
+    
+    font-size: 0;
     
     cursor: pointer;
     
@@ -157,6 +147,8 @@
     }
     
     &::before {
+      @include sprite-logo__head;
+      
       content: "";
       
       position: absolute;
@@ -169,8 +161,6 @@
       margin-left: -55px;
       margin-top: -92px;
       
-      background: url("logo__head.png") no-repeat center center;
-      
       transition: 0.4s ease;
     }
   }
@@ -182,7 +172,7 @@
   
   &__basket-link {
     @include react--trs-default;
-    @include react--background(url("icon__basket--red.png"), url("icon__basket--red.png"));
+    @include sprite-icon__basket;
     
     position: relative;
     
@@ -191,7 +181,12 @@
     height: 31px;
     margin-right: 13px;
     
-    background: url("icon__basket.png") center center;
+    font-size: 31px;
+    line-height: 31px;
+    
+    &:hover {
+      @include sprite-icon__basket--red;
+    }
   }
   
   &__basket-counter {
@@ -209,11 +204,11 @@
     margin-right: -8.5px;
     margin-bottom: -8.5px;
     
-    background-color: $color-action-main;
+    background-color: $gray;
     border-radius: 50%;
     
-    &--empty {
-      background-color: $gray;
+    &--filled {
+      background-color: $color-action-main;
     }
   }
   

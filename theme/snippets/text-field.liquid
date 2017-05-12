@@ -1,3 +1,10 @@
 <div class="text-field">
-  {{ page.content | editable }}
+  {% case template %}
+    {% when 'collection' or 'search' %}
+      {{ blocks.seo-collection.content }}
+    {% when 'product' %}
+      {{ blocks.seo-product.content }}
+    {% when 'index' %}
+      {{ page.content | editable }}
+  {% endcase %}
 </div>

@@ -1,0 +1,23 @@
+<div class="carousel">
+  <div class="carousel__item">
+    <div class="carousel__container">
+      {% for product in collections.index-carousel-1-item-1.products limit: 4 %} 
+        {% include 'card' %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="carousel__item">
+    <div class="carousel__container">
+      {% for product in collections.index-carousel-1-item-2.products limit: 4 %} 
+        {% include 'card' %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="carousel__item">
+    <div class="carousel__container">
+      {% for product in collections.index-carousel-1-item-3.products limit: 4 %} 
+        {% include 'card' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

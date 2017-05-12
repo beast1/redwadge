@@ -3,7 +3,10 @@
     <div class="alert__container">
       {% case template %}
         {% when 'index' %}
-          <a class="alert__index-target" href="{{ collections.wadge-250-gr.url }}"><span class="alert__index-target-text">Каталог</span></a>
+          <a class="alert__index-target" href="{{ collections.wadge-250-gr.url }}">
+            <span class="alert__index-target-text">Каталог</span>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
           <span class="alert__title">Доктор Вейдж</span>
           <span class="alert__sub-title">Табак для кальяна премиум класса</span>
           <p class="alert__message">Компания WADGE – профессиональный производитель табака премиум класса. Табачные смеси представляют собой продукцию авторской рецептуры. В основе лежит равное соотношение табачных листьев Берли (Burley) и Вирджиния (Virginia)</p>
@@ -15,14 +18,32 @@
           <span class="alert__sub-title">Страница не найдена</span>
           <p class="alert__message">Страница, которую вы ищите перенесена или отсутствует. Попробуйте вернуться назад или перейти на главную страницу.</p>
           <div class="alert__controls">
-            <button class="alert__target">На главную</button>
+            <a class="alert__target" href="/">На главную</a>
           </div>
         {% when 'order' %}
           <span class="alert__title">Поздравляем!</span>
           <span class="alert__sub-title">Ваша заявка успешно принята</span>
           <p class="alert__message">Благодарим за внимание к нашему интернет-магазину Wadge.ru. Ваша заявка успешно принята и в ближайшее время с вами свяжется консультант для уточнения деталей.</p>
           <div class="alert__controls">
-            <button class="alert__target">На главную</button>
+            <a class="alert__target" href="/">На главную</a>
+            <span class="alert__controls-disc">или перейти в</span>
+            <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
+          </div>
+        {% when 'cart' %}
+          <span class="alert__title">Корзина пуста</span>
+          <span class="alert__sub-title">Оформлять нечего</span>
+          <p class="alert__message">Вы пока ничего не добавили в корзину. Попробуйте подобрать для себя что-то в каталоге или оформить предзаказ, если любимого вкуса нет на складе.</p>
+          <div class="alert__controls">
+            <a class="alert__target" href="/">На главную</a>
+            <span class="alert__controls-disc">или перейти в</span>
+            <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
+          </div>
+        {% when 'search' %}
+          <span class="alert__title">Товар не найден</span>
+          <span class="alert__sub-title">Поиск не дал результатов</span>
+          <p class="alert__message">Нет товаров с названием "{% if search.query != empty %}{{ search.query }}{% endif %}". Попробуйте подобрать для себя что-то в каталоге или оформить предзаказ, если любимого вкуса нет на складе.</p>
+          <div class="alert__controls">
+            <a class="alert__target" href="/">На главную</a>
             <span class="alert__controls-disc">или перейти в</span>
             <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a>
           </div>

@@ -8,6 +8,7 @@ $color-second-transen: rgba(0, 0, 0, 0.80);
 $color-second-trans: rgba(0, 0, 0, 0.95);
 $color-second: #000000;
 $color-second-light: #111111;
+$color-second-lighten: #424242;
 
 $color-action-main-dark: #db281f;
 $color-action-main: #f24941;
@@ -33,14 +34,15 @@ $gray-lighten: #afafaf;
 $gray-lighter: #c7c7c7;
 
 $transparent: transparent;
+$black: #000;
 
 //fonts
 
 $font-family: Lato, sans-serif;
-$font-family--h1: "Adelle Cyrillic";
-$font-family--h2: Lato; //LATO BLACK
-$font-family--h3: Lato; //LATO BLACK
-$font-family--p: Lato; //LATO REGULAR
+$font-family--h1: "Adelle Cyrillic Bold";
+$font-family--h2: "Lato", sans-serif;
+$font-family--h3: "Lato", sans-serif;
+$font-family--p: "Lato", sans-serif;
 
 $font-size: 16px;
 $font-size--h1: 44px;

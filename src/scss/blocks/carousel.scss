@@ -1,0 +1,75 @@
+.carousel {
+  position: relative;
+  top: -45px;
+  
+  &__item {
+    margin: 0 5px;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -40px;
+  }
+  
+  .card:hover {
+    box-shadow: none;
+  }
+  
+  &__controls {
+    @include radial(60px);
+    
+    @include react--trs-default;
+    
+    position: absolute;
+    top: 50%;
+    z-index: 3995;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    
+    font-size: 0;
+    
+    background-color: $color-main;
+    
+    transition-property: background-image;
+    
+    &::before {
+      content: "";
+      
+      width: 11px;
+      height: 22px;
+      
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    &--left {
+      left: 0;
+      margin-left: -25px;
+      
+      &::before {
+        @include sprite-icon__arrow-left--large;
+      }
+      
+      &:hover::before {
+        @include sprite-icon__arrow-left--large-red;
+      }
+    }
+    
+    &--right {
+      right: 0;
+      margin-right: -25px;
+      
+      &::before {
+        @include sprite-icon__arrow-right--large;
+      }
+      
+      &:hover::before {
+        @include sprite-icon__arrow-right--large-red;
+      }
+    }
+  }
+}

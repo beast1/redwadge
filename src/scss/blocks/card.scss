@@ -10,15 +10,12 @@
   min-height: 513px;
   padding: 28px 25px 83px;
   border: 1px solid $gray-lighter;
+  margin-bottom: 40px;
   
   background-color: $color-main;
   
   &:hover {
     box-shadow: 0 0 40px 0 fade-out($color-second, 0.2);
-  }
-  
-  &:nth-of-type(-n+8) {
-    margin-bottom: 40px;
   }
   
   &--not-avialable {
@@ -38,12 +35,26 @@
     @include label($color-status-new);
     
     margin-right: auto;
+    
+    &::before {
+      content: "New";
+
+      color: $color-main;
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
   
   &__label-hot {
     @include label($color-status-star);
     
     margin-right: auto;
+    
+    &::before {
+      @include sprite-icon__star;
+      
+      content: "";
+    }
   }
   
   &__price {
@@ -59,8 +70,24 @@
     
     background-color: $color-action-main;
     
-    &--limit {
+    &--sale {
+      position: relative;
+      
       background-color: $color-second;
+      
+      &::before {
+        content: "";
+        
+        position: absolute;
+        top: 50%;
+        right: 0;
+        
+        border-top: 7px solid $transparent;
+        border-left: 7px solid $transparent;
+        border-bottom: 7px solid $transparent;
+        border-right: 6px solid $color-action-main;
+        margin-top: -7px;
+      }
     }
   }
   
@@ -102,15 +129,15 @@
     }
     
     &--green-aple::before {
-      background-image: url("taste--green-aple.png");
+      @include sprite-taste--green-aple;
     }
       
-    &--green-orange::before {
-      background-image: url("taste--orange.png");
+    &--orange::before {
+      @include sprite-taste--orange;
     }
       
     &--red-aple::before {
-      background-image: url("taste--red-aple.png");
+      @include sprite-taste--red-aple;
     }
   }
   
@@ -158,19 +185,15 @@
     }
     
     &::before {
+      @include sprite-icon__basket--slim;
+        
       content: "";
       
       position: absolute;
       left: 20px;
       top: 50%;
       
-      width: 15px;
-      height: 18px;
       margin-top: -10px;
-      
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url("icon__basket--slim.png");
     }
   }
   
@@ -197,4 +220,8 @@
       margin-bottom: 0;
     }
   }
+}
+
+.card__price--sale + .card__price {
+  text-decoration: line-through;
 }

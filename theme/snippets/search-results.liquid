@@ -1,28 +1,24 @@
+{% if search.performed? %}
+  {% if search.results == empty %}
+    {% include 'alert' %}
+  {% else %}
+    <div class="page-main">
+      <div class="catalog" data-search-result>
+        {% paginate search.results by 12 %}
+          <div class="catalog__list">
+          {% for product in search.results %}
+              {% include 'card' %}
+          {% endfor %}
+          </div>
+          {% if search.results != empty %}
+            {% include "pagination" %}
+          {% endif %}
+        {% endpaginate %}
+      </div>
+      {% include 'text-field' %}
+    </div>
+  {% endif %}
+{% else %}
+  {% include 'alert' %}
+{% endif %}
 
-{% include 'page-title' %}
-<div class="page-main">
-  <div class="catalog" data-search-result>
-    {% if search.performed? %}
-      {% if search.results == empty %}
-        <div class="notice notice-info">
-          {{ messages.search_is_fail }}
-        </div>
-      {% endif %}
-    {% else %}
-      <div class="notice notice-info">
-        {{ messages.search_is_empty }}
-      </div>
-    {% endif %}
-    {% if search.performed? %}
-      {% paginate search.results by 12 %}
-      <div class="catalog__list">
-      {% for product in search.results %}
-          {% include 'card' %}
-      {% endfor %}
-      </div>
-        {% include "pagination" %}
-      {% endpaginate %}
-    {% endif %}
-  </div>
-  {% include 'text-field' %}
-</div>

@@ -1,9 +1,45 @@
 .catalog {
   padding-top: 35px;
   
+  &__controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  &__controls-item {
+    @include margin-right(30px);
+    
+    display: flex;
+    align-items: center;
+  }
+  
+  &__controls-label {
+    @include font-other($gray, 14px);
+    
+    margin-right: 12px;
+  }
+  
+  &__map-wrapper {
+    margin-left: auto;
+  }
+  
+  &__map {
+    @include font-other($gray, 14px);
+  }
+  
+  &__map-current {
+    color: $color-action-main;
+  }
+  
+  &__map-total {
+    color: $color-action-main;
+  }
+  
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: -40px;
   }
 }

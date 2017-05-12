@@ -5,9 +5,9 @@
       <form class="page-header__search" action="/search" method="get">
         <input type="hidden" name="lang" value="{{ language.locale }}">
         <div class="page-header__search-input-wrap">
-          <input class="page-header__search-input" id="search-widget-input" type="text" placeholder="Поиск по сайту..." name="q"  value="{% if search.query != empty %}{{ search.query }}{% endif %}" data-search-field>
+          <input class="page-header__search-input" id="search-widget-input" type="text" placeholder="Поиск по сайту..." name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}" data-search-field>
+          <i class="fa fa-search" aria-hidden="true"></i>
         </div>
-        <button type="submit">Искать</button>
       </form>
       
       {% include 'social' %}
@@ -20,23 +20,24 @@
       </div>
       <nav class="page-header__nav">
         <div class="page-header__nav-list">
-          <a class="page-header__nav-item  page-header__nav-item--home" href="/">Главная</a>
+          <a class="page-header__nav-item  page-header__nav-item--home" href="/"><i class="fa fa-home" aria-hidden="true"></i>Главная</a>
           {% for link in linklists.header-menu-left.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
           {% endfor %}
         </div>
-          <a class="page-header__logo" {% if template != 'index' %}href="/"{% endif %}><img class="page-header__logo-image" src="{{ 'logo.png' | file_url }}" alt="WADGE"></a>
+          <a class="page-header__logo" {% if template != 'index' %}href="/"{% endif %}>Wadge</a>
         <div class="page-header__nav-list">
           {% for link in linklists.header-menu-right.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
           {% endfor %}
         </div>
       </nav>
-      <div class="page-header__basket">
+      <div class="js-shopcart-area  page-header__basket">
         <a class="page-header__basket-link" href="{{ cart_url }}" title="Корзина">
-          <span class="page-header__basket-counter  {% if cart.items_count == 0 %} page-header__basket-counter--empty {% endif %}">{{ cart.items_count }}</span>
+<!--          <i class="fa fa-shopping-basket" aria-hidden="true"></i>-->
+          <span class="js-shopcart-amount  page-header__basket-counter  page-header__basket-counter--filled">{{ cart.items_count }}</span>
         </a>
-        <span class="page-header__basket-text  page-header__basket-text--red">{{ cart.items_price | money}}</span>
+        <span class="js-shopcart-total-summ  page-header__basket-text  page-header__basket-text--red">{{ cart.items_price | money}}</span>
 <!--        <span class="page-header__basket-text">{{ money }}</span>-->
       </div>
     </section>

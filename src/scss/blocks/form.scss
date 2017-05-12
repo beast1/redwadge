@@ -55,13 +55,14 @@
   }
   
   &__submit {
-    @include un-btn;
+    @include un-target;
     @include btn($color-action-main, 25px);
     @include font-other($color-main, 16px);
     
     @include react--trs-default;
     @include react--background($color-action-main-dark, $color-action-main-dark);
     
+    width: 100%;
     height: 50px;
     margin-top: 30px;
     

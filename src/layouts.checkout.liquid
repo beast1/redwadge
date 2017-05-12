@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='ru' xml:lang='ru' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='noindex, nofollow' name='robots'>
+
+    <title>{% yield 'title' %}</title>
+
+    <!--required?-->
+    {% assign custom_checkout_css = 'custom_checkout.css' | asset_url_if_exists %}
+
+    {% if custom_checkout_css %}
+      <link href='{{ custom_checkout_css }}' rel='stylesheet'>
+    {% endif %}
+    <!--endrequired?-->
+
+    <!-- icons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_url }}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ 'main.css' | asset_url }}" rel="stylesheet">
+    <script src="{{ 'modernizr-custom.js' | asset_url }}"></script>
+    <!--[if IE]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    {% include 'page-header' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Оформление заказа</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Оформление заказа</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+    <div class="page-main">
+      <div class="checkout">
+        <div class="checkout__fieldset  checkout__fieldset--generate">
+          <span class="checkout__title">Оформление заказа</span>
+          {% yield 'flash_messages' %}
+          <div id='top_info'>
+            {% yield 'top_info' %}
+          </div>
+          {% yield %}
+        </div>
+        <div class="checkout__fieldset">
+          <span class="checkout__title">Ваш заказ</span>
+          <table class="checkout__payment payment">
+            <tr class="payment__settings">
+              <td class="payment__settings-item">Название продукта</td>
+              <td class="payment__settings-item">Сумма</td>
+            </tr>
+            {% for item in cart.items %}
+              <tr class="payment__item">
+                <td class="payment__item-name">{{ item.title }}<span class="payment__item-counter">× {{ item.quantity }}</span></td>
+                <td class="payment__item-price">{{ item.total_price | money }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="payment__full-price">
+              <td>Общая сумма:</td>
+              <td>{{ cart.total_price | money }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% include 'page-footer' %}
+    {% include 'scripts' %}
+    <script src="{{ 'checkout.js' | asset_url }}"></script>
+  </body>
+</html>

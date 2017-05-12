@@ -6,22 +6,56 @@
   
   &__content {
     margin-left: 95px;
+    width: 100%;
+  }
+  
+  &__fieldset {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    
+    &:nth-of-type(2) {
+      &::before,
+      &::after {
+        content: "";
+          
+        position: absolute;
+        left: 0;
+        right: 0;
+        
+        height: 2px;
+        
+        background-image: repeating-linear-gradient(to left, $gray-lighten 0px, $gray-lighten 3px, transparent 3px, transparent 6px, $gray-lighten 6px, $gray-lighten 9px);
+      }
+      
+      &::before {
+        top: -25px;
+      }
+      
+      &::after {
+        bottom: 30px;
+      }
+    }
   }
   
   &__title {
     @include font-h2($color-second);
     
+    display: flex;
     margin-bottom: 30px;
     
     font-size: 25px;
+    line-height: 25px;
   }
   
-  &__disc {
+  &__descr {
     @include font-p($gray);
     
     margin-bottom: 55px;
     
     font-size: 16px;
+    line-height: 24px;
   }
   
   &__price {
@@ -47,6 +81,10 @@
   &__controls {
     display: flex;
     margin-bottom: 35px;
+    
+    & > *:not(:last-child) {
+      margin-right: 15px;
+    }
   }
   
   &__target {
@@ -60,7 +98,6 @@
     
     height: 32px;
     padding: 10px 25px 10px 45px;
-    margin-left: 15px;
     
     &:active {
       box-shadow: $shadow-btn;
@@ -81,6 +118,11 @@
       background-position: center center;
       background-image: url("icon__basket--slim.png");
     }
+  }
+  
+  &__counter {
+    display: flex;
+    align-items: center;
   }
   
   &__social {

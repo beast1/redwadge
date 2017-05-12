@@ -1,24 +1,13 @@
 {% include 'alert' %}
 
 <div class="page-main">
-  <div class="slider  slider--collection">
-    <div class="slider__controls  slider__controls--left"></div>
-    <div class="slider__list">
-      
-      {% for product in collections.wadge-250-gr.products limit: 4 %} 
-        {% include 'card' %}
-      {% endfor %}
-      
-    </div>
-    <div class="slider__controls  slider__controls--right"></div>
-  </div>
-  
+  {% include 'carousel' %}
   {% include 'features' %}
   
   <div class="blog">
     <h2 class="blog__title"></h2>
     <div class="blog-list">
-        {% for article in blogs.test.articles limit: 4 %}
+        {% for article in blogs.news.articles limit: 4 %}
           {% include 'blog-demo' %}
         {% endfor %}
     </div>

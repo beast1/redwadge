@@ -10,7 +10,18 @@
   {% include 'card-status' %}
   
   <div class="card__preview">
-    <div class="card__taste  card__taste--green-aple"></div>
+    {% if product.fields.taste.value != '' %}
+      <a class="card__taste  
+        {% case product.fields.taste.value %}
+          {% when 'Зеленое яблоко' %}
+            card__taste--green-aple
+          {% when 'Красное яблоко' %}
+            card__taste--red-aple
+          {% when 'Апельсин' %}
+            card__taste--orange                          
+        {% endcase %}
+      " href="{{ product.url }}" title="{{ product.title | strip_html }}"></a>
+    {% endif %}
     {% if product.images.size > 0 %}
       <a href="{{ product.url }}" title="{{ product.title | strip_html }}">
         <img src="{{ product.images.first.large_url }}" alt="{{ product.images.first.title | strip_html }}"
@@ -25,7 +36,15 @@
   <span class="card__name">{{ product.title }}</span>
   <p class="card__disc">{{ product.short_description }}</p>
   <form class="card__controls" method="post" action="{{ cart_url }}" data-product-id="{{ product.id }}">
-    <input type="hidden" name="variant_id" value="{{ product.variants.first.id }}">
+    {% if product.show_variants? %}
+      <select name="variant_id" data-product-variants>
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title | escape }}</option>
+        {% endfor %}
+      </select>
+    {% else %}
+      <input type="hidden" name="variant_id" value="{{product.variants.first.id}}" >
+    {% endif %}
     {% if product.available %}   
       {% include 'counter' %}
       <button class="card__target" type="submit" data-item-add>В корзину</button>

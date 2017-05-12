@@ -1,0 +1,14 @@
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0 70px;
+  
+  &__editable {
+    width: 46%;
+    flex-shrink: 2;
+  }
+  
+  &__preview {
+    width: 50%;
+  }
+}

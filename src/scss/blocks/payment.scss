@@ -1,7 +1,31 @@
 .payment {
+  position: relative;
+  
   width: 100%;
   padding: 20px 30px;
   border: 1px solid $gray-light;
+  
+  &::before,
+  &::after {
+    content: "";
+    
+    position: absolute;
+    left: 32px;
+    right: 30px;
+    
+//    height: 1px;
+    min-width: 5px;
+    
+    border-bottom: 2px dashed $gray-lighten;
+  }
+  
+  &::before {
+    top: 50px;
+  }
+  
+  &::after {
+    bottom: 60px;
+  }
   
   &__settings-item {
     @include font-other($gray, 12px);

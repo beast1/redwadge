@@ -1,4 +1,6 @@
 .alert {
+  border-bottom: 5px solid $color-main;
+  
   background: $color-second url("bg--alert.jpg") no-repeat center 0;
   
   &__wrapper {
@@ -35,7 +37,7 @@
     align-items: flex-start;
     height: 50px;
     padding-left: 55px;
-    padding-right: 45px;
+    padding-right: 24px;
     padding-top: 16px;
     
     text-transform: uppercase;
@@ -49,31 +51,27 @@
     }
     
     &::before {
+      @include sprite-icon__cigarets;
+      
       content: "";
       
       position: absolute;
       left: 26px;
       top: 50%;
       
-      width: 18px;
-      height: 24px;
       margin-top: -12px;
-      
-      background: url("icon__cigarets.png") no-repeat center center;
     }
     
-    &::after {
-      content: "";
+    .fa {
+      @include react--trs-default;
       
-      position: absolute;
-      right: 26px;
-      top: 50%;
+      margin-left: 10px;
       
-      width: 7px;
-      height: 13px;
-      margin-top: -6.5px;
-      
-      background: url("icon__catalog-arrow.png") no-repeat center center;
+      font-size: 22px;
+    }
+    
+    &:hover .fa {
+      transform: translate(8px);
     }
   }
   
@@ -121,7 +119,7 @@
   
   &__controls {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
   
   &__target {

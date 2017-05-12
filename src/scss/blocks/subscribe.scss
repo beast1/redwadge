@@ -25,11 +25,15 @@
     
     width: 60px;
     height: 35px;
+    
+    color: $color-main;
+    font-size: 18px;
+    
     border-radius: 17px;
     background-color: $color-action-main;
-    background-image: url("icon__send.png");
-    background-repeat: no-repeat;
-    background-position: center center;
+//    background-image: url("icon__send.png");
+//    background-repeat: no-repeat;
+//    background-position: center center;
 
     &:hover {
       background-color: $color-action-main-dark;

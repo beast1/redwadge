@@ -1,0 +1,51 @@
+.table {
+  width: 100%;
+  
+  //t
+//  border: 1px solid #000;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+//  height: 130px;
+  
+  //t
+  // border: 1px solid #999;
+//  border-bottom: 2px dashed #999;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  //t
+//   border: 2px dashed #999;
+}
+
+.tc {
+  &--preview {
+    width: 15%;
+  }
+  
+  &--name {
+    width: 35%;
+  }
+  
+  &--price {
+    width: 15%;
+  }
+  
+  &--count {
+    width: 15%;
+  }
+  
+  &--common-price {
+    width: 15%;
+  }
+  
+  &--remove {
+    width: 5%;
+  }
+}

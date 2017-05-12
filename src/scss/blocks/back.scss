@@ -1,0 +1,29 @@
+.back {
+  @include un-target;
+  @include font-other($gray, 16px);
+  
+  display: flex;
+  align-items: center;
+  
+  &:hover &__btn {
+    color: $color-action-main;
+  }
+  
+  &--right {
+    margin-left: auto;
+  }
+  
+  &__btn {
+    @include radial(25px);
+    
+    @include react--trs-default;
+    
+    position: relative;
+    
+    margin-right: 10px;
+    
+    &--right {
+      margin-left: 10px;
+    }
+  }
+}

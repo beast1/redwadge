@@ -1,12 +1,20 @@
-<div class="basket-item" data-product-id="{{ item.product.id }}" data-item-id="{{ item.id }}">
-  <div class="basket-item__preview"></div>
-  <span class="basket-item__name">{{ item.title }}</span>
-  <span class="js-item-price  basket-item__price">{{ item.price }}</span>
-  <div class="counter counter--large">
-    
-    {% include 'counter--large' %}
-    
+<div class="tr  basket__item" data-product-id="{{ item.product.id }}" data-item-id="{{ item.id }}">
+  <div class="td  tc--preview  basket__item-data">
+    <a class="basket__preview-link" href="{{ item.product.url }}" title="{{ item.title }}">
+      {% if item.image %}
+        <img title="{{ item.title }}" alt="{{ item.title }}" src="{{ item.image.compact_url }}">
+      {% else %}
+        <img title="{{ item.title }}" alt="{{ item.title }}" src="{{ 'no_image.png' | asset_url }}">
+      {% endif %}
+    </a>
   </div>
-  <span class="basket-item__common-price">{{ item.total_price | money }}</span>
-  <button class="basket-item__remove" data-item-delete="{{ item.id }}"></button>
+  <div class="td  tc--name  basket__item-data">{{ item.title }}</div>
+  <div class="js-item-price  td  tc--price  basket__item-data">{{ item.sale_price | money }}</div>
+  <div class="td  tc--count  basket__item-data">
+    {% include 'counter--large' %} 
+  </div>
+  <div class="js-item-total-price  td  tc--common-price  basket__item-data  basket__item-data--common-price">{{ item.total_price | money }}</div>
+  <div class="td  tc--remove  basket__item-data">
+    <button class="js-basket__remove-btn  basket__remove-btn" data-item-delete="{{ item.id }}"></button>
+  </div>
 </div>

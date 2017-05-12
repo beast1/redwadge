@@ -1,38 +1,125 @@
 .basket {
-  display: flex;
-  flex-direction: column;
-  padding: 25px 0 60px;
+  @include react--trs-default;
+//  display: flex;
+//  flex-direction: column;
+  padding-top: 25px;
   
-  &__counter {
-    display: inline-block;
-    margin-bottom: 30px;
+//  &__list {
+//    width: 100%;
+//    
+//    td {
+//      border-bottom: 2px dashed $gray-lighten;
+//    }
+//  }
+  
+//  &__settings {
+//    display: flex;
+//    justify-content: space-between;
+//    width: 100%;
+//    padding: 10px 0;
+//  }
+  
+//  &__settings-item {
+//    @include font-other($gray, 14px);
+//    
+//    text-transform: uppercase;
+//    
+//    &:nth-of-type(2) {
+//      padding-left: 65px;
+//    }
+//    
+//    &:nth-of-type(3) {
+//      padding-left: 80px;
+//    }
+//    
+//    &:nth-of-type(4) {
+//      width: 150px;
+//      
+//      text-align: center;
+//    }
+//    
+//    &:nth-of-type(5) {
+//      padding-left: 60px;
+//    }
+//  }
+//  
+//  &__counter {
+//    display: inline-block;
+//    margin-bottom: 30px;
+//  }
+//  
+//  &__counter-value {
+//    font-weight: 700;
+//  }
+  
+  &__items {
+    margin-top: 30px;
   }
   
-  &__counter-value {
-    font-weight: 700;
-  }
-  
-  &__settings {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 0;
-  }
-  
-  &__setting-item {
-    @include font-other($gray, 14px);
+  &__items-settings {
+    @include font-other($gray, 12px);
     
     text-transform: uppercase;
+  }
+  
+  &__item {
+    @include font-other($color-second, 16px);
     
-    //temporary
-    &:nth-of-type(1) {
-      margin-left: 220px;
+    text-transform: uppercase;
+  }
+  
+  &__items-settings,
+  &__item {
+    position: relative;
+    
+    padding-bottom: 20px;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 9px;
+      
+      height: 2px;
+      
+      background-image: repeating-linear-gradient(to left, $gray-lighten 0px, $gray-lighten 3px, transparent 3px, transparent 6px, $gray-lighten 6px, $gray-lighten 9px);
     }
   }
   
-  &__basket-list {
+  &__item-data {
+    &--common-price {
+      font-weight: 700;
+    }
+  }
+  
+  &__preview-link {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 135px;
+    
+    overflow: hidden;
+  }
+  
+  &__remove-btn {
+    @include radial(25px);
+    
+    @include react--trs-default;
+    
+    &::before {
+      @include sprite-icon__cross--gray;
+      
+      content: "";
+    }
+    
+    &:hover::before {
+      @include sprite-icon__cross--red;
+      
+      content: "";
+    }
   }
   
   &__controls {
@@ -45,20 +132,6 @@
   &__fieldset {
     display: flex;
     align-items: center;
-  }
-  
-  &__back-btn {
-    @include radial(25px);
-    
-    @include react--trs-default;
-    
-    margin-right: 10px;
-    
-    background: url("icon__arrow-left.png") no-repeat center center;
-    
-    &:hover {
-      background-image: url("icon__arrow-left--slim-red.png");
-    }
   }
   
   &__action-disc {
@@ -76,6 +149,7 @@
     @include un-target;
     @include font-other($color-action-main, 16px);
     
+    display: none;
     margin-bottom: 27px;
   }
   

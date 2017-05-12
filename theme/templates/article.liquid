@@ -7,23 +7,49 @@
       <img src="{{ article.image.original_url }}" alt="{{ article.title }}">
     </div>
     <span class="article__title">{{ article.title }}</span>
-    <span class="date--slim">{{ article.created_at | date: "%B, %d, %Y" }}</span>
+    <span class="date--slim">
+      <i class="fa  fa-calendar-o"></i>
+      {{ article.created_at | date: "%B, %d, %Y" }}
+    </span>
     <div class="article__textset">
       {{ article.content }}
     </div>
     <div class="article__footer">
       <span class="article__social">
-        Поделиться:{% include 'social' %}
+        Поделиться:{% include 'share' %}
       </span>
       <div class="article__controls">
-        <div class="article__control-group">
-          <a class="article__control  article__control--prev"></a>
-          <a class="article__control-disc">Предыдущая новость</a>
-        </div>
-        <div class="article__control-group">
-          <a class="article__control-disc">Следующая новость</a>
-          <a class="article__control  article__control--next"></a>
-        </div>
+        {% assign current_found = false %}
+        {% assign done = false %}
+        {% for a in blog.articles %}
+            {% if current_found and done == false %}
+                {% assign next_article = a %}
+                {% assign done = true %}
+            {% endif %}
+            {% unless done %}
+                {% if a.id == article.id %}
+                    {% assign current_found = true %}
+                {% else %}
+                    {% assign prev_article = a %}
+                {% endif %}
+            {% endunless %}
+        {% endfor %}
+        {% if prev_article %}
+            <a class="back" href="{{ prev_article.url }}" title="{{ prev_article.title | escape }}">
+              <span class="back__btn">
+                <i class="fa fa-angle-left"></i>
+              </span>
+              Предыдущая новость
+            </a>
+        {% endif %}
+        {% if next_article %}
+            <a class="back  back--right" href="{{ next_article.url }}" title="{{ next_article.title | escape }}">
+              Следующая новость
+              <span class="back__btn  back__btn--right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+        {% endif %}
       </div>
     </div>
   </div>

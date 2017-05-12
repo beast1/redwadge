@@ -27,17 +27,17 @@
       height: 20px;
       margin-left: -8px;
       margin-top: -10px;
-      
-      background-repeat: no-repeat;
-      background-position: center center;
     }
   }
-  
+
   &__item.social__item--vk {
     @include react--background($color-vk, $color-vk);
     
     &::before {
-      background-image: url("icon__vk.png");
+      @include sprite-icon__vk;
+      
+      margin-left: -6.5px;
+      margin-top: -4px;
     }
   }
   
@@ -45,7 +45,10 @@
     @include react--background($color-facebook, $color-facebook);
     
     &::before {
-      background-image: url("icon__facebook.png");
+      @include sprite-icon__facebook;
+      
+      margin-left: -3.5px;
+      margin-top: -6px;
     }
   }
   
@@ -55,15 +58,10 @@
     transition: none;
     
     &::before {
-      background-image: url("icon__instagram.png");
-    }
-  }
-  
-  &__item.social__item--twitter {
-    @include react--background($color-twitter, $color-twitter);
-    
-    &::before {
-      background-image: url("icon__twitter.png");
+      @include sprite-icon__instagram;
+      
+      margin-left: -5px;
+      margin-top: -5px;
     }
   }
   
@@ -71,7 +69,7 @@
     @include react--background($color-youtube, $color-youtube);
     
     &::before {
-      background-image: url("icon__youtube.png");
+      @include sprite-icon__youtube;
     }
   }
 }

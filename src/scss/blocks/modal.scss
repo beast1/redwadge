@@ -1,0 +1,63 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5000;
+  
+  display: none;
+  
+  background-color: fade-out($black, 0.25);
+  
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    padding: 30px;
+    
+    background-color: $color-main;
+
+    &--preorder {
+      width: 360px;
+      min-height: 230px;
+      margin-left: -180px;
+      margin-top: -115px;
+    }
+  }
+  
+  &__exit {
+    @include un-target;
+    
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    
+    width: 14px;
+    height: 14px;
+    
+    font-size: 0;
+    
+    &::before,
+    &::after {
+      content: "";
+      
+      position: absolute;
+      left: 0;
+      right: 0;
+      
+      height: 2px;
+      
+      background-color: $gray;
+    }
+    
+    &::before {
+      transform: rotate(45deg);
+    }
+    
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

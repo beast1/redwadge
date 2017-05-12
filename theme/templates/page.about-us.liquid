@@ -1,0 +1,15 @@
+{% include 'page-title' %}
+
+<div class="page-main">
+  <div class="about-us">
+    <div class="about-us__editable  text-editable">
+      {{ blocks.about-us.content }}
+    </div>
+    <div class="about-us__preview">
+      <img src="{{ 'img-about-us.jpg' | file_url }}" alt="{{ image.title }}">
+    </div>
+  </div>
+  
+  {% include 'features' %}
+  
+</div>

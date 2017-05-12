@@ -1,0 +1,14 @@
+<div class="catalog__map-wrapper">
+  <span class="catalog__map">
+    На странице
+    <span class="catalog__map-current">
+      {% if paginate.page_size > collection.products_count %}
+        {{ collection.products_count }}
+      {% else %}
+        {{ paginate.page_size }}
+      {% endif %}
+    </span>
+    товаров из
+    <span class="catalog__map-total">{{ collection.products_count }}</span>
+  </span>
+</div>

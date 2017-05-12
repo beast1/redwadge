@@ -1,0 +1,27 @@
+<div class="js-md__preorder  modal">
+  <div class="modal__container  modal__container--preorder  preorder">
+    <button class="js-md__exit-preorder  modal__exit">Закрыть</button>
+    <form class="js-preorder-form  form" action="/feedback" method="post">
+
+      <input type="hidden" name="subject" value="{{ messages.label_preorder }}">
+      <input type="hidden" name="from" value="{{ account.email }}">
+      <input class="js-product-title-input" type="hidden" name="content" value="{{ product.title }} ({{ product.variants.first.title }})">
+
+      {% if language.not_default? %}
+        <input type="hidden" name="lang" value="{{ language.locale }}"/>
+      {% endif %}
+
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__name">Имя</label>
+        <input class="form__input" id="preorder__name" name="name" type="text" placeholder="Джесси Пинкман" required>
+      </div>
+
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__phone">Телефон</label>
+        <input class="phone-mask  form__input" id="preorder__phone" name="phone" type="text" placeholder="+_(___)___-__-__" required>
+      </div>
+      
+      <button class="form__submit" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>  

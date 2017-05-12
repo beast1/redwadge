@@ -1,0 +1,52 @@
+{% include 'page-title' %}
+
+<div class="page-main">
+  <div class="catalog">
+    {% paginate products by 12 %}
+      <form class="catalog__controls" action="{{ collection.url }}" method="get">
+        <div class="catalog__controls-item">
+          <label class="catalog__controls-label" for="select__products--sort">Сортировка</label>
+          <select class="select  select--radial  js-filter-trigger" id="select__products--sort" name="order">
+            <option value="" disabled selected>По умолчанию</option>
+            {{ "price"            | select_option: order, 'По возрастанию цены' }}
+            {{ "descending_price" | select_option: order, 'По спаданию цены' }}
+            {{ "descending_age"   | select_option: order, 'Сначала старые' }}
+            {{ "age"              | select_option: order, 'Сначала новые' }}
+            {{ "title"            | select_option: order, 'По алфавиту' }}
+          </select>
+        </div> 
+        {% if collection.products.size > 12 %}
+          <div class="catalog__controls-item">
+            <label class="catalog__controls-label" for="select__products--size">Показывать по</label>
+            <select class="select  select--radial  js-filter-trigger" id="select__products--size" name="page_size">
+              {{ "12"   | select_option: page_size, "12" }}
+              {{ "24"   | select_option: page_size, "24" }}
+              {% if collection.products.size > 24 %}
+                {{ "48"   | select_option: page_size, "48" }}
+              {% endif %}
+              {% if collection.products.size > 48 %}
+                {{ "96"   | select_option: page_size, "96" }}
+              {% endif %}
+            </select>
+          </div>
+        {% endif %}
+        {% if page_size %}
+          <input type="hidden" name="page_size" value="{{ page_size }}"/>
+        {% endif %}
+        {% if language.not_default? %}
+          <input type="hidden" name="lang" value="{{ language.locale }}"/>
+        {% endif %}
+        {% if search.query != '' %}
+          <input type="hidden" name="q" value="{{ search.query }}"/>
+        {% endif %}
+      </form>
+      <div class="catalog__list">
+        {% for product in products limit: 12 %}
+          {% include 'card' %}
+        {% endfor %}
+      </div>
+      {% include 'pagination' %}
+    {% endpaginate %}
+  </div>
+  {% include 'text-field' %}
+</div>

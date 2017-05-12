@@ -1,5 +1,6 @@
 @mixin wrapper {
-  width: 1170px;
+  max-width: 1170px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -68,6 +69,9 @@
 }
 
 @mixin radial($size) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: $size;
   height: $size;
   border: 1px solid $gray-light;

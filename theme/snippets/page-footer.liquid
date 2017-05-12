@@ -4,9 +4,7 @@
       <div class="page-footer__subscribe">
         <b class="page-footer__subscribe-title">Будь в курсе всех событий</b>
         <span class="page-footer__subscribe-disc">Не пропускай последних новостей - присоединяйся к нам в сообщество Вконтакте</span>
-
-        {% include 'subscribe' %}
-
+        <a class="link  link--white"  href="https://vk.com/wadge_tobacco">vk.com/wadge_tobacco</a>
       </div>
     </div>
   </div>
@@ -18,10 +16,13 @@
           <span class="page-footer__promo">Кальян с табаком WADGE – удовольствие без границ. Широкая линейка ароматной палитры и уникальных миксов.</span>
         </div>
         <div class="page-footer__main-col  page-footer__blog">
-          {% for article in blogs.test.articles limit: 1 %}
+          {% for article in blogs.news.articles limit: 1 %}
             <h3 class="page-footer__col-title">Последние новости</h3>
             {{ article.preview }}
-            <a class="page-footer__blog-link" href="{{ blogs.test.url }}">Все новости ></a>
+            <a class="page-footer__blog-link" href="{{ blogs.test.url }}">
+              Все новости
+              <i class="fa  fa-angle-right"></i>
+            </a>
           {% endfor %}
         </div>
         <div class="page-footer__main-col  page-footer__menu">
@@ -39,9 +40,7 @@
 
           <div class="page-footer__subscribe--slim">
             <b class="page-footer__subscribe-title--slim">Хотите получать полезные новости?</b>
-
             {% include 'subscribe' %}
-
           </div>
         </div>
       </div>
