@@ -8,11 +8,11 @@
         <p class="page-title__breadcrumbs">
           <a class="page-title__breadcrumbs-item" href="/">
             Главная
-            <i class="fa  fa-angle-right"></i>
+            <i class="fa  fa-angle-right" aria-hidden="true"></i>
           </a>
           <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Каталог</a>
         </p>
-        <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+        <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
       </div>
     </div>
   </div>
@@ -25,11 +25,11 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-left"></i>
+              <i class="fa  fa-angle-left" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Результат поиска "{% if search.query != empty %}{{ search.query }}{% endif %}"</a>
           </p>
-          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
         </div>
       </div>
     </div>
@@ -42,15 +42,15 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item" href="{{ collections.wadge-250-gr.url }}">
               Каталог
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ product.title }}</a>
           </p>
-          <a class="page-title__back-link" href="{{ collections.wadge-250-gr.url }}"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="{{ collections.wadge-250-gr.url }}"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
         </div>
       </div>
     </div>
@@ -63,11 +63,25 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Корзина</a>
           </p>
-          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
+  {% when 'checkout' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <h1 class="page-title__title">Оформление заказа</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">Главная</a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Оформление заказа</a>
+          </p>
+          <a class="page-title__back-link" href="/">Предыдущая страница</a>
         </div>
       </div>
     </div>
@@ -80,14 +94,14 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">
               {{ blog.title }}
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
           </p>
-          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
         </div>
       </div>
     </div>
@@ -100,15 +114,15 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item" href="{{ blog.url }}">
               {{ blog.title }}
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">{{ article.title }}</a>
           </p>
-          <a class="page-title__back-link" href="{{ blog.url }}"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="{{ blog.url }}"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
         </div>
       </div>
     </div>
@@ -121,15 +135,15 @@
           <p class="page-title__breadcrumbs">
             <a class="page-title__breadcrumbs-item" href="/">
               Главная
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item" href="{{ blogs.news.url }}">
               {{ blogs.news.title }}
-              <i class="fa  fa-angle-right"></i>
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
             </a>
             <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">О нас</a>
           </p>
-          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left"></i>Предыдущая страница</a>
+          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
         </div>
       </div>
     </div>

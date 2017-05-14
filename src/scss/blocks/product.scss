@@ -104,19 +104,15 @@
     }
     
     &::before {
+      @include sprite-icon__basket--slim;
+      
       content: "";
       
       position: absolute;
       left: 20px;
       top: 50%;
       
-      width: 15px;
-      height: 18px;
       margin-top: -10px;
-      
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url("icon__basket--slim.png");
     }
   }
   

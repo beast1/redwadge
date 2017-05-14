@@ -1,0 +1,14 @@
+{% case template %}
+  {% when "search" %}
+    <div class="error">
+      <p class="error__text">
+        Нет результатов по заданному запросу
+      </p>
+    </div>
+  {% when "cart" %}
+    <div class="error">
+      <p class="error__text">
+        Ваша корзина пуста. Вы можете перейти в <a class="link" href="{{ collections.wadge-250-gr.url }}">каталог товаров</a>.
+      </p>
+    </div>
+{% endcase %}

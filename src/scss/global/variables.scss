@@ -17,6 +17,9 @@ $color-action-second: #e3cb00;
 
 //special colors
 
+  //error
+  $color-error: #fff6c1;
+
   //card status
   $color-status-new: #72a600;
   $color-status-star: #fe962a;
@@ -27,6 +30,9 @@ $color-action-second: #e3cb00;
   $color-twitter: #4099ff;
   $color-instagram: linear-gradient(-30deg, rgba(121, 0, 143, 0.78) 0%, rgba(216, 0, 255, 0.78) 0%, rgba(248, 235, 52, 0.78) 0%, rgba(247, 43, 124, 0.78) 49%, rgba(7, 39, 215, 0.78) 100%);
   $color-youtube: #c3191d;
+
+  //checkout
+  $color-link--checkout: #1a7cd8;
 
 $gray: #666666;
 $gray-light: #d3d3d3;

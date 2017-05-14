@@ -36,6 +36,32 @@
       color: $color-action-main;
       font-size: 14px;
     }
+      
+    &--delivery {
+      position: relative;
+      
+      &::before {
+        @include react--trs-default;
+      
+        content: "";
+        
+        position: absolute;
+        top: -2px;
+        left: -20px;
+        
+        box-sizing: border-box;
+        width: 15px;
+        height: 15px;
+        border: 3px solid $color-main;
+      
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px $gray;
+      }
+      
+      &:hover::before {
+        background-color: fade-out($color-action-main, 0.5);
+      }
+    }
   }
   
   &__input {

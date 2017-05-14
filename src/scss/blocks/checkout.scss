@@ -17,6 +17,16 @@
     display: flex;
     margin: 40px 0 20px;
   }
+  
+  &__delivery-descr {
+    @include font-p($gray);
+    
+    font-size: 12px;
+    
+    a {
+      color: $color-link--checkout;
+    }
+  }
 }
 
 .checkout__fieldset {
@@ -27,4 +37,26 @@
   .field.fc {
     background-color: red;
   }
+}
+
+.payment_variants .co-input-wrapper label {
+  display: inline-block;
+}
+
+.delivery_variants .co-input-wrapper input[type="radio"],
+.payment_variants .co-input-wrapper input[type="radio"] {
+  display: none;
+}
+
+.delivery_variants .co-input-wrapper input[type="radio"]:checked + label::before,
+.payment_variants .co-input-wrapper input[type="radio"]:checked + label::before {
+  background-color: $color-action-main;
+}
+
+.payment_variants .co-input-wrapper label:not(:first-of-type)::before {
+  display: none;
+}
+
+.co-input-wrapper.not_available {
+  display: none;
 }

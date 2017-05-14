@@ -171,7 +171,6 @@
   }
   
   &__basket-link {
-    @include react--trs-default;
     @include sprite-icon__basket;
     
     position: relative;
@@ -183,6 +182,8 @@
     
     font-size: 31px;
     line-height: 31px;
+    
+    transition: none;
     
     &:hover {
       @include sprite-icon__basket--red;
