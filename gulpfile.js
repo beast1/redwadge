@@ -116,7 +116,7 @@ gulp.task('default', ['download'], function() {
 
 // Автоматизация src
 var sass         = require('gulp-sass'),
-    browserSync  = require('browser-sync'),
+//     browserSync  = require('browser-sync'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglifyjs'),
     cssnano      = require('gulp-cssnano'),
@@ -125,13 +125,15 @@ var sass         = require('gulp-sass'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps   = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
   return gulp.src('src/scss/main.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-    .pipe(gulp.dest('src/css'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('theme/media'))
     .pipe(browserSync.reload({stream: true}))
 });
@@ -143,7 +145,6 @@ gulp.task('styleLib', function() {
     'src/libs/swiper/swiper.min.css',
   ])
     .pipe(concat('libs.css'))
-    .pipe(gulp.dest('src/css'))
     .pipe(gulp.dest('theme/media'));
 });
 
@@ -155,7 +156,6 @@ gulp.task('scriptsLib', function() {
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('src/js'))
     .pipe(gulp.dest('theme/media'));
 });
 
@@ -163,7 +163,6 @@ gulp.task('scripts', function() {
   return gulp.src([
     'src/js/script.js',
     'src/js/templates/*.js',
-    'src/js/templates/*.js.liquid'
   ])
     .pipe(gulp.dest('theme/media'));
 });
@@ -174,15 +173,6 @@ gulp.task('fonts', function() {
     'src/fonts/*.woff2',
   ])
     .pipe(gulp.dest('theme/media'));
-});
-
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-      baseDir: 'src'
-    },
-    notify: false
-  });
 });
 
 gulp.task('clean', function() {
@@ -204,11 +194,10 @@ gulp.task('img', function() {
   .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('watchSrc', ['browser-sync', 'scriptsLib', 'styleLib', 'fonts'], function() {
-  gulp.watch('src/scss/**/*.scss', ['sass'], browserSync.reload);
-  gulp.watch('src/*.html', browserSync.reload);
-  gulp.watch('src/js/**/*.js', ['scripts'], browserSync.reload);
-  gulp.watch('src/js/**/*.js.liquid', ['scripts'], browserSync.reload);
+gulp.task('watchSrc', ['scriptsLib', 'styleLib', 'fonts'], function() {
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['scripts']);
+  gulp.watch('src/js/**/*.js.liquid', ['scripts']);
   return InsalesUploader.stream()
 });
 
