@@ -116,7 +116,9 @@ gulp.task('default', ['download'], function() {
 
 // Автоматизация src
 var sass         = require('gulp-sass'),
-//     browserSync  = require('browser-sync'),
+    browserSync  = require('browser-sync').create(),
+    browserReload  = browserSync.reload,
+    bs           = require('browser-sync'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglifyjs'),
     cssnano      = require('gulp-cssnano'),
@@ -135,7 +137,6 @@ gulp.task('sass', function() {
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('theme/media'))
-    .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('styleLib', function() {
@@ -167,6 +168,25 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('theme/media'));
 });
 
+gulp.task('serve', ['scriptsLib', 'styleLib', 'fonts'], function() {
+  browserSync.init({
+    proxy: 'wadge.ru',
+    injectChanges: false,
+    port: 3000,
+    open: 'external',
+    notify: true,
+  });
+  
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  browserSync.watch(['theme/media/**.js', 'theme/snippets', 'theme/templates']).on('change', browserSync.reload);
+  
+  return InsalesUploader.stream()
+});
+
+gulp.task('serveReload', function() {
+  browserReload
+});
+
 gulp.task('fonts', function() {
   return gulp.src([
     'src/fonts/*.woff',
@@ -193,38 +213,3 @@ gulp.task('img', function() {
   })))
   .pipe(gulp.dest('dist/img'));
 });
-
-gulp.task('watchSrc', ['scriptsLib', 'styleLib', 'fonts'], function() {
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
-  gulp.watch('src/js/**/*.js.liquid', ['scripts']);
-  return InsalesUploader.stream()
-});
-
-gulp.task('buildTheme', ['clean', 'img', 'sass'], function() {
-  var buildCss = gulp.src('src/css/main.css')
-    .pipe(cssnano())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('theme/media'));
-});
-
-//gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
-//  
-//  var buildCss = gulp.src([
-//      'src/css/main.css',
-//      'src/css/toast-grid.css',
-//    ])
-//    .pipe(cssnano())
-//    .pipe(gulp.dest('dist/css'));
-//  
-//  var buildFonts = gulp.src('src/fonts/**/*')
-//    .pipe(gulp.dest('dist/fonts'));
-//  
-//  var buildJs = gulp.src('src/js/**/*')
-//    .pipe(gulp.dest('dist/js'));
-//  
-//  var buildHtml = gulp.src('src/*.html')
-//    .pipe(htmlmin({collapseWhitespace: true}))
-//    .pipe(gulp.dest('dist'));
-//  
-//});
