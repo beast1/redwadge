@@ -1,6 +1,6 @@
 $('.carousel')
   .slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1
   });
@@ -12,3 +12,6 @@ $('.carousel > button:nth-of-type(1)')
 $('.carousel > button:nth-of-type(2)')
   .removeClass('slick-next slick-arrow')
   .addClass('carousel__controls carousel__controls--right');
+
+//$('.carousel > button.slick-disabled')
+//  .css('display', 'none');

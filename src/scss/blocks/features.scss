@@ -1,6 +1,31 @@
 .features {
   display: flex;
-  justify-content: space-between;
+  
+  @media (min-width: $xs) {
+    flex-direction: column;
+  }
+  
+  @media (min-width: $lg) {
+    flex-direction: row;
+  }
+  
+  &__container {
+    display: flex;
+    
+    @media (min-width: $xs) {
+      flex-direction: column;
+      justify-content: center;
+      flex-basis: 100%;
+    }
+    
+    @media (min-width: $sm) {
+      flex-direction: row;
+    }
+    
+    @media (min-width: $lg) {
+      flex-basis: 50%;
+    }
+  }
   
   &__item {
     position: relative;
@@ -8,8 +33,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 25%;
     padding-top: 113px;
+    margin-bottom: 60px;
+    
+    @media (min-width: $xs) {
+      @include margin-right(80px);
+    }
+    
+    @media (min-width: $lg) {
+      @include margin-right(0px);
+      
+      flex-basis: 50%;
+      margin-bottom: 0;
+    }
     
     &::before {
       content: "";
@@ -25,25 +61,25 @@
       
     }
   }
-  &__item:nth-of-type(1)::before {
+  &__item.features__item--plant::before {
     @include sprite-features-1;
     
     margin-left: -52px;
   }
   
-  &__item:nth-of-type(2)::before {
+  &__item.features__item--clear::before {
     @include sprite-features-2;
     
     margin-left: -38.5px;
   }
   
-  &__item:nth-of-type(3)::before {
+  &__item.features__item--strong::before {
     @include sprite-features-3;
     
     margin-left: -29px;
   }
   
-  &__item:nth-of-type(4)::before {
+  &__item.features__item--taste::before {
     @include sprite-features-4;
     
     margin-left: -45.5px;
