@@ -51,11 +51,13 @@
 }
 
 @mixin react--box-shadow($box-shadow--hover, $box-shadow--active) {
-  &:hover {
-    box-shadow: $box-shadow--hover;
-  }
-  
-  &:active {
-    box-shadow: $box-shadow--active;
+  @media (max-width: $sm) {
+    &:hover {
+      box-shadow: $box-shadow--hover;
+    }
+
+    &:active {
+      box-shadow: $box-shadow--active;
+    }
   }
 }

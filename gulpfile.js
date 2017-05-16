@@ -83,7 +83,7 @@ gulp.task('backup', function(){
 });
 
 // Задача запускает отслеживание изменений в файлах.
-gulp.task('stream', function(){
+gulp.task('stream', ['watchDev'], function(){
   return InsalesUploader.stream()
 });
 
@@ -168,21 +168,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('theme/media'));
 });
 
-gulp.task('serve', ['scriptsLib', 'styleLib', 'fonts'], function() {
-  browserSync.init({
-    proxy: 'wadge.ru',
-    injectChanges: false,
-    port: 3000,
-    open: 'external',
-    notify: true,
-  });
-  
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-  browserSync.watch(['theme/media/**.js', 'theme/snippets', 'theme/templates']).on('change', browserSync.reload);
-  
-  return InsalesUploader.stream()
-});
-
 gulp.task('serveReload', function() {
   browserReload
 });
@@ -212,4 +197,9 @@ gulp.task('img', function() {
     use: [pngquant()]
   })))
   .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('watchDev', ['scriptsLib', 'styleLib', 'fonts'], function() {
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['scripts']);
 });

@@ -32,6 +32,6 @@
     "gulp-uglifyjs": "^0.6.2",
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.0",
-    "insales-uploader": "^0.25.2"
+    "insales-uploader": "^0.26.3"
   }
 }

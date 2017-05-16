@@ -1,7 +1,7 @@
 html, 
 body {
   margin: 0;
-  
+  /*hell*/
   font-family: $font-family;
   color: $color-second;
   font-size: $font-size;
@@ -19,4 +19,13 @@ html {
 
 .dev-hidden {
   display: none;
+}
+
+//temporary
+* {
+  @include react--trs-default;
+}
+
+.media-detector {
+  @include media-detector;
 }

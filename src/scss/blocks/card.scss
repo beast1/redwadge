@@ -15,7 +15,9 @@
   background-color: $color-main;
   
   &:hover {
-    box-shadow: 0 0 40px 0 fade-out($color-second, 0.2);
+    @media (min-width: $sm) {
+      box-shadow: 0 0 40px 0 fade-out($black, 0.2);
+    }
   }
   
   &--not-avialable {

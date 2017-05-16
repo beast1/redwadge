@@ -10,6 +10,32 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: -40px;
+    
+    @media (min-width: $xs) {
+      .card:nth-child(n+2) {
+        display: none;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      .card:nth-child(n+3) {
+        display: none;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      justify-content: center;
+      
+      .card {
+        @include margin-right(30px);
+      }
+    }
+    
+    @media (min-width: $lg) {
+      .card:nth-child(-n+5) {
+        display: flex;
+      }
+    }
   }
   
   .card:hover {
