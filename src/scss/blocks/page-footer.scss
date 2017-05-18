@@ -1,5 +1,6 @@
 .page-footer {
   background: url("bg--footer.jpg") center center;
+  background-size: cover;
 
   &__wrapper {
     @include wrapper;

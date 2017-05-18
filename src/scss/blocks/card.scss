@@ -1,23 +1,38 @@
 .card {
+  //variables
+    //media
+      $sm-1: 1110px;
+  
   @include react--trs-default;
   
   position: relative;
   
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 270px;
-  min-height: 513px;
-  padding: 28px 25px 83px;
+  align-items: flex-start;
+  min-height: 175px;
+  width: 100%;
+  padding: 10px 15px;
   border: 1px solid $gray-lighter;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   
   background-color: $color-main;
+  
+  @media (min-width: $sm) {
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    min-height: 513px;
+    padding: 28px 25px 83px;
+  }
   
   &:hover {
     @media (min-width: $sm) {
       box-shadow: 0 0 40px 0 fade-out($black, 0.2);
     }
+  }
+  
+  @media (min-width: $sm-1) {
+    margin-bottom: 40px;
   }
   
   &--not-avialable {
@@ -62,7 +77,7 @@
   &__price {
     @include font-other($color-main, 14px);
     
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 80px;
@@ -91,6 +106,32 @@
         margin-top: -7px;
       }
     }
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+  }
+  
+  &__mob-prices {
+    margin-bottom: 10px;
+  }
+  
+  &__mob-price {
+    @include font-other($color-action-main, 16px);
+    
+    font-weight: 600;
+    text-transform: uppercase;
+    
+    &--old {
+      @include font-other($gray, 16px);
+      
+      font-weight: 600;
+      text-decoration: line-through;
+    }
+    
+    @media (min-width: $sm) {
+      display: none;
+    }
   }
   
   &__preview {
@@ -99,10 +140,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 300px;
+    min-width: 80px;
+    max-width: 175px;
+    width: 100%;
+    min-height: 155px;
+    margin-right: 10px;
     
     overflow: hidden;
+    
+    @media (min-width: $sm) {
+      width: 220px;
+      height: 300px;
+      padding: 0;
+      margin-right: 0;
+    }
+  }
+  
+  &__content {
+    position: relative;
+    
+    align-self: stretch;
+    min-height: 155px;
+    padding-bottom: 40px;
+    
+    @media (min-width: $sm) {
+      position: static;
+    }
   }
   
   &__taste {
@@ -147,55 +210,90 @@
     @include font-h2($color-second);
     
     display: flex;
-    max-width: 200px;
     margin: 25px 0 17px;
-    
-    text-align: center;
+
+    @media (min-width: $sm) {
+      text-align: center;
+    }
   }
   
   &__disc {
     @include font-p($gray);
     
-    text-align: center;
+    @media (min-width: $sm) {
+      text-align: center;
+    }
   }
   
   &__controls {
     position: absolute;
-    left: 25px;
-    bottom: 28px;
-    right: 25px;
+    right: 0;
+    left: 0;
+    bottom: 0;
     
     display: flex;
-    justify-content: space-between;
+    
+
+    @media (min-width: $sm) {
+      left: 25px;
+      bottom: 28px;
+      right: 25px;
+      
+      justify-content: space-between;
+    }
   }
   
   &__target {
-    @include btn($color-action-main, 16px);
-    @include font-other($color-main, 12px);
-    
+    @include un-target;
     @include react--trs-default;
     @include react--background($color-action-main-dark, $color-action-main-dark);
     
     position: relative;
     
-    width: 125px;
-    height: 32px;
-    padding-left: 27px;
+    width: 38px;
+    height: 38px;
+    margin-left: 20px;
     
-    &:active {
-      box-shadow: $shadow-btn;
-    }
+    font-size: 0;
+    
+    background-color: $color-action-main;
+    border-radius: 50%;
     
     &::before {
       @include sprite-icon__basket--slim;
-        
+
       content: "";
-      
+
       position: absolute;
-      left: 20px;
+      left: 11px;
       top: 50%;
-      
-      margin-top: -10px;
+
+      margin-top: -9.5px;
+    }
+    
+    @media (min-width: $sm) {
+      @include btn($color-action-main, 16px);
+      @include font-other($color-main, 12px);
+
+      width: 125px;
+      height: 32px;
+      padding-left: 27px;
+
+      &:active {
+        box-shadow: $shadow-btn;
+      }
+
+      &::before {
+        @include sprite-icon__basket--slim;
+
+        content: "";
+
+        position: absolute;
+        left: 20px;
+        top: 50%;
+
+        margin-top: -10px;
+      }
     }
   }
   

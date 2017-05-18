@@ -4,6 +4,11 @@
 //  flex-direction: column;
   padding-top: 25px;
   
+  @media (min-width: $sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
 //  &__list {
 //    width: 100%;
 //    
@@ -125,8 +130,15 @@
   &__controls {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     padding-top: 50px;
+    
+    @media (min-width: $sm) {
+      align-items: center;
+    }
+    
+    @media (min-width: $lg) {
+      align-items: flex-start;
+    }
   }
   
   &__fieldset {

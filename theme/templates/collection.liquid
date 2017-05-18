@@ -44,7 +44,9 @@
           {% include 'card' %}
         {% endfor %}
       </div>
-      {% include 'pagination' %}
+      <div class="catalog__nav">
+        {% include 'pagination' %}
+      </div>
     {% endpaginate %}
   </div>
   {% include 'text-field' %}
