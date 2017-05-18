@@ -15,7 +15,7 @@
   }
   
   &__submit {
-    @include un-btn;
+    @include un-target;
     
     @include react--trs-default;
     

@@ -1,4 +1,6 @@
 .page-header {
+  border-bottom: 6px solid $color-action-main;
+  
   &__wrapper {
     @include wrapper;
   }

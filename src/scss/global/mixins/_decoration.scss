@@ -1,8 +1,12 @@
 @mixin wrapper {
   max-width: 1170px;
   width: 100%;
-  padding: 0 15px;
   margin: 0 auto;
+  
+  @media (min-width: $sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 @mixin margin-right($margin-right) {
@@ -47,7 +51,10 @@
     content: "";
    
     position: relative;
-    top: -5px;
+    top: 0;
+    bottom: auto;
+    right: auto;
+    left: auto;
 
     flex-grow: 1;
 

@@ -15,7 +15,7 @@
     top: 50%;
     z-index: 3995;
     
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin-top: -30px;
@@ -25,6 +25,10 @@
     background-color: $color-main;
     
     transition-property: background-image;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
     
     &::before {
       content: "";
@@ -72,27 +76,48 @@
     position: relative;
     
     border-right: 1px solid $gray-lighter;
-//    overflow: hidden;
   }
   
   &__main-container {
-//    display: flex;
-    width: 320px;
-    height: 440px;
-//    padding: 30px;
+    width: 186px;
+    height: 272px;
     
-//    overflow: hidden;
+    @media (min-width: $sm) {
+      width: 550px;
+      height: 760px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 320px;
+      height: 440px;
+    }
   }
   
-  &__main-item {
-//    flex-shrink: 0;
+  .slide-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
   
-  &__main-image {
+  &__main-image-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 30px;
+  }
+  
+  &__main-image {
+    width: 125px;
+    margin: auto;
+    
+    @media (min-width: $sm) {
+      width: 420px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 260px;
+    }
   }
   
   &__demos-controls {
@@ -104,37 +129,43 @@
     left: 50%;
     z-index: 3995;
     
+    display: none;
     margin-left: -12.5px;
     
     background-color: $color-main;
-//    background: $color-main url("icon__arrow-left.png") no-repeat center center;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
     
     &:hover {
       color: $color-action-main;
-//      background-image: url("icon__arrow-left--slim-red.png");
     }
     
     &--top {
       top: -12.5px;
-      
-//      transform: rotate(90deg);
     }
     
     &--bottom {
       bottom: -12.5px;
-      
-//      transform: rotate(-90deg);
     }
   }
   
   &__demos-wrapper {
     position: relative;
+    width: 135px;
+    height: 272px;
     
-    width: 155px;
-    height: 440px;
-//    padding: 15px;
     
-//    overflow: hidden;
+    @media (min-width: $sm) {
+      width: 155px;
+      height: 760px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 155px;
+      height: 440px;
+    }
   }
   
   &__demos {
@@ -149,29 +180,20 @@
     overflow: hidden;
   }
   
-  &__demos-container {
-//    display: flex;
-//    justify-content: center;
-  }
-  
   &__demos-item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 110px;
-    width: 125px;
+    width: 105px;
 
     overflow: hidden;
+    
+    @media (min-width: $sm) {
+      width: 125px;
+    }
   }
-  
-//  &__demos-item-container {
-//    &.active {
-//      img {
-//        box-shadow: 0 0 0 1px $gray-lighter;
-//      }
-//    }
-//  }
   
   &__demos-item {    
     display: flex;
@@ -179,10 +201,6 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    
-//    &--current {
-//      box-shadow: 0 0 0 2px red;
-//    }
   }
   
   &__demos-img {

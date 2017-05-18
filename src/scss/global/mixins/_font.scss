@@ -1,5 +1,7 @@
 @mixin font-h1($text-color) {
   
+  margin: -6px 0;
+  
   color: $text-color;
   font-family: $font-family--h1;
   font-size: $font-size--h1;

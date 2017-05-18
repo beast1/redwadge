@@ -15,3 +15,8 @@ $('.carousel > button:nth-of-type(2)')
 
 //$('.carousel > button.slick-disabled')
 //  .css('display', 'none');
+$(".sp-button").click(function() {
+  console.log('1');
+  $(".page-footer__subscribe-title--slim").hide();
+  console.log('2');
+});

@@ -11,9 +11,11 @@
   <div class="page-footer__flex-wrapper">
     <div class="page-footer__wrapper">
       <div class="page-footer__main">
-        <div class="page-footer__main-col">
+        <div class="page-footer__main-col  page-footer__brand">
           <a class="page-footer__logo" href="#"><img src="{{ 'logo.png' | file_url }}" alt="WADGE"></a>
-          <span class="page-footer__promo">Кальян с табаком WADGE – удовольствие без границ. Широкая линейка ароматной палитры и уникальных миксов.</span>
+          <span class="page-footer__promo">
+            <span class="page-footer__promo--short">Кальян с табаком WADGE – удовольствие без границ.</span>
+            <span class="page-footer__promo--extend">Широкая линейка ароматной палитры и уникальных миксов.</span></span>
         </div>
         <div class="page-footer__main-col  page-footer__blog">
           {% for article in blogs.news.articles limit: 1 %}
@@ -33,14 +35,13 @@
             {% endfor %}
           </ul>
         </div>
-        <div class="page-footer__main-col">
+        <div class="page-footer__main-col  page-footer__links">
           <h3 class="page-footer__col-title">Мы в соц сетях</h3>
 
           {% include 'social' %}
 
           <div class="page-footer__subscribe--slim">
-            <b class="page-footer__subscribe-title--slim">Хотите получать полезные новости?</b>
-            {% include 'subscribe' %}
+            {% include 'subscribe--send-pulse' %}
           </div>
         </div>
       </div>
