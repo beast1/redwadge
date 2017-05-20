@@ -8,13 +8,21 @@
       {% endif %}
     </a>
   </div>
-  <div class="td  tc--name  basket__item-data">{{ item.title }}</div>
-  <div class="js-item-price  td  tc--price  basket__item-data">{{ item.sale_price | money }}</div>
-  <div class="td  tc--count  basket__item-data">
+  <div class="td  tc  tc--name  basket__item-data"><a class="basket__name-link" href="{{ item.product.url }}">{{ item.title }}</a></div>
+  <div class="js-item-price  td  tc  tc--price  basket__item-data">{{ item.sale_price | money }}</div>
+  <div class="td  tc  tc--count  basket__item-data  basket__item-data--counter">
     {% include 'counter--large' %} 
   </div>
-  <div class="js-item-total-price  td  tc--common-price  basket__item-data  basket__item-data--common-price">{{ item.total_price | money }}</div>
-  <div class="td  tc--remove  basket__item-data">
+  <div class="td  tc  tc--common-price  basket__item-data  basket__item-data--common-price">{{ item.total_price | money }}</div>
+  <div class="td  tc  tc--both-prices  basket__item-data--both-prices">
+    <div class="js-item-price  basket__item-data">
+      {{ item.sale_price | money }}
+    </div>
+    <div class="js-item-total-price  basket__item-data  basket__item-data--common-price">
+      {{ item.total_price | money }}
+    </div>
+  </div>
+  <div class="td  tc  tc--remove  basket__item-data">
     <button class="js-basket__remove-btn  basket__remove-btn" data-item-delete="{{ item.id }}"></button>
   </div>
 </div>

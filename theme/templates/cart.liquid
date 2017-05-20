@@ -5,26 +5,14 @@
       <input type="hidden" name="_method" value="put">
       <input type="hidden" name="make_order" value="">
       <input type="hidden" name="lang" value="{{ language.locale }}"/>
-      <span class="basket__counter">
-        У Вас 
-        {% if cart.items_count == 0 %}
-          <span class="basket__counter-value">ни одного товара</span>
-        {% else %}
-          {% if cart.items_count == 1 %}
-            <span class="basket__counter-value">{{ cart.items_count }} товар</span>
-          {% else %}
-            <span class="basket__counter-value">{{ cart.items_count }} товара</span>
-          {% endif %}
-        {% endif %}
-         в корзине
-      </span>
       <div class="table  basket__items">
         <div class="tr  basket__items-settings">
           <div class="td tc--preview  basket__settings-data"></div>
-          <div class="td tc--name  basket__settings-data">Название</div>
+          <div class="td tc--name  basket__settings-data  basket__settings-data--name">Название</div>
           <div class="td tc--price  basket__settings-data">Цена</div>
           <div class="td tc--count  basket__settings-data">Колличество</div>
           <div class="td tc--common-price  basket__settings-data">Сумма</div>
+          <div class="td tc--both-prices  basket__settings-data">Цена и Сумма</div>
           <div class="td tc--remove  basket__settings-data"></div>
         </div>
         {% for item in cart.items limit: 100 %}
@@ -42,7 +30,7 @@
           <a class="link  basket__sub-target" href="#">Купить в 1 клик</a>
           <button class="basket__target" type="submit" data-cart-submit>Оформить заявку</button>
         </div>
-        <div class="basket__fieldset">
+        <div class="basket__fieldset  basket__final-price-wrap">
           <span class="basket__action-disc">Общая сумма:  </span>
           <span class="js-shopcart-total-summ  basket__final-price">{{ cart.items_price | money }}</span>
         </div>
