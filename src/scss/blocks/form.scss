@@ -46,7 +46,7 @@
         content: "";
         
         position: absolute;
-        top: -2px;
+        top: 4px;
         left: -20px;
         
         box-sizing: border-box;
@@ -96,6 +96,24 @@
     
     &:active {
       box-shadow: $shadow-btn;
+    }
+  }
+}
+
+.set-block {
+  .form {
+    &__column {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      width: 100%;
+      
+      .form__item {
+        @include margin-right(0);
+        
+        width: 48%;
+      }
     }
   }
 }

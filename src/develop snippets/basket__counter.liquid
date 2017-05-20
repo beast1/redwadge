@@ -1,0 +1,13 @@
+<span class="basket__counter">
+  У Вас 
+  {% if cart.items_count == 0 %}
+    <span class="basket__counter-value">ни одного товара</span>
+  {% else %}
+    {% if cart.items_count == 1 %}
+      <span class="basket__counter-value">{{ cart.items_count }} товар</span>
+    {% else %}
+      <span class="basket__counter-value">{{ cart.items_count }} товара</span>
+    {% endif %}
+  {% endif %}
+   в корзине
+</span>

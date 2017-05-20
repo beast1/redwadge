@@ -1,13 +1,39 @@
 .checkout {
+  //media var
+    $lg-less-1: 1040px;
+    $sm-more-1: 810px;
+  
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  
+  @media (min-width: $sm-more-1) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   
   &__fieldset {
-    width: 48%;
+    width: 100%;
     
     &--generate {
-      display: flex;
-      flex-direction: column;
+      @media (min-width: $sm-more-1) {
+        display: flex;
+        flex-direction: column;
+        width: 58%;
+      }
+      
+      @media (min-width: $lg-less-1) {
+        width: 68%;
+      }
+    }
+    
+    &--payment {
+      @media (min-width: $sm-more-1) {
+        width: 40%;
+      }
+      
+      @media (min-width: $lg-less-1) {
+        width: 30%;
+      }
     }
   }
   
@@ -59,4 +85,8 @@
 
 .co-input-wrapper.not_available {
   display: none;
+}
+
+.variants {
+  padding-left: 22px;
 }

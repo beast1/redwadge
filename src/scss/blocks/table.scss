@@ -1,51 +1,135 @@
 .table {
   width: 100%;
-  
-  //t
-//  border: 1px solid #000;
 }
 
 .tr {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
   display: flex;
   width: 100%;
-//  height: 130px;
+}
+
+.basket__items {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
   
-  //t
-  // border: 1px solid #999;
-//  border-bottom: 2px dashed #999;
+  .tr {
+    @media (max-width: $sm-2) {
+      position: relative;
+
+      padding-top: 40px;
+    }
+  }
 }
 
 .td {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  //t
-//   border: 2px dashed #999;
 }
 
 .tc {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
   &--preview {
     width: 15%;
+    
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
   
   &--name {
     width: 35%;
+    
+    @media (max-width: $sm-1) {
+      width: 50%;
+    }
+    
+    @media (max-width: $sm-2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      
+      text-align: center;
+    }
   }
   
   &--price {
     width: 15%;
+    
+    @media (max-width: $sm) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-1) {
+      display: none;
+    }
   }
   
   &--count {
     width: 15%;
+    
+    @media (max-width: $sm) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-1) {
+      width: 30%;
+    }
+    
+    @media (max-width: $sm-2) {
+      width: 50%;
+    }
   }
   
   &--common-price {
     width: 15%;
+    
+    @media (max-width: $sm-1) {
+      display: none;
+    }
+  }
+  
+  &--both-prices {
+    flex-direction: column;
+    
+    @media (min-width: $sm-1+1) {
+      display: none;
+    }
+    
+    @media (max-width: $sm-1) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-2) {
+      width: 42%;
+    }
   }
   
   &--remove {
-    width: 5%;
+    width: 8%;
+  }
+  
+  &--mob-settings {
+    justify-content: flex-start;
+    width: 105px;
+    margin: 15px 0;
+  }
+  
+  &--mob-vals {
+    justify-content: flex-end;
+    flex-grow: 2;
   }
 }

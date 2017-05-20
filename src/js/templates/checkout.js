@@ -73,6 +73,22 @@ $("label[for='client_name'], label[for='client_surname'], label[for='client_phon
   .addClass("form__label--require")
 ;
 
+$(".set-block .form__item:nth-of-type(2)")
+  .wrap("<div class='form__column  form__column--first'></div>")
+;
+
+$(".set-block .form__item:nth-of-type(7)")
+  .wrap("<div class='form__column  form__column--second'></div>")
+;
+
+$(".set-block .form__item:nth-of-type(8), .set-block .form__item:nth-of-type(9), .set-block .form__item:nth-of-type(10)")
+  .appendTo(".form__column--second")
+;
+
+$(".set-block > .form__item:nth-of-type(3), .set-block > .form__item:nth-of-type(4), .set-block > .form__item:nth-of-type(5)")
+  .appendTo(".form__column--first")
+;
+
 //delivery
 
 $(".delivery_variants br:nth-of-type(2n)")
@@ -106,3 +122,10 @@ $(".payment_variants p")
 $(".variants .not_available label")
   .addClass("form__label--disabled")
 ;
+
+//second page
+  //hide variants and #create-order
+  //add btn
+  //hide .set-block > *
+  //show variants and #create-order
+  //add back-btn

@@ -1,7 +1,10 @@
 .basket {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
   @include react--trs-default;
-//  display: flex;
-//  flex-direction: column;
+  
   padding-top: 25px;
   
   @media (min-width: $sm) {
@@ -9,72 +12,37 @@
     padding-right: 30px;
   }
   
-//  &__list {
-//    width: 100%;
-//    
-//    td {
-//      border-bottom: 2px dashed $gray-lighten;
-//    }
-//  }
-  
-//  &__settings {
-//    display: flex;
-//    justify-content: space-between;
-//    width: 100%;
-//    padding: 10px 0;
-//  }
-  
-//  &__settings-item {
-//    @include font-other($gray, 14px);
-//    
-//    text-transform: uppercase;
-//    
-//    &:nth-of-type(2) {
-//      padding-left: 65px;
-//    }
-//    
-//    &:nth-of-type(3) {
-//      padding-left: 80px;
-//    }
-//    
-//    &:nth-of-type(4) {
-//      width: 150px;
-//      
-//      text-align: center;
-//    }
-//    
-//    &:nth-of-type(5) {
-//      padding-left: 60px;
-//    }
-//  }
-//  
-//  &__counter {
-//    display: inline-block;
-//    margin-bottom: 30px;
-//  }
-//  
-//  &__counter-value {
-//    font-weight: 700;
-//  }
-  
   &__items {
     margin-top: 30px;
+    
+    @media (max-width: $sm) {
+      padding: 0 15px;
+    }
+  }
+  
+  &__mob-item {
+    padding: 0 15px;
+    
+    @media (min-width: $sm) {
+      display: none;
+    }
   }
   
   &__items-settings {
-    @include font-other($gray, 12px);
-    
-    text-transform: uppercase;
+//    @media (max-width: $sm) {
+//      display: none;
+//    }
   }
   
   &__item {
-    @include font-other($color-second, 16px);
-    
-    text-transform: uppercase;
+//    @media (max-width: $sm) {
+//      display: none;
+//    }
   }
   
   &__items-settings,
-  &__item {
+  &__item,
+  &__mob-item {
     position: relative;
     
     padding-bottom: 20px;
@@ -93,13 +61,35 @@
     }
   }
   
+  &__settings-data {
+    @include font-other($gray, 12px);
+    
+    text-transform: uppercase;
+    
+    &--name {
+      @media (max-width: $sm-2) {
+        display: none;
+      }
+    }
+  }
+  
   &__item-data {
+    @include font-other($color-second, 16px);
+    
+    text-transform: uppercase;
+    
     &--common-price {
       font-weight: 700;
+    }
+    
+    &--counter {
+      padding: 0 20px;
     }
   }
   
   &__preview-link {
+    @include un-link;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,6 +97,19 @@
     height: 135px;
     
     overflow: hidden;
+  }
+  
+  &__name-link {
+    @include un-link;
+    @include font-other($color-second, 16px);
+    
+    @include react--color($gray, $gray-light);
+    
+    text-transform: uppercase;
+    
+    @media (max-width: $sm-2) {
+      font-weight: 700;
+    }
   }
   
   &__remove-btn {
@@ -155,6 +158,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    @media (max-width: $sm) {
+      margin: 0 auto;
+    }
   }
   
   &__sub-target {
@@ -163,6 +170,14 @@
     
     display: none;
     margin-bottom: 27px;
+  }
+  
+  .back {
+    display: none;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
   }
   
   &__target {
@@ -180,10 +195,17 @@
     }
   }
   
+  &__final-price-wrap {
+    display: none;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+  }
+  
   &__final-price {
     @include font-other($color-second, 25px);
     
-    display: flex;
     margin-left: 10px;
     
     font-weight: bold;

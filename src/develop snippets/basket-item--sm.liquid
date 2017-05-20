@@ -1,0 +1,35 @@
+<div class="table  basket__mob-item">
+  <div class="tr">
+    <div class="td  tc  tc--mob-settings  basket__settings-data">
+      Название:
+    </div>
+    <div class="td  tc  tc--mob-vals  basket__item-data">
+      {{ item.title }}
+      <button class="js-basket__remove-btn  basket__remove-btn" data-item-delete="{{ item.id }}"></button>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td  tc  tc--mob-settings  basket__settings-data">
+      Цена:
+    </div>
+    <div class="td  tc  tc--mob-vals  basket__item-data">
+      {{ item.sale_price | money }}
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td  tc  tc--mob-settings  basket__settings-data">
+      Колличество:
+    </div>
+    <div class="td  tc  tc--mob-vals  basket__item-data">
+      {% include 'counter--large' %}
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td  tc  tc--mob-settings  basket__settings-data">
+      Сумма:
+    </div>
+    <div class="td  tc  tc--mob-vals  basket__item-data  basket__item-data--common-price">
+      {{ item.total_price | money }}
+    </div>
+  </div>
+</div>
