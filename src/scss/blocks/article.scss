@@ -1,7 +1,14 @@
 .article {
+  //media vars
+    $sm-less-1: 470px;
+  
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  
+  @media (max-width: $sm) {
+    padding: 0 15px;
+  }
   
   &__preview {
     position: relative;
@@ -29,12 +36,27 @@
   &__textset {
     @include font-p($color-second-light);
     
+    position: relative;
+    
     padding-bottom: 20px;
     
     line-height: 24px;
     
     p {
       margin: 24px 0;
+    }
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      
+      height: 2px;
+      
+      background-image: repeating-linear-gradient(to left, $gray-lighten 0px, $gray-lighten 3px, transparent 3px, transparent 6px, $gray-lighten 6px, $gray-lighten 9px);
     }
   }
   
@@ -43,6 +65,11 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 70px;
+    
+    @media (max-width: $sm) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
   
   &__social {
@@ -60,7 +87,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
+    
+    @media (max-width: $sm) {
+      margin-bottom: 10px;
+    }
+    
+    @media (max-width: $sm-less-1) {
+      flex-direction: column;
+      
+      > * {
+        margin: 0 auto 10px;
+      }
+    }
   }
   
   &__control {

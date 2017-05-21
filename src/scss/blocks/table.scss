@@ -133,3 +133,34 @@
     flex-grow: 2;
   }
 }
+
+.payment {
+  .td {
+    justify-content: flex-start;
+  }
+  
+  .tc {
+    &--settings {
+      width: 70%;
+    }
+    
+    &--vals {
+      width: 30%;
+    }
+  }
+  
+//  &__full-price {
+//    @media (min-width: $sm),
+//           (max-width: 885px) {
+//      .tc {
+//        &--settings {
+//          width: 50%;
+//        }
+//
+//        &--vals {
+//          width: 50%;
+//        }
+//      }
+//    }
+//  }
+}

@@ -1,14 +1,52 @@
 .about-us {
   display: flex;
-  justify-content: space-between;
-  padding: 50px 0 70px;
+  flex-direction: column-reverse;
+  padding: 20px 15px 40px;
+  
+  @media (min-width: $sm) {
+    padding: 50px 0 20px;
+  }
+  
+  @media (min-width: $lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 0 70px;
+  }
   
   &__editable {
-    width: 46%;
-    flex-shrink: 2;
+    @media (min-width: $lg) {
+      width: 46%;
+      flex-shrink: 2;
+    }
   }
   
   &__preview {
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+    
+    @media (min-width: $sm) {
+      margin-bottom: 40px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 50%;
+      margin-bottom: 0;
+    }
   }
+  
+//  & + .features {
+//    margin-bottom: 0;
+//    padding-bottom: 0;
+//    
+//    &__item {
+//      margin-bottom: 0;
+//      padding-bottom: 0;
+//      
+//      p {
+//        margin-bottom: 0;
+//      }
+//    }
+//  }
 }

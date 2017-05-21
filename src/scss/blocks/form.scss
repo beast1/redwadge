@@ -102,17 +102,23 @@
 
 .set-block {
   .form {
-    &__column {
+    &__row {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      
-      width: 100%;
+      flex-direction: column;
       
       .form__item {
         @include margin-right(0);
         
-        width: 48%;
+        width: 100%;
+      }
+      
+      @media (min-width: $sm) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .form__item {
+          width: 48%;
+        }
       }
     }
   }

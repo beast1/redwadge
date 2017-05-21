@@ -5,6 +5,11 @@ $('.carousel')
     slidesToScroll: 1
   });
 
+//$('.slick-slide')
+//  .css({
+//  "height": "auto"
+//});
+
 $('.carousel > button:nth-of-type(1)')
   .removeClass('slick-prev slick-arrow')
   .addClass('carousel__controls carousel__controls--left');
