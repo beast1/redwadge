@@ -28,11 +28,17 @@
     var mdPreorder = $(".js-md__preorder");
     var preorderExit = $(".js-md__exit-preorder");
 
+    var preorderForm = $(".js-md__preorder-form");
+
     preorderOpen.click(function() {
       mdPreorder.fadeToggle();
     });
 
     preorderExit.click(function() {
+      mdPreorder.fadeToggle();
+    });
+
+    preorderForm.submit(function() {
       mdPreorder.fadeToggle();
     });
 
