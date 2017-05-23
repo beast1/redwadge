@@ -14,7 +14,11 @@
             {{ "age"              | select_option: order, 'Сначала новые' }}
             {{ "title"            | select_option: order, 'По алфавиту' }}
           </select>
-        </div> 
+        </div>
+        <div class="catalog__controls-item  catalog__view">
+          <button class="catalog__view-btn  catalog__view-btn--tile  catalog__view-btn--current"><i class="fa fa-th-large" aria-hidden="true"></i>Отобразить как блок</button>
+          <button class="catalog__view-btn  catalog__view-btn--list"><i class="fa fa-th-list" aria-hidden="true"></i>Отобразить как список</button>
+        </div>
         {% if page_size %}
           <input type="hidden" name="page_size" value="{{ page_size }}"/>
         {% endif %}
@@ -39,7 +43,7 @@
           </span>
          </div>
       </form>
-      <div class="catalog__list">
+      <div class="catalog__list  view-tile">
         {% for product in products limit: 12 %}
           {% include 'card' %}
         {% endfor %}

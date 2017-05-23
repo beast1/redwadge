@@ -1,5 +1,5 @@
 <div class="
-   card 
+   card  view-tile 
    {% unless product.available %}
      {% unless settings.product_not_available_hide %} 
        card--not-avialable 
@@ -9,19 +9,7 @@
   
   {% include 'card-status' %}
   
-  <div class="card__preview">
-    {% if product.fields.taste.value != '' %}
-      <a class="card__taste  
-        {% case product.fields.taste.value %}
-          {% when 'Зеленое яблоко' %}
-            card__taste--green-aple
-          {% when 'Красное яблоко' %}
-            card__taste--red-aple
-          {% when 'Апельсин' %}
-            card__taste--orange                          
-        {% endcase %}
-      " href="{{ product.url }}" title="{{ product.title | strip_html }}"></a>
-    {% endif %}
+  <div class="card__preview  view-tile">
     {% if product.images.size > 0 %}
       <a href="{{ product.url }}" title="{{ product.title | strip_html }}">
         <img src="{{ product.images.first.large_url }}" alt="{{ product.images.first.title | strip_html }}"
@@ -33,10 +21,10 @@
       </a>
     {% endif %}
   </div>
-  <div class="card__content">
-    <span class="card__name">{{ product.title }}</span>
-    <p class="card__disc">{{ product.short_description }}</p>
-    <div class="card__mob-prices">
+  <div class="card__content  view-tile">
+    <span class="card__name  view-tile">{{ product.title }}</span>
+    <p class="card__descr  view-tile">{{ product.short_description }}</p>
+    <div class="card__mob-prices  view-tile">
       {% if product.old_price %}
         <span class="card__mob-price">{{ product.price | money }}</span>
         <span class="card__mob-price  card__mob-price--old">{{ product.old_price | money }}</span>
@@ -44,7 +32,7 @@
         <span class="card__mob-price">{{ product.price | money }}</span>
       {% endif %}
     </div>
-    <form class="card__controls" method="post" action="{{ cart_url }}" data-product-id="{{ product.id }}">
+    <form class="card__controls  view-tile" method="post" action="{{ cart_url }}" data-product-id="{{ product.id }}">
       {% if product.show_variants? %}
         <select name="variant_id" data-product-variants>
           {% for variant in product.variants %}
@@ -56,9 +44,9 @@
       {% endif %}
       {% if product.available %}   
         {% include 'counter' %}
-        <button class="card__target" type="submit" data-item-add>В корзину</button>
+        <button class="card__target  view-tile" type="submit" data-item-add>В корзину</button>
       {% else %}
-        <a class="link  card__link" href="{{ product.url }}" title="{{ product.title }}">Нет в наличии</a>
+        <button class="js-md__open-preorder  card__preorder-target" type="button">Предзаказ</button>
       {% endif %}
     </form>
   </div>

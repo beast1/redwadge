@@ -6,6 +6,10 @@
   }
   
   &__top-section {
+    
+  }
+  
+  &__top-section-wrap {
     @include separator(auto, -1px);
     
     position: relative;
@@ -282,6 +286,37 @@
     
     &--red {
       color: $color-action-main;
+    }
+  }
+}
+
+.is-sticky {
+  .page-header {
+    &__top-section {
+      background: $color-main;
+      z-index: 10000!important;
+      left: 0;
+      right: 0;
+      width: 100%!important;
+      border-bottom: 6px solid $color-action-main;
+    }
+
+    &__top-section-wrap {
+      @include wrapper;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__search-input-wrap {
+      top: -2px;
+      
+      &::before {
+        bottom: -2px;
+        
+        height: 2px;
+      }
     }
   }
 }

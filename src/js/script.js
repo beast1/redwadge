@@ -22,6 +22,18 @@
 //    ;
 //  }
 
+//stiky
+  //header
+  $("#sticky-header")
+    .sticky({topSpacing:0});
+
+  //btnToTop
+  $(".btn-to-top")
+    .sticky({
+      topSpacing:60, 
+      bottomSpacing:525
+    });
+
 //modals
   //preorder
     var preorderOpen = $(".js-md__open-preorder");
@@ -31,18 +43,28 @@
     var preorderForm = $(".js-md__preorder-form");
 
     preorderOpen.click(function() {
-      mdPreorder.fadeToggle();
+      mdPreorder.fadeIn();
     });
 
     preorderExit.click(function() {
-      mdPreorder.fadeToggle();
+      mdPreorder.fadeOut();
     });
 
     preorderForm.submit(function() {
-      mdPreorder.fadeToggle();
+      mdPreorder.fadeOut();
     });
 
 //    jQuery(function($) {
 //      $.mask.definitions['~']='[+-]';
 //      $('#preorder__phone').mask('(999) 999-9999');
 //    });
+
+  ////toTopBtn
+    $('.js-to-top').click(function() {
+      $('html, body')
+        .animate({scrollTop: 0},500)
+      ;
+      return false;
+    });
+
+    

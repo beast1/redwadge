@@ -2,6 +2,7 @@
   //variables
     //media
       $sm-1: 1110px;
+      $xs-1: 420px;
   
   @include react--trs-default;
   
@@ -9,24 +10,14 @@
   
   display: flex;
   align-items: flex-start;
-  min-height: 175px;
   width: 100%;
   padding: 10px 15px;
   border: 1px solid $gray-lighter;
-  margin-bottom: 20px;
   
   background-color: $color-main;
   
-  @media (min-width: $sm) {
-    flex-direction: column;
-    align-items: center;
-    width: 270px;
-    min-height: 513px;
-    padding: 28px 25px 83px;
-  }
-  
   &:hover {
-    @media (min-width: $sm) {
+    @media (min-width: $lg) {
       box-shadow: 0 0 40px 0 fade-out($black, 0.2);
     }
   }
@@ -36,7 +27,35 @@
   }
   
   &--not-avialable {
-    filter: grayscale(1);
+    * {
+      filter: grayscale(1);
+    }
+  }
+  
+  &.view-tile {
+    min-height: 175px;
+    margin-bottom: 20px;
+    
+    @media (min-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+      min-height: 513px;
+      padding: 28px 25px 83px;
+    }
+    
+    @media (min-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+      min-height: 513px;
+      padding: 28px 25px 83px;
+    }
+  }
+  
+  &.view-list {
+    flex-direction: row;
+    margin-bottom: 10px;
   }
   
   &__status {
@@ -45,7 +64,13 @@
     right: 10px;
     z-index: 1;
     
-    display: flex;
+    &.view-tile {
+      display: flex;
+    }
+
+    &.view-list {
+      display: none;
+    }
   }
   
   &__label-new {
@@ -113,7 +138,36 @@
   }
   
   &__mob-prices {
+    display: flex;
     margin-bottom: 10px;
+    
+    
+    &.view-tile {
+      @media (min-width: $sm) {
+        display: none;
+      }
+    }
+    
+    &.view-list {
+      margin-bottom: 0;
+      margin-right: 13px;
+      
+      @media (max-width: $sm) {
+        flex-direction: column;
+      }
+      
+      @media (max-width: $xs-1) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 32px;
+        margin-right: 0;
+      }
+    }
   }
   
   &__mob-price {
@@ -125,19 +179,21 @@
     &--old {
       @include font-other($gray, 16px);
       
+      order: -1;
+      margin-right: 5px;
+      
       font-weight: 600;
       text-decoration: line-through;
-    }
-    
-    @media (min-width: $sm) {
-      display: none;
+      
+      @media (max-width: $sm) {
+        margin-right: 0;
+      }
     }
   }
   
   &__preview {
     position: relative;
     
-    display: flex;
     justify-content: center;
     align-items: center;
     min-width: 80px;
@@ -154,94 +210,120 @@
       padding: 0;
       margin-right: 0;
     }
+    
+    &.view-tile {
+      display: flex;
+    }
+    
+    &.view-list {
+      display: none;
+    } 
   }
   
   &__content {
     position: relative;
     
     align-self: stretch;
-    min-height: 155px;
-    padding-bottom: 40px;
     
-    @media (min-width: $sm) {
-      position: static;
+    &.view-tile {
+      min-height: 155px;
+      padding-bottom: 40px;
+      
+      @media (min-width: $sm) {
+        position: static;
+
+        padding-bottom: 0;
+      }
+    }
+    
+    &.view-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 38px;
       
       padding-bottom: 0;
-    }
-  }
-  
-  &__taste {
-    position: absolute;
-    top: 60%;
-    left: 0;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    
-    background-color: $color-main;
-    border-radius: 50%;
-    
-    &::before {
-      content: "";
+      padding-right: 138px;
       
-      width: 55px;
-      height: 55px;
+      @media (max-width: $sm) {
+        padding-right: 80px;
+        min-height: 68px;
+      }
       
-      background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 50%;
-    }
-    
-    &--green-aple::before {
-      @include sprite-taste--green-aple;
-    }
-      
-    &--orange::before {
-      @include sprite-taste--orange;
-    }
-      
-    &--red-aple::before {
-      @include sprite-taste--red-aple;
+      @media (max-width: $xs-1) {
+        justify-content: flex-start;
+        min-height: 105px;
+      }
     }
   }
   
   &__name {
     @include font-h2($color-second);
-    
     display: flex;
-    margin: 25px 0 17px;
+    
 
     @media (min-width: $sm) {
       text-align: center;
     }
+    
+    &.view-tile {
+      margin: 25px 0 17px;
+    }
+    
+    &.view-list {
+      margin: 0;
+      margin-right: 5px;
+    }
   }
   
-  &__disc {
+  &__descr {
     @include font-p($gray);
     
     @media (min-width: $sm) {
       text-align: center;
     }
+    
+    &.view-tile {
+      display: block;
+    }
+    
+    &.view-list {
+      display: none;
+    }
   }
   
   &__controls {
     position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
     
     display: flex;
     
+    &.view-tile {
+      @media (min-width: $sm) {
+        right: 0;
+        left: 0;
+        bottom: 0;
+        
+        left: 25px;
+        bottom: 28px;
+        right: 25px;
 
-    @media (min-width: $sm) {
-      left: 25px;
-      bottom: 28px;
-      right: 25px;
+        justify-content: space-between;
+      }
+    }
+    
+    &.view-list {
+      right: 0;
+      top: 0;
       
-      justify-content: space-between;
+      @media (max-width: $sm) {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      @media (max-width: $xs-1) {
+        top: 37px;
+      }
     }
   }
   
@@ -273,28 +355,73 @@
       margin-top: -9.5px;
     }
     
-    @media (min-width: $sm) {
-      @include btn($color-action-main, 16px);
-      @include font-other($color-main, 12px);
+    &.view-tile {
+      @media (min-width: $sm) {
+        @include btn($color-action-main, 16px);
+        @include font-other($color-main, 12px);
 
-      width: 125px;
-      height: 32px;
-      padding-left: 27px;
+        width: 125px;
+        height: 32px;
+        padding-left: 27px;
 
-      &:active {
-        box-shadow: $shadow-btn;
+        &:active {
+          box-shadow: $shadow-btn;
+        }
+
+        &::before {
+          @include sprite-icon__basket--slim;
+
+          content: "";
+
+          position: absolute;
+          left: 20px;
+          top: 50%;
+
+          margin-top: -10px;
+        }
       }
+    }
+    
+    &.view-list {
+      @media (max-width: $sm) {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+  
+  &__preorder-target {
+    @include un-target;
+    @include btn($color-action-main, 16px);
+    @include font-other($color-main, 12px);
+    
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
 
-      &::before {
-        @include sprite-icon__basket--slim;
+    position: relative;
 
-        content: "";
+    width: 125px;
+    height: 32px;
+    padding-left: 20px;
 
-        position: absolute;
-        left: 20px;
-        top: 50%;
+    background-color: $color-action-main;
+    filter: grayscale(0);
 
-        margin-top: -10px;
+    &::before {
+      @include sprite-icon__basket--slim;
+
+      content: "";
+
+      position: absolute;
+      left: 20px;
+      top: 50%;
+
+      margin-top: -10px;
+    }
+    
+    &:active {
+      @media (min-width: $sm) {
+        box-shadow: $shadow-btn;
       }
     }
   }

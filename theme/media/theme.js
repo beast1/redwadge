@@ -14,4 +14,6 @@
 #= require messages_ru.js
 #= require plugin.alertify.js
 #= require main.js
+#= require jquery.sticky.js
+
 #= require script.js

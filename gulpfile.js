@@ -151,12 +151,12 @@ gulp.task('styleLib', function() {
 
 gulp.task('scriptsLib', function() {
   return gulp.src([
-//    'src/libs/jquery/dist/jquery.min.js',
-    'src/libs/slick-carousel/slick/slick.min.js',
-//    'src/libs/jquery.maskedinput/dist/jquery.maskedinput.js',
+    'src/libs/jquery-sticky/jquery.sticky.js',
+    'src/libs/slick-carousel/slick/slick.min.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
+    .pipe(gulp.dest('src/js'))
     .pipe(gulp.dest('theme/media'));
 });
 

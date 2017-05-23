@@ -1,0 +1,22 @@
+.btn-to-top {
+  @include radial(50px);
+  
+  position: absolute;
+  top: 1000px;
+  right: 10%;
+  
+  display: none;
+  width: 50px!important;
+  
+  color: $color-second;
+  font-size: 26px;
+  line-height: 26px;
+  
+  cursor: pointer;
+}
+
+.is-sticky {
+  .btn-to-top {
+    display: flex;
+  }
+}

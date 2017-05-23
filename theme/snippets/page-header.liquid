@@ -1,23 +1,22 @@
 <header class="page-header">
   <div class="page-header__wrapper">
-    <section class="page-header__top-section">
-      <span class="page-header__phone  page-header__phone--top-section">+7(926)542-15-74</span>
-      <span class="page-header__promo">Несомненный лидер кальянных табаков WADGE</span>
-      <form class="page-header__search" action="/search" method="get">
-        <input type="hidden" name="lang" value="{{ language.locale }}">
-        <div class="page-header__search-input-wrap">
-          <input class="page-header__search-input" id="search-widget-input" type="text" placeholder="Поиск по сайту..." name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}" data-search-field>
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </div>
-      </form>
-      
-      {% include 'social' %}
-      
+    <section class="js-sticky-header  page-header__top-section" id="sticky-header">
+      <div class="page-header__top-section-wrap">
+        <span class="page-header__phone  page-header__phone--top-section">+7(926)542-15-74</span>
+        <span class="page-header__promo">Несомненный лидер кальянных табаков WADGE</span>
+        <form class="page-header__search" action="/search" method="get">
+          <input type="hidden" name="lang" value="{{ language.locale }}">
+          <div class="page-header__search-input-wrap">
+            <input class="page-header__search-input" id="search-widget-input" type="text" placeholder="Поиск по сайту..." name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}" data-search-field>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+        </form>
+        {% include 'social' %}
+      </div>
     </section>
     <section class="page-header__bottom-section">
       <div class="page-header__contacts">
         <span class="page-header__phone">+7(926)542-15-74</span>
-        <span class="page-header__email">info@wadge.ru</span>
       </div>
       <nav class="page-header__nav">
         <div class="page-header__nav-list">
