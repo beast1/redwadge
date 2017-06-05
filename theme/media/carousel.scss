@@ -1,0 +1,124 @@
+.carousel {
+  position: relative;
+  top: -45px;
+  
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+  
+  @media (min-width: $sm) {
+    max-width: 570px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  @media (min-width: $lg) {
+    max-width: none;
+    width: 100%;
+  }
+  
+  &__item {
+    margin: 0 5px;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+//    margin-bottom: -40px;
+    
+    .card {
+      &:nth-child(n+2) {
+        display: none;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      .card {
+        &:nth-child(-n+2) {
+          display: flex;
+        }
+
+        &:first-of-type {
+          margin-right: 30px;
+        }
+      }
+    }
+    
+    @media (min-width: $lg) {
+      justify-content: space-between;
+      
+      .card {
+        &:first-of-type {
+          margin-right: 0;
+        }
+        
+        &:nth-child(n+3) {
+          display: flex;
+        }
+      }
+    }
+  }
+  
+  .card:hover {
+    box-shadow: none;
+  }
+  
+  &__controls {
+    @include radial(60px);
+    
+    @include react--trs-default;
+    
+    position: absolute;
+    top: 50%;
+    z-index: 3995;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    
+    font-size: 0;
+    
+    background-color: $color-main;
+    
+    transition-property: background-image;
+    
+    @media (max-width: $sm) {
+      display: none;
+    }
+    
+    &::before {
+      content: "";
+      
+      width: 11px;
+      height: 22px;
+      
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    &--left {
+      left: 0;
+      margin-left: -25px;
+      
+      &::before {
+        @include sprite-icon__arrow-left--large;
+      }
+      &:hover::before {
+        @include sprite-icon__arrow-left--large-red;
+      }
+    }
+    
+    &--right {
+      right: 0;
+      margin-right: -25px;
+      
+      &::before {
+        @include sprite-icon__arrow-right--large;
+      }
+      &:hover::before {
+        @include sprite-icon__arrow-right--large-red;
+      }
+    }
+  }
+}

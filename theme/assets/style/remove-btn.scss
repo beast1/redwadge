@@ -1,0 +1,21 @@
+.remove-btn {
+  @include radial(25px);
+  
+  @include react--trs-default;
+  
+  background-color: $color-main;
+  
+  &::before {
+    @include sprite-icon__cross--gray;
+    
+    content: "";
+
+	margin: auto;
+  }
+  
+  &:hover::before {
+    @include sprite-icon__cross--red;
+    
+    content: "";
+  }
+}

@@ -1,0 +1,532 @@
+.card {
+  //variables
+    //media
+      $sm-1: 1110px;
+      $xs-1: 420px;
+  
+  @include react--trs-default;
+  
+  position: relative;
+  
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid $gray-lighter;
+  
+  background-color: $color-main;
+  
+  &:hover {
+    @media (min-width: $lg) {
+      box-shadow: 0 0 40px 0 fade-out($black, 0.2);
+    }
+  }
+  
+  @media (min-width: $sm-1) {
+    margin-bottom: 40px;
+  }
+  
+  &--not-avialable {
+    .card__preview,
+    .card__status,
+    .card__name,
+    .card__mob-price,
+    .link {
+      filter: grayscale(1);
+    }
+  }
+  
+  &.view-tile {
+    min-height: 175px;
+    margin-bottom: 20px;
+    
+    @media (min-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+      min-height: 513px;
+      padding: 28px 25px 83px;
+    }
+    
+    @media (min-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+      min-height: 513px;
+      padding: 28px 25px 83px;
+    }
+  }
+  
+  &.view-list {
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  
+  &__status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    
+    &.view-tile {
+      display: flex;
+    }
+
+    &.view-list {
+      display: none;
+    }
+  }
+  
+  &__label-new {
+    @include label($color-status-new);
+    
+    margin-right: auto;
+    
+    &::before {
+      content: "New";
+
+      color: $color-main;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  
+  &__label-hot {
+    @include label($color-status-star);
+    
+    margin-right: auto;
+    
+    &::before {
+      @include sprite-icon__star;
+      
+      content: "";
+    }
+  }
+  
+  &__price {
+    @include font-other($color-main, 14px);
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    
+    text-transform: uppercase;
+    
+    background-color: $color-action-main;
+    
+    &--sale {
+      position: relative;
+      
+      background-color: $color-second;
+      
+      &::before {
+        content: "";
+        
+        position: absolute;
+        top: 50%;
+        right: 0;
+        
+        border-top: 7px solid $transparent;
+        border-left: 7px solid $transparent;
+        border-bottom: 7px solid $transparent;
+        border-right: 6px solid $color-action-main;
+        margin-top: -7px;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+  }
+  
+  &__mob-prices {
+    display: flex;
+    margin-bottom: 10px;
+    
+    
+    &.view-tile {
+      @media (min-width: $sm) {
+        display: none;
+      }
+    }
+    
+    &.view-list {
+      margin-bottom: 0;
+      margin-right: 13px;
+      
+      @media (max-width: $sm) {
+        flex-direction: column;
+      }
+      
+      @media (max-width: $xs-1) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 32px;
+        margin-right: 0;
+      }
+    }
+  }
+  
+  &__mob-price {
+    @include font-other($color-action-main, 16px);
+    
+    font-weight: 600;
+    text-transform: uppercase;
+    
+    &--old {
+      @include font-other($gray, 16px);
+      
+      order: -1;
+      margin-right: 5px;
+      
+      font-weight: 600;
+      text-decoration: line-through;
+      
+      @media (max-width: $sm) {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  &__preview {
+    position: relative;
+    
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    max-width: 175px;
+    width: 100%;
+    min-height: 155px;
+    margin-right: 10px;
+    
+    overflow: hidden;
+    
+    @media (min-width: $sm) {
+      width: 220px;
+      height: 300px;
+      padding: 0;
+      margin-right: 0;
+    }
+    
+    &.view-tile {
+      display: flex;
+    }
+    
+    &.view-list {
+      display: none;
+    } 
+  }
+  
+  &__content {
+    position: relative;
+    
+    align-self: stretch;
+    
+    &.view-tile {
+      min-height: 155px;
+      padding-bottom: 40px;
+      
+      @media (min-width: $sm) {
+        position: static;
+
+        padding-bottom: 0;
+      }
+      
+      @media (max-width: $sm) {
+        padding-bottom: 60px;
+      }
+    }
+    
+    &.view-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 38px;
+      
+      padding-bottom: 0;
+      padding-right: 138px;
+      
+      @media (max-width: $sm) {
+        padding-right: 80px;
+        min-height: 68px;
+      }
+      
+      @media (max-width: $xs-1) {
+        justify-content: flex-start;
+        min-height: 105px;
+      }
+    }
+    
+    &--not-avialable.view-list {
+      min-height: 60px;
+      
+      @media (max-width: $xs-1) {
+        min-height: 102px;
+      }
+    }
+  }
+  
+  &__name {
+    @include font-h2($color-second);
+    display: flex;
+    
+
+    @media (min-width: $sm) {
+      text-align: center;
+    }
+    
+    &.view-tile {
+      margin: 25px 0 17px;
+    }
+    
+    &.view-list {
+      margin: 0;
+      margin-right: 5px;
+    }
+  }
+  
+  &__descr {
+    @include font-p($gray);
+    
+    @media (min-width: $sm) {
+      text-align: center;
+    }
+    
+    &.view-tile {
+      display: block;
+    }
+    
+    &.view-list {
+      display: none;
+    }
+  }
+  
+  &__controls {
+	$sm-less-1: 400px;
+    position: absolute;
+    
+    display: flex;
+    
+    &.view-tile {
+	  @media (max-width: $sm-less-1) {
+        right: 0;
+      }
+
+      @media (min-width: $sm) {
+        left: 25px;
+        bottom: 28px;
+        right: 25px;
+
+        justify-content: space-between;
+      }	  
+    }
+    
+    &.view-list {
+      right: 0;
+      top: 0;
+      
+      @media (max-width: $sm) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      @media (max-width: $xs-1) {
+        top: 14px;
+      }
+    }
+    
+    &--not-avialable.view-tile {
+      @media (max-width: $sm) {
+        flex-direction: column;
+        align-items: center;
+
+        > * {
+          @include margin-bottom(5px);
+        }
+      }
+    }
+    
+    &--not-avialable.view-list {
+      flex-direction: column;
+      align-items: center;
+      
+      @media (max-width: $sm) {
+        justify-content: flex-start;
+      }
+      
+      @media (max-width: $xs-1) {
+        top: 33px;
+      }
+        
+      .card__preorder-target {
+        margin-bottom: 5px;
+        
+        @media (max-width: $sm) {
+          max-width: 80px;
+          padding: 10px 15px;
+
+          border-radius: 40px;
+          
+          &::before {
+            display: none;
+          }
+        }
+      }
+      
+      .link {
+        padding-bottom: 5px;
+      }
+      
+      
+    }
+  }
+  
+  &__target {
+    @include un-target;
+    
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
+    
+    position: relative;
+    
+    width: 38px;
+    height: 38px;
+    margin-left: 20px;
+    
+    font-size: 0;
+    
+    background-color: $color-action-main;
+    border-radius: 50%;
+    
+    &:active {
+	  transform: scale(0.97);
+      box-shadow: $shadow-btn;
+    }
+    
+    &::before {
+      @include sprite-icon__basket--slim;
+
+      content: "";
+
+      position: absolute;
+      left: 11px;
+      top: 50%;
+
+      margin-top: -9.5px;
+    }
+    
+    &.view-tile {
+	  margin-left: 5px;	
+	
+      @media (min-width: $sm) {
+        @include btn($color-action-main, 16px);
+        @include font-other($color-main, 12px);
+        
+        @include react--background($color-action-main-dark, $color-action-main-dark);
+		
+		justify-content: flex-start;
+        width: 125px;
+        height: 32px;
+        padding-left: 43px;
+
+        
+
+        &::before {
+          @include sprite-icon__basket--slim;
+
+          content: "";
+
+          position: absolute;
+          left: 20px;
+          top: 50%;
+
+          margin-top: -10px;
+        }
+      }
+    }
+    
+    &.view-list {
+      @media (max-width: $sm) {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+  
+  &__preorder-target {
+    @include un-target;
+    @include btn($color-action-main, 16px);
+    @include font-other($color-main, 12px);
+    
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
+
+    position: relative;
+
+	justify-content: flex-start; 
+    width: 125px;
+    height: 32px;
+    padding-left: 43px;
+
+    background-color: $color-action-main;
+    filter: grayscale(0);
+
+    &::before {
+      @include sprite-icon__basket--slim;
+
+      content: "";
+
+      position: absolute;
+      left: 20px;
+      top: 50%;
+
+      margin-top: -10px;
+    }
+    
+    &:active {
+	  transform: scale(0.97);
+
+      @media (min-width: $sm) {
+        box-shadow: $shadow-btn;
+      }
+    }
+  }
+  
+  &__link {
+    @include un-link;
+    @include font-p($gray);
+    
+    margin: 0 auto;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: -17px;
+      right: -17px;
+    }
+  }
+}
+
+.slider {
+  &__list {
+    .card {
+      @include margin-right(20px);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card__price--sale + .card__price {
+  text-decoration: line-through;
+}

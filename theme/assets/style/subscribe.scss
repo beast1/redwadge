@@ -1,0 +1,46 @@
+.subscribe {
+  display: flex;
+  
+  &--top {
+    margin-bottom: 50px;
+  }
+  
+  &__input {
+    @include un-input;
+    @include font-other($color-main, 15px);
+    
+    width: 220px;
+    padding: 10px 20px 7px 0;
+    border-bottom: 1px dashed $gray;
+  }
+  
+  &__submit {
+    @include un-target;
+    
+    @include react--trs-default;
+    
+    position: relative;
+    bottom: -2px;
+    left: -13px;
+    
+    width: 60px;
+    height: 35px;
+    
+    color: $color-main;
+    font-size: 18px;
+    
+    border-radius: 17px;
+    background-color: $color-action-main;
+//    background-image: url("icon__send.png");
+//    background-repeat: no-repeat;
+//    background-position: center center;
+
+    &:hover {
+      background-color: $color-action-main-dark;
+    }
+    
+    &:active {
+      box-shadow: inset 0 2px 3px rgba(0, 146, 168, 0.35);
+    }
+  }
+}

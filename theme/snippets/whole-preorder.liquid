@@ -1,0 +1,96 @@
+<!--<a href="#" id="mod-fast-call-link" class="top-phone-link fl">Çàêàçàòü çâîíîê</a>-->
+<div class="modal__container  modal__container--preorder" id="mod-fast-call">
+    <button class="modal__exit" id="mod-fast-call-close" name="close">Закрыть</button>
+    <div class="errors"></div>
+    <form class="form  whole-preorder" id="mod-fast-call_form" method="post" action="/client_account/feedback">
+      <div class="form__row">     
+        <div class="form__item  whole-preorder__input-name"><!--56-->
+          <label class="form__label  form__label--require" for="cb-name">Имя</label>
+          <input class="form__input  required" type="text" size="30" id="cb-name" name="feedback[name]" placeholder="Джесси Пинкман" required>
+        </div>
+
+        <div class="form__item  whole-preorder__input-phone"><!--36-->
+          <label class="form__label  form__label--require" for="cb-phone">Телефон</label>
+          <input class="phone-mask  form__input  required" id="cb-phone" name="feedback[phone]" type="text" placeholder="+_(___)___-__-__" required>
+        </div>
+      </div>
+      
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__products">Товары для предзаказа</label>
+        <div class="form__input  whole-preorder__select" id="preorder__products">
+          {% for product in collections.wadge-250-gr.products %}
+            {% if product.available != true %}
+            <div class="js-preorder-option  whole-preorder__option"><span class="whole-preorder__option-statement"></span>{{ product.title }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      
+      <ul class="js-preorder-confirm  whole-preorder__confirm">
+        <lh class="whole-preorder__confirm-title">Ваш предзаказ</lh>
+      </ul>
+      
+      <div id="preorder-list" class="form__item">
+        <input class="js-preorder-subject" type="hidden" value="" name="feedback[subject]">
+        <input id="mod-fast-call_from" name="feedback[from]" type="hidden" size="30" value="ne-obrashay-vnimania@mail.ru">
+        <textarea class="js-preorder-send  whole-preorder__send" rows="8" cols="20" id="cb-message" name="feedback[content]" tabindex="3"></textarea>
+      </div>
+       
+      <button class="js-preorder-submit  form__submit" id="mod-fast-call_submit" name="commit">Отправить</button>
+    </form>
+</div>
+<div id="opaco-mod-fast-call-link"><!-- --></div>
+
+<!--OLD-->
+<!--<a href="#" id="mod-fast-call-link" class="top-phone-link fl">Çàêàçàòü çâîíîê</a>-->
+<!--
+<div id="mod-fast-call">
+  <div class="errors"></div>
+  <form method="post" action="/client_account/feedback" id="mod-fast-call_form">
+    <label for="cb-phone">Номер</label>
+    <input type="text" size="30" id="cb-phone" autocomplete="off" name="feedback[phone]" class="required" tabindex="1"  value="" />
+    <label for="cb-name">Имя</label>
+    <input type="text" size="30" id="cb-name" name="feedback[name]" autocomplete="off" class="required" tabindex="2"  value=""/>
+    <label for="cb-message">Сообщение</label>
+    <input type="hidden" value="Предзаказ со страницы товара" name="feedback[subject]" />
+    <input id="mod-fast-call_from" name="feedback[from]" type="hidden" size="30" value="ne-obrashay-vnimania@mail.ru">
+    <textarea rows="8" cols="20" id="cb-message" name="feedback[content]" tabindex="3"></textarea>
+    <button class="send-but" name="commit" id="mod-fast-call_submit" tabindex="4">Отправить</button>
+    <button class="send-but" name="close" id="mod-fast-call-close" tabindex="4">Закрыть</button>
+</form>
+</div>
+<div id="opaco-mod-fast-call-link"> </div>
+-->
+<!--/OLD-->
+
+<!--NEW-->
+<!--
+<div class="js-md__preorder  modal">
+  <div class="modal__container  modal__container--preorder  preorder">
+    <button class="js-md__exit-preorder  modal__exit">Закрыть</button>
+    <form class="js-md__preorder-form  js-preorder-form  form" action="/feedback" method="post">
+
+      <input type="hidden" name="subject" value="{{ messages.label_preorder }}">
+      <input type="hidden" name="from" value="{{ account.email }}">
+      <input class="js-product-title-input" type="hidden" name="content" value="{{ product.title }} ({{ product.variants.first.title }})">
+
+      {% if language.not_default? %}
+        <input type="hidden" name="lang" value="{{ language.locale }}"/>
+      {% endif %}
+
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__name">Имя</label>
+        <input class="form__input" id="preorder__name" name="name" type="text" placeholder="Джесси Пинкман" required>
+      </div>
+
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__phone">Телефон</label>
+        <input class="phone-mask  form__input" id="preorder__phone" name="phone" type="text" placeholder="+_(___)___-__-__" required>
+      </div>
+      
+      <button class="js-preorder-submit  form__submit" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>  
+-->
+<!--/NEW-->

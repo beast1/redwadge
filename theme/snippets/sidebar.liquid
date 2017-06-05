@@ -1,0 +1,110 @@
+<div class="sidebar">
+  {% include 'search' %}
+  <nav class="sidebar__nav">
+    {% case template %}
+      {% when 'index' %}
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'collection' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'search' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+    	<a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Результат поиска</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'product' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+    	<a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">{{ product.title }}</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'cart' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'blog' or 'article' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'page.about-us' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'page.contact-us' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'page.representatives' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Представители</a>
+      {% when 'page_404' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+    {% endcase %}
+  </nav>
+  {% include 'social' %}
+</div>
+
+{% case template %}
+  {% when 'never' %}
+    <div class="palette" style="display: none;">
+     <!--without links-->
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">Каталог</a>
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">Главная</a>
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">Корзина</a>
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">Блог</a>
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">О нас</a>
+       <a class="sidebar__nav-item  sidebar__nav-item--current" href="{{ link.url }}" title="{{ link.title }}">Оплата\доставка</a>
+     <!--with links-->
+       <a class="sidebar__nav-item" href="/">Главная</a>
+       <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+       <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+       <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+       <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+       <a class="sidebar__nav-item" href="{{ link.url }}">Оплата\доставка</a>
+    </div>
+{% endcase %}

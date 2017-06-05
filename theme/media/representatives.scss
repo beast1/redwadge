@@ -1,0 +1,30 @@
+.representatives {
+  @media (max-width: $lg) {
+    flex-direction: column-reverse;
+  }
+  
+  &__item {
+    @include react--trs-default;
+    
+    display: none;
+    
+    opacity: 0;
+    
+    &.current {
+      display: block;
+      
+      opacity: 1;
+    }
+  }
+  
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+  
+  &__map {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+  }
+}

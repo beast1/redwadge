@@ -1,0 +1,122 @@
+<a href="#" id="mod-fast-call-link" class="top-phone-link fl">�������� ������</a>
+<div id="mod-fast-call">
+  <div class="errors"></div>
+  <form method="post" action="/client_account/feedback" id="mod-fast-call_form">
+    <label for="cb-phone">����������� ��� �� �����</label>
+    <input type="text" size="30" id="cb-phone" autocomplete="off" name="feedback[phone]" class="required" tabindex="1"  value="" />
+    <label for="cb-name">���� �����</label>
+    <input type="text" size="30" id="cb-name" name="feedback[name]" autocomplete="off" class="required" tabindex="2"  value=""/>
+    <label for="cb-message">�����������:</label>
+    <input type="hidden" value="������" name="feedback[subject]" />
+   <input id="mod-fast-call_from" name="feedback[from]" type="hidden" size="30" value="call-me-back@asap.com">
+    <textarea rows="8" cols="20" id="cb-message" name="feedback[content]" tabindex="3"></textarea>
+    <button class="send-but" name="commit" id="mod-fast-call_submit" tabindex="4">���������</button>
+    <button class="send-but" name="close" id="mod-fast-call-close" tabindex="4">�������</button>
+</form>
+</div>
+<div id="opaco-mod-fast-call-link"><!-- --></div>
+
+<style>
+  #mod-fast-call_form {
+   padding-top: 10px;
+  }
+#mod-fast-call { background-color: #fff; position: fixed; left:50%; top:50%; width:400px; z-index: 810; display:none; padding:10px; border: 2px solid #232323; }
+#mod-fast-call h3 { padding-left: 10px; }
+#mod-fast-call .errors { color:#900; }
+#mod-fast-call label { display:block; margin:10px 0 10px 1px; font-size: 14px; }
+#mod-fast-call input { width:100%; height: 35px; border: 1px solid #000;}
+#mod-fast-call button { width:49%;}
+#mod-fast-call button#mod-fast-call-close { width:49%; float:right; }
+#mod-fast-call textarea { width:100%; height:100px; margin-bottom: 15px; max-width: 100%; border: 1px solid #000;}
+#opaco-mod-fast-call-link {
+    background-color: #000000;
+    left: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";/* IE8 */
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity = 70); /* IE5+ */
+    filter: alpha(opacity=70);/* IE4- */
+    moz-opacity: 0; /* Mozilla */
+    -khtml-opacity: 0; /* Safari */
+    opacity: 0;  /* general CSS3 */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 800;
+}
+</style>
+<script type="text/javascript">
+/* == POPUP == */
+
+$(document).ready(function(){
+  var modCallMeBack = $("#mod-fast-call");
+  $("body").append($("div#opaco-mod-fast-call-link"),modCallMeBack);
+  $("#mod-fast-call-link, #mod-fast-call-close").click(function(e){ e.preventDefault(); modCallMeBack.togglePopup(); });
+
+   $.fn.togglePopup = function(){
+     var popup = $(this);
+     //detect whether popup is visible or not
+     if(!popup.is(':visible')) { //hidden - then display
+       if($.browser.msie) { //when IE - fade immediately
+         $('#opaco-mod-fast-call-link').height($(document).height()).show().fadeTo('slow', 0.7).click(function(){popup.togglePopup();});
+       } else {
+       //in all the rest browsers - fade slowly
+         $('#opaco-mod-fast-call-link').height($(document).height()).show().fadeTo('slow', 0.7).click(function(){popup.togglePopup();});
+       }
+
+       popup.css({'margin-left':- $(this).width()/2 + 'px', 'margin-top':- $(this).height()/2 + 'px'}).show();
+     } else { //visible - then hide
+       $('#opaco-mod-fast-call-link').hide().removeAttr('style').unbind('click');
+       popup.hide();
+     }
+   };
+
+    /* CallMeBack */
+    $("#mod-fast-call_submit", modCallMeBack).bind("click",function(e){
+        e.preventDefault();
+
+        var is_error = false;
+        var errors = $('#mod-fast-call .errors').html("");
+        var arr = [];
+
+        // �������� �� ������
+        $("input.required, textarea.required", modCallMeBack).each( function(){
+          if(this.value==this.defaultValue){
+            is_error = true;
+            arr.push("���� '"+$(this).prev().text()+"' ������ ���� ���������!");
+          }
+        });
+
+        if(is_error == true) {
+          modCallMeBackShowMessage(errors_to_arr(arr).join("<br />"),5000); return;
+        }
+
+        var form = $('#mod-fast-call_form',modCallMeBack);
+        var fields = form.serialize();
+        $.ajax({
+            url:      form.attr('action') + '.json',
+            type:     'post',
+            data:     fields,
+            dataType: 'json',
+            beforeSend: function() { show_preloader(); },
+            complete: function() { },
+            success:  function(response) {
+                if ( response.status == 'ok' ) {
+                    $("textarea#mod-fast-call_content, #cb-message", modCallMeBack).val("");
+                    modCallMeBack.togglePopup();
+                    modCallMeBackShowMessage('<strong>�������!</strong><br />� ��������� ����� ��� ��������<br />��������&nbsp;�&nbsp;����.', 3000);
+                } else {
+                    modCallMeBackShowMessage(errors_to_arr(response['errors']).join("<br />"),5000);
+                }
+            }
+        });
+    });
+});
+
+function modCallMeBackShowMessage(text, time){
+    var delay = 1000;
+    if (arguments.length > 1) { delay = time; }
+    show_preloader();
+    set_preloaders_message('<div id="add_product_notification">'+text.replace(" ","&nbsp;")+'</div>');
+    changeCss(jQuery("#own_preloader"));
+    window.setTimeout( hide_preloader, delay);
+}
+</script>

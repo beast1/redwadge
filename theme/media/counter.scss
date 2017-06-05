@@ -1,0 +1,83 @@
+.counter {
+  display: flex;
+  align-items: center;
+  
+  &__count-down,
+  &__count-up {
+    @include react--trs-default;
+  }
+  
+  &__count-down {
+    @include radial(25px);
+    
+    &::before {
+      @include sprite-icon__count-down;
+      
+      content: "";
+	  
+	  margin: auto;
+    }
+    &:hover::before {
+      @include sprite-icon__count-down--red;
+    }
+    
+    &:active::before {
+      @include sprite-icon__count-down--red;
+    }
+  }
+  
+  &__count-up {
+    @include radial(25px);
+    
+    &::before {
+      @include sprite-icon__count-up;
+      
+      content: "";
+
+	  margin: auto;
+    }
+    
+    &:hover::before {
+      @include sprite-icon__count-up--red;
+    }
+    
+    &:active::before {
+      @include sprite-icon__count-up--red;
+    }
+  }
+  
+  &__output {
+    @include un-input;
+    @include font-other($color-action-main, 16px);
+    
+    display: flex;
+    width: 30px;
+    
+    text-align: center;
+  }
+}
+
+.counter--large {
+  .counter__output {
+    border: 1px solid $gray-light;
+    
+    width: 100px;
+    height: 36px;
+    
+    color: $gray;
+  }
+  
+  .counter__count-down {
+    position: relative;
+    right: -12.5px;
+    
+    background-color: $color-main;
+  }
+  
+  .counter__count-up {
+    position: relative;
+    left: -12.5px;
+    
+    background-color: $color-main;
+  }
+}

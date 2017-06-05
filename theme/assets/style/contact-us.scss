@@ -1,0 +1,29 @@
+.contacts {
+  @media (max-width: $lg) {
+    align-items: center;
+  }
+  
+  &__preview {
+    @media (max-width: $lg) {
+      margin-bottom: 50px;
+    }
+  }
+  
+  &__list {
+    @include un-list;
+  }
+  
+  &__item {
+    margin: 16px 0;
+    
+    i {
+      font-size: 1.3em;
+    }
+  }
+  
+  &__social-descr {
+    .social {
+      margin-left: 5px;
+    }
+  }
+}

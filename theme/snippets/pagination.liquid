@@ -14,7 +14,9 @@
   <div class="pagination">
     <p class="pagination__container">
       {% if paginate.previous %}
-        <a class="pagination__item  pagination__item--prev" href="{{ paginate.previous.url }}">&lt;</a>
+        <a class="pagination__item  pagination__item--prev" href="{{ paginate.previous.url }}">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
       {% endif %}
 
       {% for part in paginate.parts %}
@@ -31,7 +33,9 @@
       {% endfor %}
 
       {% if paginate.next %}
-        <a class="pagination__item  pagination__item--next" href="{{ paginate.next.url }}">&gt;</a>
+        <a class="pagination__item  pagination__item--next" href="{{ paginate.next.url }}">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
       {% endif %}
     </p>
   </div>

@@ -1,0 +1,23 @@
+<div class="user">
+  {% if account.enable_clients? %}
+    {% for link in linklists.user-block.links limit:1 %}
+      <a class="js-user-menu-open  user__link  page-header__office-link" href="{{ link.url }}" title="{{ link.title }}">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        <span class="page-header__login-condition  page-header__login-condition{% if client %}--true{% else %}--false{% endif %}"></span>
+      </a>
+  	  <a class="user__note" href="{{ link.url }}">Кабинет</a>
+    {% endfor %}
+  {% endif %} 
+  <p class="js-user-menu  user__menu">
+    <a class="js-user-menu-open  user__menu-item" href="{{ link.url }}">{{ client.full_name }}</a>
+    <a class="user__menu-item" href="{{ link.url }}">Контактные данные</a>
+    <a class="user__menu-item" href="/client_account/addresses">Адрес доставки</a>
+    <a class="user__menu-item" href="/client_account/orders">Заказы и скидки</a>
+    <a class="user__menu-item" href="/client_account/feedback">Обратная связь</a>
+    {% if client %}
+      <a class="user__menu-item" href="/client_account/exit">Выйти</a>
+    {% else %}
+      <span class="user__menu-item  user__menu-item--for-unknown"><a class="js-md__open-login">Войти</a> или <a class="js-md__open-check-in">Зарегистрироваться</a></span>
+    {% endif %}
+  </p>
+</div>

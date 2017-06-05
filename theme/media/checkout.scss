@@ -1,0 +1,96 @@
+.checkout {
+  //media var
+    $lg-less-1: 1040px;
+    $sm-more-1: 810px;
+  
+  display: flex;
+  flex-direction: column-reverse;
+  
+  @media (max-width: $sm) {
+    padding: 0 15px;
+  }
+  
+  @media (min-width: $sm-more-1) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  &__fieldset {
+    width: 100%;
+    
+    &--generate {
+      @media (min-width: $sm-more-1) {
+        display: flex;
+        flex-direction: column;
+        width: 58%;
+      }
+      
+//      @media (min-width: $lg-less-1) {
+//        width: 65%;
+//      }
+    }
+    
+    &--payment {
+      @media (min-width: $sm-more-1) {
+        width: 40%;
+      }
+      
+//      @media (min-width: $lg-less-1) {
+//        width: 33%;
+//      }
+    }
+  }
+  
+  &__title {
+    @include font-h2($color-second);
+    
+    display: flex;
+    margin: 40px 0 20px;
+  }
+  
+  &__delivery-descr {
+    @include font-p($gray);
+    
+    font-size: 12px;
+    
+    a {
+      color: $color-link--checkout;
+    }
+  }
+}
+
+//.checkout__fieldset {
+//  #regular-client {
+//    width: 100%;
+//  }
+//  
+//  .form {
+//    margin-bottom: 20px;
+//  }
+//}
+//
+//.payment_variants .co-input-wrapper label {
+//  display: inline-block;
+//}
+//
+//.delivery_variants .co-input-wrapper input[type="radio"],
+//.payment_variants .co-input-wrapper input[type="radio"] {
+//  display: none;
+//}
+//
+//.delivery_variants .co-input-wrapper input[type="radio"]:checked + label::before,
+//.payment_variants .co-input-wrapper input[type="radio"]:checked + label::before {
+//  background-color: $color-action-main;
+//}
+//
+//.payment_variants .co-input-wrapper label:not(:first-of-type)::before {
+//  display: none;
+//}
+//
+//.co-input-wrapper.not_available {
+//  display: none;
+//}
+//
+//.variants {
+//  padding-left: 22px;
+//}

@@ -1,0 +1,152 @@
+.features {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+   &__icon-wrap {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 110px;
+    height: 90px;
+	  margin-bottom: 40px;
+  }
+
+  &__icon {    
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__item.features__item--plant .features__icon {
+    @include sprite-features-1;
+  }
+  
+  &__item.features__item--clear .features__icon {
+    @include sprite-features-2;
+  }
+  
+  &__item.features__item--strong .features__icon {
+    @include sprite-features-3;
+  }
+  
+  &__item.features__item--taste .features__icon {
+    @include sprite-features-4;
+  }
+  
+  &__title {
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  &__description {
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    word-wrap: break-word;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+/*.features {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  
+  @media (min-width: $lg) {
+    flex-direction: row;
+    padding-bottom: 130px;
+  }
+  
+  &__item {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 113px;
+    margin-bottom: 60px;
+    
+    @media (min-width: $sm) {
+      @include margin-right(80px);
+    }
+    
+    @media (min-width: $lg) {
+      @include margin-right(0px);
+      
+      flex-basis: 50%;
+      margin-bottom: 0;
+    }
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      
+      width: 110px;
+      height: 90px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      
+    }
+  }
+  &__item.features__item--plant::before {
+    @include sprite-features-1;
+    
+    margin-left: -52px;
+  }
+  
+  &__item.features__item--clear::before {
+    @include sprite-features-2;
+    
+    margin-left: -38.5px;
+  }
+  
+  &__item.features__item--strong::before {
+    @include sprite-features-3;
+    
+    margin-left: -29px;
+  }
+  
+  &__item.features__item--taste::before {
+    @include sprite-features-4;
+    
+    margin-left: -45.5px;
+  }
+  
+  &__title {
+    @include font-h2($color-second);
+    
+    margin-bottom: 20px;
+    
+    text-align: center;
+  }
+  
+  &__description {
+    @include font-p($color-second);
+    
+    max-width: 250px;
+    
+    text-align: center;
+  }
+}*/

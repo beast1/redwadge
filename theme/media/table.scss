@@ -1,0 +1,166 @@
+.table {
+  width: 100%;
+}
+
+.tr {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
+  display: flex;
+  width: 100%;
+}
+
+.basket__items {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
+  .tr {
+    @media (max-width: $sm-2) {
+      position: relative;
+
+      padding-top: 40px;
+    }
+  }
+}
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
+  &--preview {
+    width: 15%;
+    
+    @media (max-width: $sm) {
+      display: none;
+    }
+  }
+  
+  &--name {
+    width: 35%;
+    
+    @media (max-width: $sm-1) {
+      width: 50%;
+    }
+    
+    @media (max-width: $sm-2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      
+      text-align: center;
+    }
+  }
+  
+  &--price {
+    width: 15%;
+    
+    @media (max-width: $sm) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-1) {
+      display: none;
+    }
+  }
+  
+  &--count {
+    width: 15%;
+    
+    @media (max-width: $sm) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-1) {
+      width: 30%;
+    }
+    
+    @media (max-width: $sm-2) {
+      width: 50%;
+    }
+  }
+  
+  &--common-price {
+    width: 15%;
+    
+    @media (max-width: $sm-1) {
+      display: none;
+    }
+  }
+  
+  &--both-prices {
+    flex-direction: column;
+    
+    @media (min-width: $sm-1+1) {
+      display: none;
+    }
+    
+    @media (max-width: $sm-1) {
+      width: 20%;
+    }
+    
+    @media (max-width: $sm-2) {
+      width: 42%;
+    }
+  }
+  
+  &--remove {
+    width: 8%;
+  }
+  
+  &--mob-settings {
+    justify-content: flex-start;
+    width: 105px;
+    margin: 15px 0;
+  }
+  
+  &--mob-vals {
+    justify-content: flex-end;
+    flex-grow: 2;
+  }
+}
+
+.payment {
+  .td {
+    justify-content: flex-start;
+  }
+  
+  .tc {
+    &--settings {
+      width: 70%;
+    }
+    
+    &--vals {
+      width: 30%;
+    }
+  }
+  
+//  &__full-price {
+//    @media (min-width: $sm),
+//           (max-width: 885px) {
+//      .tc {
+//        &--settings {
+//          width: 50%;
+//        }
+//
+//        &--vals {
+//          width: 50%;
+//        }
+//      }
+//    }
+//  }
+}

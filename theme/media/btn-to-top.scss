@@ -1,0 +1,46 @@
+////sticky
+
+//.btn-to-top {
+//  @include radial(50px);
+//  
+//  position: absolute;
+//  top: 1000px;
+//  right: 10%;
+//  
+//  display: none;
+//  width: 50px!important;
+//  
+//  color: $color-second;
+//  font-size: 26px;
+//  line-height: 26px;
+//  
+//  cursor: pointer;
+//}
+//
+//.is-sticky {
+//  .btn-to-top {
+//    display: flex;
+//  }
+//}
+
+////standalone
+
+.btn-to-top {
+  $icon-size: 26px;
+  
+  color: $color-second;
+  font-size: $icon-size;
+  line-height: $icon-size;
+  
+  @media (min-width: $sm) {
+	right: 20px;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+  }
+}

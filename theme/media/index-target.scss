@@ -1,0 +1,93 @@
+.index-target {
+  @include un-target;
+  @include btn($color-action-main, 25px);
+  @include font-other($color-main, 14px);
+  
+  @include react--trs-default;
+  @include react--background($color-action-main-dark, $color-action-main-dark);
+  
+  position: relative;
+//  position: absolute;
+//  z-index: 10000;
+//  bottom: -30px;
+//  left: 0;
+  
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 159px;
+  width: 159px;
+  height: 50px;
+  padding-left: 55px;
+  padding-right: 24px;
+  padding-top: 16px;
+  
+  text-transform: uppercase;
+  
+  @media (max-width: $sm) {
+    display: none;
+  }
+  
+  &:hover .alert__index-target-text::before {
+      //transform: translateY(-6px);
+  }
+  
+  &:active {
+    box-shadow: $shadow-btn;
+  }
+  
+  &::before {
+    @include sprite-icon__cigarets;
+    
+    content: "";
+    
+    position: absolute;
+    left: 26px;
+    top: 50%;
+    
+    margin-top: -12px;
+  }
+  
+  .fa {
+    @include react--trs-default;
+    
+    margin-left: 10px;
+    
+    font-size: 22px;
+  }
+  
+  &:hover .fa {
+    transform: translate(8px);
+  }
+  
+//  &--fixed {
+//    position: fixed;
+//    top: 51px;
+//    
+//  }
+
+  &__text {
+    position: relative;
+
+    padding-bottom: 6px;
+
+    &::before {
+      @include react--trs-default;
+
+      content: "";
+
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      border-bottom: 1px dashed $color-main;
+    }
+  }
+  
+  &__wrap {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+}

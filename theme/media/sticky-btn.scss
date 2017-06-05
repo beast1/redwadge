@@ -1,0 +1,55 @@
+.sticky-btn {
+  @include radial(50px);
+  @include react--trs-default;
+  
+  position: fixed;
+  z-index: 10000;
+  
+  border: 4px solid $color-second;
+  
+  background-color: $color-main;
+  cursor: pointer;
+  box-shadow: $shadow-dropdown;
+  visibility: hidden;
+  opacity: 0;
+  
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  &--btn-to-top {
+    bottom: 10%;
+    right: 10%;
+    
+	display: none;
+
+    visibility: visible;
+    opacity: 1;
+    
+    @media (max-width: $sm) {
+      $size: 65px;
+
+      bottom: 25px;
+      right: 25px;
+
+      width: $size;
+      height: $size;
+    }
+  }
+  
+  &--basket-link {
+    top: 10%;
+    right: 10%;
+    
+    @media (max-width: $sm) {
+      $size: 65px;
+
+      top: 25px;
+      right: 25px;
+
+      width: $size;
+      height: $size;
+    }
+  }
+}

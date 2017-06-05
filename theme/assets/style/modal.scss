@@ -1,0 +1,61 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15000;
+  
+  display: none;
+  
+  background-color: fade-out($black, 0.25);
+  
+  &__container {
+    $sm-less-1: 410px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    max-height: 90%;
+    max-width: 90%;
+    padding: 30px;
+    
+    background-color: $color-main;
+    transform: translate(-50%, -50%);
+    box-shadow: $shadow-md;
+    overflow: scroll;
+    
+    @media (max-width: $sm-less-1) {
+      max-width: 100%;
+      padding: 25px 15px;
+    }
+    
+    &--preorder {
+      width: 460px;
+      min-height: 230px;
+    }
+    
+    &--login {
+      width: 340px;
+      min-height: 230px;
+    }
+    
+    &--check-in {
+      width: 460px;
+      min-height: 230px;
+    }
+  }
+   
+  &__exit {
+    @extend .remove-btn;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    font-size: 0;
+    
+    transform: translate(-50%, 50%);
+  }
+}

@@ -1,0 +1,87 @@
+.payment {
+  position: relative;
+  
+  width: 100%;
+  padding: 25px 30px;
+  border: 1px solid $gray-light;
+  
+  &__settings {
+    position: relative;
+    
+    padding-bottom: 20px;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 5px;
+      
+      min-width: 5px;
+      
+      border-bottom: 2px dashed $gray-lighten;
+    }
+  }
+  
+  &__settings-item {
+    @include font-other($gray, 12px);
+    
+    width: 65%;
+//    padding-bottom: 30px;
+    
+    text-transform: uppercase;
+  }
+  
+  &__item > * {
+    @include font-p($gray);
+    
+    width: 35%;
+    padding: 10px 0;
+    
+    text-align: right;
+  }
+  
+  &__item-name {
+    display: inline;
+    text-align: left;
+  }
+  
+  &__item-price {
+    @media (max-width: $lg) {
+      text-align: right;
+    }
+  }
+  
+  &__full-price {
+    position: relative;
+    
+    padding-top: 20px;
+    
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+
+      min-width: 5px;
+
+      border-bottom: 2px dashed $gray-lighten;
+    }
+  }
+  
+  &__full-price > * {
+    @include font-other($color-second, 16px);
+    
+    font-weight: 700;
+  }
+  
+  &__item-counter {
+//    margin-left: 5px;
+    
+    color: $color-second;
+    font-weight: 700;
+  }
+}

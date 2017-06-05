@@ -76,8 +76,16 @@
     <script src="{{ 'product.js' | asset_url }}"></script>
   {% when 'article' %}
     <script src="{{ 'article.js' | asset_url }}"></script>
-  {% when 'collection' %}
+  {% when 'collection' or 'search' %}
     <script src="{{ 'collection.js' | asset_url }}"></script>
   {% when 'cart' %}
     <script src="{{ 'cart.js' | asset_url }}"></script>
+  {% when 'page.representatives' %}
+    <script src="{{ 'representatives.js' | asset_url }}"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlUWp4n4_zMYtLi-BJms_n_1uZbI_yLJo&v=3&callback=initMap">
+    </script>
+  {% when 'collection' or 'search' or 'product' %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 {% endcase %}

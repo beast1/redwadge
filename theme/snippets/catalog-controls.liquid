@@ -1,0 +1,16 @@
+<form class="catalog__controls" action="{{ collection.url }}" method="get">
+  <div class="catalog__controls-item  catalog__view">
+    <button class="catalog__view-btn  catalog__view-btn--tile  catalog__view-btn--current"><i class="fa fa-th-large" aria-hidden="true"></i>Отобразить как блок</button>
+    <button class="catalog__view-btn  catalog__view-btn--list"><i class="fa fa-th-list" aria-hidden="true"></i>Отобразить как список</button>
+  </div>
+  {% if page_size %}
+    <input type="hidden" name="page_size" value="{{ page_size }}"/>
+  {% endif %}
+  {% if language.not_default? %}
+    <input type="hidden" name="lang" value="{{ language.locale }}"/>
+  {% endif %}
+  {% if search.query != '' %}
+    <input type="hidden" name="q" value="{{ search.query }}"/>
+  {% endif %}
+  {% include 'pagination' %}
+</form>

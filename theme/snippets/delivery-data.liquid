@@ -1,0 +1,57 @@
+<form accept-charset="UTF-8" action="/client_account/addresses" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="UR9TRlmXR9xgwDFCoaEggaYCYTGX5ygwenAA4iuonOI="></div>
+
+    <div id="delivery_address">
+      <div class="field fc">
+        <div class="field-label"><label for="shipping_address_phone">Телефон получателя:</label><span class="warning">*</span></div>
+        <div class="field-content"><input class="textfield" id="shipping_address_phone" name="shipping_address[phone]" size="30" type="text"></div>
+      </div>
+      <div data-address-autocomplete="http://kladr.insales.ru" data-address-json="{&quot;kladr_code&quot;:&quot;94235&quot;,&quot;zip&quot;:null,&quot;country&quot;:&quot;UA&quot;,&quot;state&quot;:&quot;\u0414\u043d\u0435\u043f\u0440\u043e\u043f\u0435\u0442\u0440\u043e\u0432\u0441\u043a\u0430\u044f&quot;,&quot;state_type&quot;:&quot;\u043e\u0431\u043b&quot;,&quot;area&quot;:&quot;\u041f\u0430\u0432\u043b\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0438\u0439&quot;,&quot;area_type&quot;:&quot;\u0440-\u043d&quot;,&quot;city&quot;:&quot;\u041f\u0430\u0432\u043b\u043e\u0433\u0440\u0430\u0434&quot;,&quot;city_type&quot;:&quot;\u0433&quot;,&quot;settlement&quot;:null,&quot;settlement_type&quot;:null,&quot;result&quot;:&quot;\u0433 \u041f\u0430\u0432\u043b\u043e\u0433\u0440\u0430\u0434, \u041f\u0430\u0432\u043b\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d, \u0414\u043d\u0435\u043f\u0440\u043e\u043f\u0435\u0442\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.&quot;}"><div data-shipping-location="" style="display: none"><input type="hidden" name="shipping_address[kladr_json]" value="{&quot;kladr_code&quot;:&quot;94235&quot;,&quot;zip&quot;:null,&quot;country&quot;:&quot;UA&quot;,&quot;state&quot;:&quot;Днепропетровская&quot;,&quot;state_type&quot;:&quot;обл&quot;,&quot;area&quot;:&quot;Павлоградский&quot;,&quot;area_type&quot;:&quot;р-н&quot;,&quot;city&quot;:&quot;Павлоград&quot;,&quot;city_type&quot;:&quot;г&quot;,&quot;settlement&quot;:null,&quot;settlement_type&quot;:null,&quot;result&quot;:&quot;г Павлоград, Павлоградский район, Днепропетровская обл.&quot;,&quot;is_kladr&quot;:true}"></div>
+          <div class="field fc ">
+            <div class="field-label">
+              <label for="shipping_address_country">Страна:</label>
+              <span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <select class="textfield" id="shipping_address_country" name="shipping_address[country]"><option value="BY">Беларусь</option><option value="RU">Россия</option><option value="UA" selected="selected">Украина</option></select>
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc old-theme-fix">
+            <div class="field-label">
+              <label for="shipping_address_city">Город:</label>
+              <span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="text" id="shipping_address_city" name="shipping_address[city]" value="Павлоград">
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc ">
+            <div class="field-label">
+              <label for="shipping_address_zip">Почтовый индекс:</label>
+              <span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="text" id="shipping_address_zip" name="shipping_address[zip]" value="">
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc ">
+            <div class="field-label">
+              <label for="shipping_address_address">Адрес:</label>
+              <span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <textarea class="textfield" id="shipping_address_address" name="shipping_address[address]" rows="2"></textarea>
+              <div class="small"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="field fc">
+      <div class="field-label"></div>
+      <div class="field-content"><input type="submit" value="Сохранить изменения" name="commit" class="button"></div>
+    </div>
+</form>

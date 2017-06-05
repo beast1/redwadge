@@ -1,0 +1,110 @@
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__link {
+    margin-right: 10px;
+  }
+  
+  &__note {
+    @extend .page-header__nav-item;
+    
+    padding-top: 15px;
+    
+    @media (max-width: $sm) {
+      display: none;
+    }
+  }
+  
+  &__menu {
+    @include react--trs-default;
+    position: absolute;
+    left: 92px;
+    top: 100%;
+    z-index: 999;
+    
+    display: none;
+    flex-direction: column;
+    min-width: 170px;
+    max-width: 180px;
+    padding: 10px 0;
+    
+    background-color: $color-main;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%);
+    box-shadow: $shadow-dropdown;
+    
+    &--visible {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+    }
+    
+//  > *:first-child,
+    > *:last-child {
+      position: relative;
+      margin-bottom: 10px;
+      
+      &::before {
+        $p: 2px;
+        content: "";
+        
+        position: absolute;
+        top: -6px;
+        left: $p;
+        right: $p;
+        
+        height: 1px;
+        
+        background-image: repeating-linear-gradient(to left, $gray 0px, $gray 3px, transparent 3px, transparent 6px, $gray 6px, $gray 9px);
+      }
+    }
+    
+//    &:first-child {
+//      margin-bottom: 10px;
+//      
+//      &::before {        
+//        bottom: -6px;
+//      }
+//    }
+    
+    > *:last-child {
+      margin-top: 10px;
+      
+      &::before {
+        top: -6px;
+      }
+    }
+  }
+  
+  &__menu-item {
+    @include un-link;
+    @include font-other($gray, 14px);
+    
+    @include react--color($color-action-main, $color-action-main);
+    
+    display: flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 15px;
+    
+    line-height: 18px;
+    
+    &--current {
+      color: $color-action-main;
+    }
+    
+    &--for-unknown {
+      @include react--color(initial, initial);
+      
+      display: inline;
+      
+      a {
+        @include un-link;
+        @include react--color($color-action-main, $color-action-main);
+      }
+    }
+  }
+}

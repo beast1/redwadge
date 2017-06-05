@@ -1,0 +1,152 @@
+<div class="js-md__check-in  modal">
+  <div class="modal__container  modal__container--check-in  check-in">
+    <button class="js-md__exit-check-in  modal__exit">Закрыть</button>
+    <form accept-charset="UTF-8" action="/client_account/contacts" class="new_client" id="new_client" method="post">
+      <!--Служебное-->
+      <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="✓">
+        <input name="authenticity_token" type="hidden" value="UR9TRlmXR9xgwDFCoaEggaYCYTGX5ygwenAA4iuonOI=">
+      </div>
+      <input id="client_registered" name="client[registered]" type="hidden" value="1">
+      <!--/Служебное-->
+      
+      <div class="form__row">
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_name">Имя</label>
+          <input class="form__input" id="client_name" name="client[name]" type="text" placeholder="Волтер">
+        </div>
+
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_surname">Фамилия</label>
+          <input class="form__input" id="client_surname" name="client[surname]" type="text"placeholder="Вайт">
+        </div>
+      </div>
+      
+      <div class="form__row">
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_email">E-mail</label>
+          <input class="form__input" id="client_email" name="client[email]" type="text">
+        </div>
+
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_phone">Телефон</label>
+          <input class="phone-mask  form__input" id="client_phone" name="client[phone]" type="text" placeholder="+_(___)___-__-__">
+        </div>
+      </div>
+      
+      <div class="form__row">
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_password">Пароль</label>
+          <input class="form__input" id="client_password" name="client[password]" type="password">
+        </div>
+
+        <div class="form__item">
+          <label class="form__label  form__label--require" for="client_password_confirmation">Подтвердите пароль</label>
+          <input class="form__input" id="client_password_confirmation" name="client[password_confirmation]" type="password">
+        </div>
+      </div>
+      
+      <div class="form__item">
+        <label for="client_field_5790594" class="form__label">Род деятельности</label>
+        <!--Системное-->
+          <input name="client[fields_values_attributes][5790594][hack]" value="" type="hidden"><input name="client[fields_values_attributes][5790594][field_id]" value="5790594" type="hidden">
+        <!--/Системное-->
+        <select class="select" name="client[fields_values_attributes][5790594][value]">
+<!--          <option></option>-->
+          <option>Другое</option>
+          <option>Кальянная</option>
+          <option>Магазин</option>
+          <option>Частное лицо</option>
+        </select>
+      </div>
+      
+      <div class="form__item">
+        <div id="captcha_challenge">
+          <img alt="CAPTCHA" id="client_captcha_image" src="/captchas/1U%2BBETWfzESdAfHMWCxJRos%2FaFx0D%2Fti2gEZLCNgfgM=--jKeasddaKFLaf3PpHmy9gQ==.gif"><a href="#" onclick="var timestamp = new Date().getTime(); jQuery.getJSON('/captchas/regenerate?' + timestamp, function(result){jQuery('#client_captcha_image').attr('src',result.captcha_image_path); jQuery('#client_captcha_challenge').val(result.captcha_challenge); jQuery('#client_captcha_solution').val('');});return false;"><img alt="Captcha_reload" src="/served_assets/captcha_reload-13a089150ac89e8d66f3836aa413fcad.png" title="Обновить изображение"></a>
+        </div>
+        <input id="client_captcha_challenge" name="client[captcha_challenge]" type="hidden" value="1U%2BBETWfzESdAfHMWCxJRos%2FaFx0D%2Fti2gEZLCNgfgM=--jKeasddaKFLaf3PpHmy9gQ==">
+        <input class="form__input" id="client_captcha_solution" name="client[captcha_solution]" size="30" type="text">
+      </div>
+      <button class="form__submit" name="commit" type="submit">Зарегистрировать</button>
+    
+      
+<!--
+        <div class="field fc">
+        <div class="field-label">
+          <label for="client_field_5790594">Род деятельности:</label>
+        </div>
+        <div class="field-content">
+          <input name="client[fields_values_attributes][5790594][hack]" value="" type="hidden"><input name="client[fields_values_attributes][5790594][field_id]" value="5790594" type="hidden"><select name="client[fields_values_attributes][5790594][value]" class="textfield"><option></option><option>Другое</option><option>Кальянная</option><option>Магазин</option><option>Частное лицо</option></select>
+          <div class="small"></div>
+        </div>
+      </div>  
+-->
+<!--
+      <div class="set-block">
+
+          <div class="field fc">
+            <div class="field-label">
+              <label for="client_name">Имя:</label><span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="text" id="client_name" name="client[name]" value="">
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc">
+            <div class="field-label">
+              <label for="client_surname">Фамилия:</label><span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="text" id="client_surname" name="client[surname]" value="">
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc">
+            <div class="field-label">
+              <label for="client_email">E-mail:</label><span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="text" id="client_email" name="client[email]" value="">
+              <div class="small"></div>
+            </div>
+          </div>
+          <div class="field fc">
+            <div class="field-label">
+              <label for="client_phone">Контактный телефон:</label><span class="warning">*</span>
+            </div>
+            <div class="field-content">
+              <input class="textfield" type="tel" id="client_phone" name="client[phone]" value="">
+              <div class="small">Например: +7(926)111-11-11</div>
+            </div>
+          </div>
+
+        <div class="field fc">
+          <div class="field-label">Пароль:<span class="warning">*</span></div>
+          <div class="field-content"><input class="textfield" id="client_password" name="client[password]" size="30" type="password"></div>
+        </div>
+        <div class="field fc">
+          <div class="field-label">Повторите пароль:<span class="warning">*</span></div>
+          <div class="field-content"><input class="textfield" id="client_password_confirmation" name="client[password_confirmation]" size="30" type="password"></div>
+        </div>
+
+          <div class="field fc">
+            <div class="field-label">Защита от автоматических регистраций:<span class="warning">*</span></div>
+            <div class="field-content">
+              <div id="captcha_challenge">
+                <img alt="CAPTCHA" id="client_captcha_image" src="/captchas/1U%2BBETWfzESdAfHMWCxJRos%2FaFx0D%2Fti2gEZLCNgfgM=--jKeasddaKFLaf3PpHmy9gQ==.gif"><a href="#" onclick="var timestamp = new Date().getTime(); jQuery.getJSON('/captchas/regenerate?' + timestamp, function(result){jQuery('#client_captcha_image').attr('src',result.captcha_image_path); jQuery('#client_captcha_challenge').val(result.captcha_challenge); jQuery('#client_captcha_solution').val('');});return false;"><img alt="Captcha_reload" src="/served_assets/captcha_reload-13a089150ac89e8d66f3836aa413fcad.png" title="Обновить изображение"></a>
+              </div>
+              <input id="client_captcha_challenge" name="client[captcha_challenge]" type="hidden" value="1U%2BBETWfzESdAfHMWCxJRos%2FaFx0D%2Fti2gEZLCNgfgM=--jKeasddaKFLaf3PpHmy9gQ=="><input class="textfield" id="client_captcha_solution" name="client[captcha_solution]" size="30" type="text">
+              <br><small>Наберите текст, изображённый на картинке выше</small>
+            </div>
+          </div>
+
+        <div class="field fc">
+          <div class="field-label"></div>
+          <div class="field-content"><input class="button" name="commit" type="submit" value="Зарегистрировать"></div>
+        </div>
+      </div>
+-->
+    </form>
+  </div>
+</div>

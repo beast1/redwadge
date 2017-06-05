@@ -1,0 +1,27 @@
+.blog {
+  &__title {
+    @include font-h1($color-second);
+    position: relative;
+    
+    margin: 0 0 65px;
+    
+    text-align: center;
+    
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: -22px;
+      left: 0;
+      right: 0;
+
+      min-width: 5px;
+
+      border-bottom: 3px dashed $gray-lighten;
+    }
+    
+    @media (min-width: $sm) {
+      @include title-cross(56px);
+    }
+  }
+}

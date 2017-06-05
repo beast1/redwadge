@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <meta charset="UTF-8">
   {% include 'head' %}
 </head>
-<body>
+<body class="{% if client %}{% else %}js-user--unknown{% endif %}">
   <div class="media-detector"></div>
-  
   {% include 'page-header' %}
-    
+  {% include 'sidebar' %}
+  
   {{ content_for_layout }}
   
+  {% include 'btn-to-top' %}
   {% include 'page-footer' %}
   {% include 'modals' %}
   {% include 'scripts' %}
-  
 </body>
 </html>

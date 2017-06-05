@@ -1,0 +1,141 @@
+.sidebar {
+  $sidebar-width: 265px;
+  $sidebar-bd: 6px;
+  
+  transition: transform 0.2s ease-out;
+  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 20000;
+  
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  
+  background-color: $color-main;
+  box-shadow: $sidebar-bd 0 0 0 $color-second;
+  transform: translate(-($sidebar-width + $sidebar-bd));
+  
+  
+  &--pushed {
+    transform: translate(0);
+  }
+    
+  &__nav {
+    $p-hor: 4px;
+    $p-vert: 15px;
+    
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    
+    &::before,
+    &::after {
+      content: "";
+    
+      position: absolute;
+      left: $p-hor;
+      right: $p-hor;
+    
+      border-bottom: 3px dashed $gray;
+    }
+    
+    &::before {
+      top: $p-hor;  
+    }
+    
+    &::after {
+      bottom: $p-hor;  
+    }
+  }
+  
+  &__nav-item {
+    @include un-link;
+    @include font-other($gray, 20px);
+    
+    @include react--trs-default;
+    @include react--color($color-action-main, $color-action-main);
+    
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: 100%;
+    padding-left: 25px;
+    
+    text-transform: uppercase;
+
+    &--current {
+      color: $color-second;
+
+      &::before {
+        $border: 25px solid $color-action-main;
+        
+        content: "";
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        border-right: $border;
+        border-bottom: $border;
+
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  .social {
+    justify-content: center;
+    
+    &__item {
+      $size: 34px;
+      
+      width: $size;
+      height: $size;
+    }
+    
+    i {
+      font-size: 21px;
+    }
+  }
+
+  .search {
+    $p-r: 20px;
+    
+    &__input-wrap {
+      padding-right: $p-r;
+    }
+    
+    &__input {
+      padding: 10px;
+      padding-right: 0;
+      
+      font-size: 17px;
+      line-height: 20px;
+    }
+    
+    i {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      
+      font-size: $p-r;
+      
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+//.body {
+//  transition: transform 0.2s ease-out;
+//  
+//  &--pulled {
+//    transform: translate($sidebar-width);
+//  }
+//}

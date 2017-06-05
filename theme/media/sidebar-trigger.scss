@@ -1,0 +1,31 @@
+.sidebar-trigger {
+  $sm-less-1: 350px;
+
+  $st-size: 32px;
+  @include un-target;
+  
+  @include react--trs-default;
+  @include react--color($color-action-main, $color-action-main-dark);
+  
+  display: flex;
+  width: 28px;
+  height: $st-size;
+  margin-top: 2px;
+  margin-right: 23px;
+  
+  font-size: 0;
+  color: $gray;
+  
+  @media (max-width: $sm-less-1) {
+    margin-right: 5px;
+  }
+
+  @media (min-width: $sm) {
+    display: none;
+  }
+  
+  i {
+    font-size: $st-size;
+    line-height: $st-size;
+  }
+}

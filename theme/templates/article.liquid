@@ -14,6 +14,16 @@
     <div class="article__textset">
       {{ article.content }}
     </div>
+    {% if article.related_products.size > 0 %}
+      <h2 class="article__related-products-title">Сопутствущюие товары</h2>
+      <div class="article__related-products  catalog">
+        <div class="article__related-products-list  catalog__list  view-tile">
+          {% for product in article.related_products limit:4 %}
+            {% include 'card' %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
     <div class="article__footer">
       <span class="article__social">
         Поделиться:{% include 'share' %}

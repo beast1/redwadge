@@ -76,7 +76,7 @@
 <div class='set-block'>
 {% if shipping_address %}
 <div class='field fc'>
-<div class='field-label'>Получатель (ФИО):</div>
+<div class='field-label'>Получатель (123123123ФИО):</div>
 <div class='field-content'>{{ shipping_address.full_name }}</div>
 </div>
 <div class='field fc'>
@@ -86,7 +86,7 @@
 {% endif %}
 {% if order.client and order.client.email != empty %}
 <div class='field fc'>
-<div class='field-label'>E-mail:</div>
+<div class='field-label'>E-mail123:</div>
 <div class='field-content'>{{ order.client.email }}</div>
 </div>
 {% endif %}
@@ -106,7 +106,7 @@
 {% endif %}
 {% if order.comment != empty %}
 <div class='field fc'>
-<div class='field-label'>Комментарии к заказу:</div>
+<div class='field-label'>Комментарии к заказу222:</div>
 <div class='field-content'>{{ order.comment | escape | newline_to_br }}</div>
 </div>
 {% endif %}

@@ -1,0 +1,27 @@
+<div class="table  checkout__payment  payment">
+  <div class="tr  payment__settings">
+    <div class="tc  tc--settings  td  payment__settings-item">
+      Название продукта
+    </div>
+    <div class="tc  tc--vals  td  payment__settings-item">
+      Сумма
+    </div>
+  </div>
+  {% for item in cart.items %}
+    <div class="tr  payment__item">
+      <div class="tc  tc--settings  td  payment__item-name">
+        {{ item.title }}
+        <span class="payment__item-counter">
+          × {{ item.quantity }}
+        </span>
+      </div>
+      <div class="tc  tc--vals  td  payment__item-price">
+        {{ item.total_price | money }}
+      </div>
+    </div>
+  {% endfor %}
+  <div class="tr  payment__full-price">
+    <div class="tc  tc--settings  td">Общая сумма:</div>
+    <div class="tc  tc--vals  td">{{ cart.total_price | money }}</div>
+  </div>
+</div>

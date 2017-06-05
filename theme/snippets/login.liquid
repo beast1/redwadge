@@ -1,0 +1,27 @@
+<div class="js-md__login  modal">
+  <div class="modal__container  modal__container--login  login">
+    <button class="js-md__exit-login  modal__exit">Закрыть</button>
+    <form accept-charset="UTF-8" action="/client_account/session" method="post">
+      <!--Системное-->
+      <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="✓">
+        <input name="authenticity_token" type="hidden" value="UR9TRlmXR9xgwDFCoaEggaYCYTGX5ygwenAA4iuonOI=">
+      </div><!--/Системное-->
+    
+      <div class="form__item">
+        <label class="form__label" for="email">Email</label>
+        <input class="form__input" id="email" name="email" type="text" tabindex="1">
+      </div>
+
+      <div class="form__item">
+        <div class="form__label--extend">
+          <label class="form__label" for="password">Пароль</label>
+          <a class="link  link--gray" href="/client_account/password/change">Забыли?</a>
+        </div>
+        <input class="form__input" id="password" name="password" type="password" tabindex="2">
+      </div>
+
+      <button class="form__submit" name="commit" type="submit">Войти</button>
+    </form>
+  </div>
+</div>

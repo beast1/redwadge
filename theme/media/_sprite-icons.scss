@@ -1,0 +1,269 @@
+@mixin sprite-features-1 {
+  width: 104px;
+  height: 79px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -7px -7px;
+}
+
+@mixin sprite-features-2 {
+  width: 77px;
+  height: 77px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -125px -7px;
+}
+
+@mixin sprite-features-3 {
+  width: 58px;
+  height: 82px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -216px -7px;
+}
+
+@mixin sprite-features-4 {
+  width: 91px;
+  height: 67px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -7px -103px;
+}
+
+@mixin sprite-icon__arrow-left--large {
+  width: 11px;
+  height: 21px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -112px -103px;
+}
+
+@mixin sprite-icon__arrow-left--large-red {
+  width: 11px;
+  height: 21px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -137px -103px;
+}
+
+@mixin sprite-icon__arrow-right--large {
+  width: 11px;
+  height: 21px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -162px -103px;
+}
+
+@mixin sprite-icon__arrow-right--large-red {
+  width: 11px;
+  height: 21px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -187px -103px;
+}
+
+@mixin sprite-icon__basket {
+  width: 25px;
+  height: 31px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -212px -103px;
+}
+
+@mixin sprite-icon__basket--red {
+  width: 25px;
+  height: 31px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -251px -103px;
+}
+
+@mixin sprite-icon__basket--slim {
+  width: 15px;
+  height: 18px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -112px -148px;
+}
+
+@mixin sprite-icon__cigarets {
+  width: 18px;
+  height: 24px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -141px -148px;
+}
+
+@mixin sprite-icon__count-down {
+  width: 9px;
+  height: 1px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -288px -7px;
+}
+
+@mixin sprite-icon__count-down--red {
+  width: 9px;
+  height: 1px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -288px -22px;
+}
+
+@mixin sprite-icon__count-up {
+  width: 9px;
+  height: 9px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -288px -37px;
+}
+
+@mixin sprite-icon__count-up--red {
+  width: 9px;
+  height: 9px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -288px -60px;
+}
+
+@mixin sprite-icon__cross--gray {
+  width: 9px;
+  height: 9px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -173px -148px;
+}
+
+@mixin sprite-icon__cross--red {
+  width: 9px;
+  height: 9px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -196px -148px;
+}
+
+@mixin sprite-icon__email {
+  width: 15px;
+  height: 12px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -219px -148px;
+}
+
+@mixin sprite-icon__facebook {
+  width: 7px;
+  height: 12px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -290px -83px;
+}
+
+@mixin sprite-icon__instagram {
+  width: 11px;
+  height: 11px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -248px -148px;
+}
+
+@mixin sprite-icon__phone {
+  width: 12px;
+  height: 12px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -273px -148px;
+}
+
+@mixin sprite-icon__star {
+  width: 20px;
+  height: 20px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -173px -174px;
+}
+
+@mixin sprite-icon__vk {
+  width: 13px;
+  height: 8px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -207px -174px;
+}
+
+@mixin sprite-icon__youtube {
+  width: 16px;
+  height: 20px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -234px -174px;
+}
+
+@mixin sprite-logo {
+  width: 232px;
+  height: 42px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -7px -208px;
+}
+
+@mixin sprite-logo__head {
+  width: 106px;
+  height: 158px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -311px -7px;
+}
+
+@mixin sprite-taste--green-aple {
+  width: 32px;
+  height: 31px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -264px -179px;
+}
+
+@mixin sprite-taste--orange {
+  width: 33px;
+  height: 28px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -310px -179px;
+}
+
+@mixin sprite-taste--red-aple {
+  width: 25px;
+  height: 29px;
+  
+  background-image: url(sprite-icons.png);
+  background-repeat: no-repeat;
+  background-position: -357px -179px;
+}

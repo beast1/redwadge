@@ -1,0 +1,36 @@
+.search {
+  &__input {
+    @include un-input;
+    @include font-p($gray);
+
+    width: 228px;
+    height: 35px;
+    padding: 11px 20px 6px 1px;
+
+    line-height: 14px;
+  }
+
+  &__input-wrap {
+    position: relative;
+
+  //    &::before {
+  //      content: "";
+  //      
+  //      position: absolute;
+  //      bottom: -2px;
+  //      left: 0;
+  //      right: 0;
+  //      
+  //      height: 3px;
+  //      
+  //      background-color: $color-action-main;
+  //    }
+
+    &:hover,
+    &:focus {
+      .fa {
+        color: $color-action-main;
+      }
+    }
+  }
+}

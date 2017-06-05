@@ -1,0 +1,194 @@
+.catalog {
+  //variables
+    //media
+      $sm-1: 1110px;
+  
+  padding-top: 35px;
+  
+  &__controls {
+    display: flex;
+//    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 24px;
+    
+//    > * {
+//      margin-bottom: 20px;
+//    }
+    
+    @media (min-width: $sm) {
+      flex-direction: row;
+
+      > * {
+        margin-bottom: 0;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      padding: 0;
+    }
+    
+    .pagination {
+//      align-self: flex-end;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  &__controls-item {
+//    @include margin-right(30px);
+    
+    display: flex;
+    align-items: center;
+  }
+  
+  &__controls-label {
+    @include font-other($gray, 14px);
+    
+    margin-right: 12px;
+  }
+  
+  &__view {
+    @include font-other($gray, 14px);
+    
+    position: relative;
+    
+    display: flex;
+    height: 40px;
+    border: 1px solid $gray;
+    
+    border-radius: 20px;
+    overflow: hidden;
+    
+//    &::before {
+//      content: "";
+//      
+//      position: absolute;
+//      top: 0;
+//      bottom: 0;
+//      left: 50px;
+//      
+//      width: 2px;
+//      margin-right: -1px;
+//      
+//      background-color: $gray;
+//    }
+  }
+  
+  &__view-btn {
+    @include un-target;
+    
+    @include react--trs-short;
+    @include react--background($color-main, $gray);
+    @include react--color($color-second, $color-second);
+    
+    display: flex;
+    width: 50%;
+    height: 100%;
+    
+    font-size: 0;
+    color: $gray;
+    
+    background-color: $color-main;
+    
+    i {
+      font-size: 22px;
+      line-height: 22px;
+    }
+    
+    &--current {
+      @include react--background($gray, $gray);
+      @include react--color($color-main, $color-main);
+      
+      background-color: $gray;
+      
+      color: $color-main;
+    }
+    
+    &:first-child {
+      padding-left: 20px;
+      padding-right: 10px;
+    }
+    
+    &:last-child {
+      padding-right: 20px;
+      padding-left: 10px;
+    }
+  }
+  
+  &__map-wrapper {
+    @media (min-width: $sm) {
+      margin-left: auto;
+    }
+  }
+  
+  &__map {
+    @include font-other($gray, 14px);
+  }
+  
+  &__map-current {
+    color: $color-action-main;
+  }
+  
+  &__map-total {
+    color: $color-action-main;
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    
+    @media (min-width: $sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    &.view-tile {
+      align-items: center;
+      margin-bottom: -40px;
+
+      @media (min-width: $sm) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+
+        > * {
+          margin-right: 20px;
+        }
+      }
+
+      @media (min-width: $sm-1) {
+        justify-content: space-between;
+
+        > * {
+          margin-right: 0;
+        }
+      }
+    }
+    
+    &.view-list {      
+      @media (min-width: $sm) {
+        
+      }
+    }
+  }
+  
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0;
+    
+    .pagination {
+      margin-left: auto;
+    }
+    
+    @media (min-width: $sm) {
+      padding: 0;
+      padding-top: 20px;
+    }
+  }
+}

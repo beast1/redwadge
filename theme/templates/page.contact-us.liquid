@@ -1,0 +1,26 @@
+{% include 'page-title' %}
+<div class="page-main">
+  <div class="info  contacts">
+    <div class="info__editable  contacts_editable  text-editable">
+      {{ blocks.contact-us.content }}
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          Телефон 1: {{ blocks.contacts.phone-1 }}
+        </li>
+        <li class="contacts__item">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          Телефон 2: {{ blocks.contacts.phone-2 }}
+        </li>
+        <li class="contacts__item">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          E-mail: {{ blocks.contacts.email-1 }}
+        </li>
+      </ul>
+      <p class="contacts__social-descr">Присоединяйтесь к нам в социальных сетях:</p>{% include 'social' %}
+    </div>
+    <div class="contacts__preview">
+      <img src="{{ 'img-contacts.jpg' | file_url }}" alt="{{ image.title }}">
+    </div>
+  </div>
+</div>

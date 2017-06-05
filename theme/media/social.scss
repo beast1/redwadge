@@ -1,0 +1,91 @@
+.social {
+  display: flex;
+  
+  &__item {
+    @include un-target;
+    @include margin-right(10px);
+    @include font-other($color-main, 26px);
+    
+    @include react--trs-short;
+    
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    
+    font-size: 0;
+    text-align: center;
+    vertical-align: center;
+    
+    background-color: #424242;
+    border-radius: 50%;
+    
+//    &::before {
+//      content: "";
+//      
+//      position: absolute;
+//      top: 50%;
+//      left: 50%;
+//      
+//      width: 16px;
+//      height: 20px;
+//      margin-left: -8px;
+//      margin-top: -10px;
+//    }
+    i {
+      font-size: 16px;
+    }
+  }
+
+  &__item.social__item--vk {
+    @include react--background($color-vk, $color-vk);
+    
+//    &::before {
+//      @include sprite-icon__vk;
+//      
+//      margin-left: -6.5px;
+//      margin-top: -4px;
+//    }
+  }
+  
+  &__item.social__item--facebook {
+    @include react--background($color-facebook, $color-facebook);
+    
+//    &::before {
+//      @include sprite-icon__facebook;
+//      
+//      margin-left: -3.5px;
+//      margin-top: -6px;
+//    }
+  }
+  
+  &__item.social__item--instagram {
+    @include react--background($color-instagram, $color-instagram);
+    
+    transition: none;
+    
+//    &::before {
+//      @include sprite-icon__instagram;
+//      
+//      margin-left: -5px;
+//      margin-top: -5px;
+//    }
+  }
+  
+  &__item.social__item--youtube {
+    @include react--background($color-youtube, $color-youtube);
+    
+//    &::before {
+//      @include sprite-icon__youtube;
+//    }
+  }
+}
+
+.social--share {
+  .social__item--youtube {
+    display: none;
+  }
+}

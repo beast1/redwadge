@@ -1,0 +1,7 @@
+<form class="search" action="/search" method="get">
+  <input type="hidden" name="lang" value="{{ language.locale }}">
+  <div class="search__input-wrap">
+    <input class="search__input" id="search-widget-input" type="text" placeholder="Поиск по сайту..." name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}" data-search-field>
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+</form>

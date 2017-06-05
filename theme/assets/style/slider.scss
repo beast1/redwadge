@@ -1,0 +1,212 @@
+.slider {
+  position: relative;
+  
+  display: flex;
+  
+  background-color: $transparent;
+  border: 1px solid $gray-lighter;
+  
+  &__controls {
+    @include radial(60px);
+    
+    @include react--trs-default;
+    
+    position: absolute;
+    top: 50%;
+    z-index: 3995;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    
+    font-size: 0;
+    
+    background-color: $color-main;
+    
+    transition-property: background-image;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+    
+    &::before {
+      content: "";
+      
+      width: 11px;
+      height: 22px;
+      
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    &--left {
+      left: 0;
+      margin-left: -30px;
+      
+      &::before {
+        @include sprite-icon__arrow-left--large;
+      }
+      
+      &:hover::before {
+        @include sprite-icon__arrow-left--large-red;
+      }
+    }
+    
+    &--right {
+      right: 0;
+      margin-right: -30px;
+      
+      &::before {
+        @include sprite-icon__arrow-right--large;
+      }
+      
+      &:hover::before {
+        @include sprite-icon__arrow-right--large-red;
+      }
+    }
+  }
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__main {
+    position: relative;
+    
+    border-right: 1px solid $gray-lighter;
+  }
+  
+  &__main-container {
+    width: 186px;
+    height: 272px;
+    
+    @media (min-width: $sm) {
+      width: 550px;
+      height: 760px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 320px;
+      height: 440px;
+    }
+  }
+  
+  .slide-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  &__main-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  &__main-image {
+    width: 125px;
+    margin: auto;
+    
+    @media (min-width: $sm) {
+      width: 420px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 260px;
+    }
+  }
+  
+  &__demos-controls {
+    @include radial(25px);
+    
+    @include react--trs-default;
+    
+    position: absolute;
+    left: 50%;
+    z-index: 3995;
+    
+    display: none;
+    margin-left: -12.5px;
+    
+    background-color: $color-main;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+    
+    &:hover {
+      color: $color-action-main;
+    }
+    
+    &--top {
+      top: -12.5px;
+    }
+    
+    &--bottom {
+      bottom: -12.5px;
+    }
+  }
+  
+  &__demos-wrapper {
+    position: relative;
+    width: 135px;
+    height: 272px;
+    
+    
+    @media (min-width: $sm) {
+      width: 155px;
+      height: 760px;
+    }
+    
+    @media (min-width: $lg) {
+      width: 155px;
+      height: 440px;
+    }
+  }
+  
+  &__demos {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    right: 0;
+    bottom: 0px;
+    
+    padding: 3px 15px;
+    
+    overflow: hidden;
+  }
+  
+  &__demos-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+    width: 105px;
+
+    overflow: hidden;
+    
+    @media (min-width: $sm) {
+      width: 125px;
+    }
+  }
+  
+  &__demos-item {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &__demos-img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+  }
+}

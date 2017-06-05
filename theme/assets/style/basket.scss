@@ -1,0 +1,196 @@
+.basket {
+  //media vars
+    $sm-1: 620px;
+    $sm-2: 515px;
+  
+  @include react--trs-default;
+  
+  padding-top: 25px;
+  
+  @media (min-width: $sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  &__items {
+    margin-top: 30px;
+    
+    @media (max-width: $sm) {
+      padding: 0 15px;
+    }
+  }
+  
+  &__mob-item {
+    padding: 0 15px;
+    
+    @media (min-width: $sm) {
+      display: none;
+    }
+  }
+  
+  &__items-settings {
+//    @media (max-width: $sm) {
+//      display: none;
+//    }
+  }
+  
+  &__item {
+//    @media (max-width: $sm) {
+//      display: none;
+//    }
+  }
+  
+  &__items-settings,
+  &__item,
+  &__mob-item {
+    position: relative;
+    
+    padding-bottom: 20px;
+    
+    &::before {
+      content: "";
+      
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 9px;
+      
+      height: 2px;
+      
+      background-image: repeating-linear-gradient(to left, $gray-lighten 0px, $gray-lighten 3px, transparent 3px, transparent 6px, $gray-lighten 6px, $gray-lighten 9px);
+    }
+  }
+  
+  &__settings-data {
+    @include font-other($gray, 12px);
+    
+    text-transform: uppercase;
+    
+    &--name {
+      @media (max-width: $sm-2) {
+        display: none;
+      }
+    }
+  }
+  
+  &__item-data {
+    @include font-other($color-second, 16px);
+    
+    text-transform: uppercase;
+    
+    &--common-price {
+      font-weight: 700;
+    }
+    
+    &--counter {
+      padding: 0 20px;
+    }
+  }
+  
+  &__preview-link {
+    @include un-link;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 135px;
+    
+    overflow: hidden;
+  }
+  
+  &__name-link {
+    @include un-link;
+    @include font-other($color-second, 16px);
+    
+    @include react--color($gray, $gray-light);
+    
+    text-transform: uppercase;
+    
+    @media (max-width: $sm-2) {
+      font-weight: 700;
+    }
+  }
+  
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    
+    @media (min-width: $sm) {
+      align-items: center;
+    }
+    
+    @media (min-width: $lg) {
+      align-items: flex-start;
+    }
+  }
+  
+  &__fieldset {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__action-disc {
+    @include un-link;
+    @include font-other($gray, 16px);
+  }
+  
+  &__targets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media (max-width: $sm) {
+      margin: 0 auto;
+    }
+  }
+  
+  &__sub-target {
+    @include un-target;
+    @include font-other($color-action-main, 16px);
+    
+    display: none;
+    margin-bottom: 27px;
+  }
+  
+  .back {
+    display: none;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+  }
+  
+  &__target {
+    @include btn($color-action-main, 25px);
+    @include font-other($color-main, 15px);
+    
+    @include react--trs-default;
+    @include react--background($color-action-main-dark, $color-action-main-dark);
+    
+    width: 195px;
+    height: 50px;
+    
+    &:active {
+      box-shadow: $shadow-btn;
+    }
+  }
+  
+  &__final-price-wrap {
+    display: none;
+    
+    @media (min-width: $sm) {
+      display: flex;
+    }
+  }
+  
+  &__final-price {
+    @include font-other($color-second, 25px);
+    
+    margin-left: 10px;
+    
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

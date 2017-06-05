@@ -1,1 +1,26 @@
-{% include 'search-results' %}
+{% if search.performed? %}
+  {% if search.results == empty %}
+    {% include 'alert' %}
+  {% else %}
+    {% include 'page-title' %}
+    <div class="page-main">
+      <div class="catalog" data-search-result>
+        {% paginate search.results by 12 %}
+          {% include 'catalog-controls' %}
+          <div class="catalog__list  view-tile">
+          {% for product in search.results %}
+              {% include 'card' %}
+          {% endfor %}
+          </div>
+          {% if search.results != empty %}
+            {% include "pagination" %}
+          {% endif %}
+        {% endpaginate %}
+      </div>
+      {% include 'text-field' %}
+    </div>
+  {% endif %}
+{% else %}
+  {% include 'alert' %}
+{% endif %}
+

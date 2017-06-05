@@ -94,9 +94,10 @@
             <div class="js-counter-wrapper  product__counter">
               {% include 'counter' %}
             </div>
-            <button class="product__target" type="submit" data-item-add>В корзину</button>
+            <button class="js-add-to-basket  product__target" type="submit" data-item-add>В корзину</button>
           {% else %}
-            <button class="js-md__open-preorder  product__target" type="button">Предзаказ</button>
+            <button class="product__target" id="mod-fast-call-link" type="button">Предзаказ</button>
+<!--            <button class="product__target" id="mod-fast-call-link" type="button">Тест</button>-->
           {% endif %}
         </div>
         {% unless settings.product_share_hide %}

@@ -1,7 +1,7 @@
 <div class="js-md__preorder  modal">
   <div class="modal__container  modal__container--preorder  preorder">
     <button class="js-md__exit-preorder  modal__exit">Закрыть</button>
-    <form class="js-preorder-form  form" action="/feedback" method="post">
+    <form class="js-md__preorder-form  js-preorder-form  form" action="/feedback" method="post">
 
       <input type="hidden" name="subject" value="{{ messages.label_preorder }}">
       <input type="hidden" name="from" value="{{ account.email }}">
@@ -21,7 +21,18 @@
         <input class="phone-mask  form__input" id="preorder__phone" name="phone" type="text" placeholder="+_(___)___-__-__" required>
       </div>
       
-      <button class="form__submit" type="submit">Отправить</button>
+<!--
+      <div class="form__item">
+        <label class="form__label  form__label--require" for="preorder__products">Позиции</label>
+        <select class="form__input" id="preorder__products" name="products" required multiple>
+          <option value="1">Значение 1</option>
+          <option value="2">Значение 2</option>
+          <option value="3">Значение 3</option>
+        </select>
+      </div>
+-->
+      
+      <button class="js-preorder-submit  form__submit" type="submit">Отправить</button>
     </form>
   </div>
 </div>  

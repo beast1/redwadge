@@ -1,0 +1,59 @@
+.basket-link {
+  @include un-target;
+//  @include sprite-icon__basket;
+  
+  top: 10%;
+  right: 10%;
+  
+  display: flex;
+  align-items: center;
+//  width: 25px;
+//  height: 31px;
+  
+  font-size: 26px;
+  
+  transition: none;
+  
+  &:hover {
+//    @include sprite-icon__basket--red;
+    color: $color-action-main;
+  }
+  
+  &__counter {
+    @include font-other($color-main, 10px);
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    
+    background-color: $color-action-main;
+    border-radius: 50%;
+    transform: translate(50%, 50%);
+    
+    &--sticky {
+      width: 24px;
+      height: 24px;
+      
+      font-size: 14px;
+      line-height: 14px;
+      
+      box-shadow: 5px 3px 16px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  @media (max-width: $sm) {
+    $size: 65px;
+    
+    top: 25px;
+    right: 25px;
+    
+    width: $size;
+    height: $size;
+  }
+}

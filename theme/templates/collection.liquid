@@ -3,43 +3,8 @@
 <div class="page-main">
   <div class="catalog">
     {% paginate products by 12 %}
-      <form class="catalog__controls" action="{{ collection.url }}" method="get">
-        <div class="catalog__controls-item">
-          <label class="catalog__controls-label" for="select__products--sort">Сортировка</label>
-          <select class="select  select--radial  js-filter-trigger" id="select__products--sort" name="order">
-            <option value="" disabled selected>По умолчанию</option>
-            {{ "price"            | select_option: order, 'По возрастанию цены' }}
-            {{ "descending_price" | select_option: order, 'По спаданию цены' }}
-            {{ "descending_age"   | select_option: order, 'Сначала старые' }}
-            {{ "age"              | select_option: order, 'Сначала новые' }}
-            {{ "title"            | select_option: order, 'По алфавиту' }}
-          </select>
-        </div> 
-        {% if page_size %}
-          <input type="hidden" name="page_size" value="{{ page_size }}"/>
-        {% endif %}
-        {% if language.not_default? %}
-          <input type="hidden" name="lang" value="{{ language.locale }}"/>
-        {% endif %}
-        {% if search.query != '' %}
-          <input type="hidden" name="q" value="{{ search.query }}"/>
-        {% endif %}
-        <div class="catalog__map-wrapper">
-          <span class="catalog__map">
-            На странице
-            <span class="catalog__map-current">
-              {% if paginate.current_page == 1 %}
-                1-12
-              {% else %}
-                13-{{ collection.products.size }}
-              {% endif %}
-            </span>
-            товаров из
-            <span class="catalog__map-total">{{ collection.products.size }}</span>
-          </span>
-         </div>
-      </form>
-      <div class="catalog__list">
+      {% include 'catalog-controls' %}
+      <div class="catalog__list  view-tile">
         {% for product in products limit: 12 %}
           {% include 'card' %}
         {% endfor %}

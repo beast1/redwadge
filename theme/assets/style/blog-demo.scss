@@ -1,0 +1,79 @@
+.blog-demo {
+  @include margin-bottom(40px);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  
+  @media (min-width: $sm) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  &__preview {
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+	max-width: 100%;
+	min-width: 290px;
+	width: 100%;
+    height: 220px;
+    margin-bottom: 5px;
+	border: 3px dashed $gray-light;    
+
+    overflow: hidden;
+    
+    @media (min-width: $sm) {
+      width: 360px;
+      margin-bottom: 0;
+    }
+  }
+  
+  &__content {
+	position: relative;
+
+	align-self: stretch;
+    padding-bottom: 32px;
+    min-height: 175px;
+
+    @media (min-width: $sm) {
+      margin-left: 40px;
+    }
+  }
+  
+  &__title {
+    @include font-other($color-second, 16px);
+    
+    margin: 22px 0 18px;
+    
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  p {
+    @include font-p($color-second);
+    
+    max-width: 290px;
+    width: 100%;
+    margin: 22px 0 30px;
+    
+    @media (min-width: $sm) {
+      max-width: none;
+    }
+  }
+  
+  &__target {
+    @include un-link;
+    @include font-other($color-action-main, 15px);
+
+	position: absolute;
+    left: 0;
+    bottom: 10px;
+  }
+}

@@ -1,0 +1,59 @@
+.link {
+  @include font-other($color-action-main, 14px);
+  
+  position: relative;
+  
+  padding-bottom: 10px;
+  border: none;
+  
+  text-decoration: none;
+  
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  
+  
+  
+  &:hover::before {
+    transform: translateY(-6px);
+  }
+  
+  &::before {
+    @include react--trs-default;
+    
+    content: "";
+    
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    
+    border-bottom: 1px dashed $color-action-main;
+  }
+  
+  &--yellow {
+    color: $color-action-second;
+    
+    &::before {
+      border-color: $color-action-second;
+    }
+  }
+  
+  &--white {
+    color: $color-main;
+    
+    &::before {
+      border-color: $color-main;
+    }
+  }
+  
+  &--gray {
+    padding-bottom: 4px;
+    
+    color: $gray;
+    
+    &::before {
+      border-color: $gray;
+    }
+  }
+}
