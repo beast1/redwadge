@@ -6,13 +6,13 @@ var watch = require('gulp-watch');
 // Настройки для InSales uploader
 var options = {
   account: {
-    id: '61d18b6819951ded26492e1af86a813f',
-    token: 'f30324304e4f50726b382ab556264862',
+    id: 'd1626a106c2a74d3e90fe5aab9063519',
+    token: 'dc771830e60165751c58595b49a97638',
     url: 'wadge.ru',
     http: true
   },
   theme: {
-    id: '807923',
+    id: '824553',
     root: 'theme',
     update: true,
     excludeFiles: ['**/*.DS_Store', '**/*.log'],
@@ -83,7 +83,7 @@ gulp.task('backup', function(){
 });
 
 // Задача запускает отслеживание изменений в файлах.
-gulp.task('stream', ['watchDev'], function(){
+gulp.task('stream', function(){
   return InsalesUploader.stream()
 });
 
@@ -115,91 +115,91 @@ gulp.task('default', ['download'], function() {
 });
 
 // Автоматизация src
-var sass         = require('gulp-sass'),
-    browserSync  = require('browser-sync').create(),
-    browserReload  = browserSync.reload,
-    bs           = require('browser-sync'),
-    concat       = require('gulp-concat'),
-    uglify       = require('gulp-uglifyjs'),
-    cssnano      = require('gulp-cssnano'),
-    rename       = require('gulp-rename'),
-    del          = require('del'),
-    imagemin     = require('gulp-imagemin'),
-    pngquant     = require('imagemin-pngquant'),
-    cache        = require('gulp-cache'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps   = require('gulp-sourcemaps');
+// var sass         = require('gulp-sass'),
+//     browserSync  = require('browser-sync').create(),
+//     browserReload  = browserSync.reload,
+//     bs           = require('browser-sync'),
+//     concat       = require('gulp-concat'),
+//     uglify       = require('gulp-uglifyjs'),
+//     cssnano      = require('gulp-cssnano'),
+//     rename       = require('gulp-rename'),
+//     del          = require('del'),
+//     imagemin     = require('gulp-imagemin'),
+//     pngquant     = require('imagemin-pngquant'),
+//     cache        = require('gulp-cache'),
+//     autoprefixer = require('gulp-autoprefixer'),
+//     sourcemaps   = require('gulp-sourcemaps');
 
-gulp.task('sass', function() {
-  return gulp.src('src/scss/main.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('theme/media'))
-});
+// gulp.task('sass', function() {
+//   return gulp.src('src/scss/main.scss')
+//     .pipe(sourcemaps.init())
+//     .pipe(sass())
+//     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('theme/media'))
+// });
 
-gulp.task('styleLib', function() {
-  return gulp.src([
-    'src/libs/slick-carousel/slick/slick.css',
-    'src/libs/slick-carousel/slick/slick-theme.css',
-    'src/libs/swiper/swiper.min.css',
-  ])
-    .pipe(concat('libs.css'))
-    .pipe(gulp.dest('theme/media'));
-});
+// gulp.task('styleLib', function() {
+//   return gulp.src([
+//     'src/libs/slick-carousel/slick/slick.css',
+//     'src/libs/slick-carousel/slick/slick-theme.css',
+//     'src/libs/swiper/swiper.min.css',
+//   ])
+//     .pipe(concat('libs.css'))
+//     .pipe(gulp.dest('theme/media'));
+// });
 
-gulp.task('scriptsLib', function() {
-  return gulp.src([
-//    'src/libs/jquery/dist/jquery.min.js',
-    'src/libs/slick-carousel/slick/slick.min.js',
-//    'src/libs/jquery.maskedinput/dist/jquery.maskedinput.js',
-  ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('theme/media'));
-});
+// gulp.task('scriptsLib', function() {
+//   return gulp.src([
+// //    'src/libs/jquery/dist/jquery.min.js',
+//     'src/libs/slick-carousel/slick/slick.min.js',
+// //    'src/libs/jquery.maskedinput/dist/jquery.maskedinput.js',
+//   ])
+//     .pipe(concat('libs.min.js'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('theme/media'));
+// });
 
-gulp.task('scripts', function() {
-  return gulp.src([
-    'src/js/script.js',
-    'src/js/templates/*.js',
-  ])
-    .pipe(gulp.dest('theme/media'));
-});
+// gulp.task('scripts', function() {
+//   return gulp.src([
+//     'src/js/script.js',
+//     'src/js/templates/*.js',
+//   ])
+//     .pipe(gulp.dest('theme/media'));
+// });
 
-gulp.task('serveReload', function() {
-  browserReload
-});
+// gulp.task('serveReload', function() {
+//   browserReload
+// });
 
-gulp.task('fonts', function() {
-  return gulp.src([
-    'src/fonts/*.woff',
-    'src/fonts/*.woff2',
-  ])
-    .pipe(gulp.dest('theme/media'));
-});
+// gulp.task('fonts', function() {
+//   return gulp.src([
+//     'src/fonts/*.woff',
+//     'src/fonts/*.woff2',
+//   ])
+//     .pipe(gulp.dest('theme/media'));
+// });
 
-gulp.task('clean', function() {
-  return del.sync('theme/media');
-});
+// gulp.task('clean', function() {
+//   return del.sync('theme/media');
+// });
 
-gulp.task('clear', function() {
-  return cache.clearAll();
-});
+// gulp.task('clear', function() {
+//   return cache.clearAll();
+// });
 
-gulp.task('img', function() {
-  return gulp.src('src/img/**/*')
-  .pipe(cache(imagemin({
-    interlaced: true,
-    progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
-    use: [pngquant()]
-  })))
-  .pipe(gulp.dest('dist/img'));
-});
+// gulp.task('img', function() {
+//   return gulp.src('src/img/**/*')
+//   .pipe(cache(imagemin({
+//     interlaced: true,
+//     progressive: true,
+//     svgoPlugins: [{removeViewBox: false}],
+//     use: [pngquant()]
+//   })))
+//   .pipe(gulp.dest('dist/img'));
+// });
 
-gulp.task('watchDev', ['scriptsLib', 'styleLib', 'fonts'], function() {
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
-});
+// gulp.task('watchDev', ['scriptsLib', 'styleLib', 'fonts'], function() {
+//   gulp.watch('src/scss/**/*.scss', ['sass']);
+//   gulp.watch('src/js/**/*.js', ['scripts']);
+// });

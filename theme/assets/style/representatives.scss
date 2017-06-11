@@ -15,6 +15,16 @@
       
       opacity: 1;
     }
+
+    &__info-window {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &__phones {
+      display: flex;
+      flex-direction: column;
+    }
   }
   
   #map {
