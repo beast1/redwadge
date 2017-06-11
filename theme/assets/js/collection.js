@@ -1,8 +1,11 @@
-//view
+//Переключатель видов отображения
+
+// Определим контроллеры
 var btnViewTuggle = $(".catalog__view-btn");
 var btnTile       = $(".catalog__view-btn--tile");
 var btnList       = $(".catalog__view-btn--list");
 
+// Определим операнды
 var catalog       = $(".catalog__list");
 var card          = $(".card");
 var cardPreview   = $(".card__preview");
@@ -14,6 +17,7 @@ var cardMobPrices = $(".card__mob-prices");
 var cardControls  = $(".card__controls");
 var cardTarget    = $(".card__target");
 
+// Функции смены типа отображения
 function turnTile(elem) {
   elem
     .removeClass("view-list")
@@ -28,8 +32,10 @@ function turnList(elem) {
   ;
 };
 
+// Массив операндов
 var vievListeners = [catalog, card, cardPreview, cardName, cardDescr, cardContent, cardStatus, cardMobPrices, cardControls, cardTarget];
 
+// Клик на контроллер переключает классы отображения
 btnTile.click(function(e) {
   e.preventDefault();
   vievListeners.forEach(function(item) {
@@ -55,3 +61,5 @@ btnList.click(function(e) {
     .addClass("catalog__view-btn--current")
   ;
 });
+
+//END Переключатель видов отображения

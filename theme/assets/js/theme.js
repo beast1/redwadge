@@ -1,5 +1,5 @@
 //#= require device.min.js
-#= require jquery.min.js
+// #= require jquery.min.js
 #= require alertify.min.js
 #= require ion.rangeSlider.min.js
 #= require jquery.cookie.js
