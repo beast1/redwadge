@@ -6,9 +6,23 @@
         {{ blocks.representatives-optrf.content }}
       </div>{% endcomment %}
     </div>
-    <div class="info__preview  representatives__map">
+    <div class="info__preview  representatives__map  map">
       <div id="map">
         
+      </div>
+      <div class="map__info">
+        <a class="map__info-exit  remove-btn"></a>
+        <h2 class="map__info-title"></h2>
+        <p class="map__info-list  map__phones">
+          <span class="map__info-label  map__phones-label">Тел.:</span>
+        </p>
+        <p class="map__info-list  map__emails">
+          <span class="map__info-label  map__emails-label">E-mail:</span>
+        </p>
+        <p class="map__info-list  map__sites">
+          <span class="map__info-label  map__sites-label">Сайт:</span>
+          {% comment %}<a class="map__info-item  map__sites-item"></a>{% endcomment %}
+        </p>
       </div>
     </div>
   </div>  

@@ -1,0 +1,93 @@
+.map {
+	position: relative;
+
+	&__info {
+    position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 9998;
+
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 234px;
+    max-width: 280px;
+    min-height: 140px;
+
+    border-radius: 3px;
+    background-color: $color-main;
+
+    &.visible {
+    	display: flex;
+    }
+  }
+
+  &__info-exit {
+		position: absolute;
+		top: 17px;
+		right: 10px;
+  }
+
+  &__info-title {
+  	@include font-h2($color-second);
+
+  	margin: 0;
+  	margin-right: 20px;
+  	margin-bottom: 16px;
+  }
+
+  &__info-list {
+  	display: inline;
+  	// flex-direction: column;
+
+  	margin: 6px 0;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+  	&.hide {
+  		display: none;
+  	}
+  }
+
+  &__info-label {
+  	@include font-other($gray, 14px);
+
+  	margin-bottom: 7px;
+  }
+
+  &__info-item {
+		@include un-link;
+		@include font-other($gray, 14px);
+
+		@include react--trs-default;
+
+		margin-bottom: 5px;
+
+		white-space: pre;
+
+		&:not(:last-of-type) {
+			&::after {
+				content: ", ";
+			}
+		}
+  }
+
+	&__phones-item,
+	&__emails-item {
+  	@include font-other($color-second, 14px);
+  }
+
+  &__sites-item {
+  	@include font-other($color-action-main, 14px);
+
+  	&:hover {
+  		opacity: 0.8;
+  	}
+  }
+}
