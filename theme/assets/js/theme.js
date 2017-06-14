@@ -17,3 +17,4 @@
 #= require jquery.sticky.js
 
 #= require script.js
+//#= require dynamic-price.js
