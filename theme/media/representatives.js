@@ -101,6 +101,10 @@ function createInfo(id) {
     e.preventDefault();
     
     body.classList.remove("visible");
+
+    markers.forEach(function(item, i, arr) {
+      item.setAnimation(null);
+    });
   });
 
   //Покажем сгенерированное окно
@@ -118,7 +122,8 @@ function initMap() {
     center: {lat: 55.749047, lng: 37.539108},
     zoom: 13,
     mapTypeId: 'satellite',
-    scrollwheel: false
+    scrollwheel: false,
+    fullscreenControl: false
   });
 
   // Создадим массив локаций

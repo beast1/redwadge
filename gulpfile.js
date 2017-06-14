@@ -6,8 +6,8 @@ var watch = require('gulp-watch');
 // Настройки для InSales uploader
 var options = {
   account: {
-    id: 'd1626a106c2a74d3e90fe5aab9063519',
-    token: 'dc771830e60165751c58595b49a97638',
+    id: '0b4d362cde26deeeb855cb82b75f7908',
+    token: 'fe0af9ced1ebbdfb5b1891d6847ac2ed',
     url: 'wadge.ru',
     http: true
   },

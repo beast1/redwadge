@@ -36,5 +36,9 @@
     width: 100%;
     height: 400px;
     margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+      height: 600px;
+    }
   }
 }

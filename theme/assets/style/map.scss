@@ -20,6 +20,10 @@
     &.visible {
     	display: flex;
     }
+
+    @media (max-width: 400px) {
+      top: 50px;
+    }
   }
 
   &__info-exit {
