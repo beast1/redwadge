@@ -12,11 +12,19 @@ var stores = [
     emails: []
   },
   {
+    title: "https://vk.com/koshkin54", 
+    location: {lat: 60.0762383, lng: 30.1213829}, //Санкт-Питербург
+    name: "",
+    sites: ["https://vk.com/koshkin54"],
+    phones: ["+8 (921) 432-30-34"],
+    emails: ["spb@wadge.ru"]
+  },
+  {
     title: "Tornado-hs", 
     location: {lat: 50.4501, lng: 30.5234}, //Киев
     name: "Tornado-hs",
     sites: ["http://www.tornado-hs.com.ua/"],
-    phones: ["+8 (063) 104 66 93"],
+    phones: ["+8 (063) 104-66-93"],
     emails: ["Tornado_hookah_shop@mail.ru"]
   },
   {
@@ -121,7 +129,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 55.749047, lng: 37.539108},
     zoom: 13,
-    mapTypeId: 'satellite',
+    mapTypeId: 'roadmap',
     scrollwheel: false,
     fullscreenControl: false
   });

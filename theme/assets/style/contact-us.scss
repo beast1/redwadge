@@ -19,11 +19,21 @@
     i {
       font-size: 1.3em;
     }
+
+    &::before {
+      display: none;
+    }
   }
   
   &__social-descr {
     .social {
       margin-left: 5px;
     }
+  }
+}
+
+.text-editable {
+  .contacts__list {
+    padding: 0;
   }
 }

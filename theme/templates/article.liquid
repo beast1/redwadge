@@ -15,7 +15,7 @@
       {{ article.content }}
     </div>
     {% if article.related_products.size > 0 %}
-      <h2 class="article__related-products-title">Сопутствущюие товары</h2>
+      <h2 class="article__related-products-title">Сопутствующие товары</h2>
       <div class="article__related-products  catalog">
         <div class="article__related-products-list  catalog__list  view-tile">
           {% for product in article.related_products limit:4 %}

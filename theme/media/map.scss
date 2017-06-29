@@ -8,16 +8,25 @@
 		z-index: 9998;
 
     display: none;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 20px;
     min-width: 234px;
     max-width: 280px;
     min-height: 140px;
 
-    border-radius: 3px;
+    -webkit-border-radius: 3px;
+
+            border-radius: 3px;
     background-color: $color-main;
 
     &.visible {
+    	display: -webkit-box;
+    	display: -webkit-flex;
+    	display: -ms-flexbox;
     	display: flex;
     }
 
