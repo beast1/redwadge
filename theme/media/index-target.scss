@@ -46,6 +46,15 @@
     
     margin-top: -12px;
   }
+
+  &--flex {
+    width: auto;
+    // padding: 16px 24px;
+
+    // &::before {
+    //   display: none;
+    // }
+  }
   
   .fa {
     @include react--trs-default;

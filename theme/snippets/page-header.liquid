@@ -21,6 +21,7 @@
       </div>
       <nav class="page-header__nav">
         <div class="page-header__nav-list">
+          <a class="page-header__nav-item  page-header__nav-item-reviews  page-header__nav-item-reviews--left" href="/product/otzyvy" title="Отзывы">Отзывы</a>
           <a class="page-header__nav-item  page-header__nav-item--home" href="/"><i class="fa fa-home" aria-hidden="true"></i>Главная</a>
           {% for link in linklists.header-menu-left.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
@@ -31,6 +32,7 @@
           {% for link in linklists.header-menu-right.links limit:2 %}
             <a class="page-header__nav-item" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
           {% endfor %}
+          <a class="page-header__nav-item  page-header__nav-item-reviews  page-header__nav-item-reviews--right" href="/product/otzyvy" title="Отзывы">Отзывы</a>
         </div>
       </nav>
     </section>

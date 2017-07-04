@@ -1,0 +1,50 @@
+{% if product.reviews_count > 0 %}
+{% include "page-title" %}
+<div class="page-main  page-main--reviews">
+  <div class="reviews">
+      <div class="reviews__list" id="product-reviews">
+        {% for review in product.reviews %}
+          <blockquote class="reviews__item">
+            <header class="reviews__item-header">
+              <cite class="reviews__item-author">
+                {% comment %}<i class="fa fa-user"></i>{% endcomment %}
+                {{ review.author }}
+              </cite>
+              {% comment %}<time class="reviews__item-date">
+                {{ review.created_at | date: "%d.%m.%Y" }}
+              </time>{% endcomment %}
+            </header>
+            <p class="reviews__item-text">
+              {{ review.content }}
+            </p>
+          </blockquote>
+        {% endfor %}
+      </div>
+    <a class="js-open-form  reviews__add-mobile" href="#reviews-popup">Оставить отзыв</a>
+      {% comment %}<a class="js-open-form  reviews__add-btn" href="#reviews-popup">Оставить отзыв</a>{% endcomment %}
+    </div><!-- /#product-comment -->
+  </div>
+</div>
+{% else %}
+  {% include "alert" %}
+{% endif %}
+
+<div id="reviews-popup" class="mfp-hide  popup  reviews__form">
+  <form class="js-review-wrapper  form" id="review_form" method="post" action="/product/otzyvy/reviews#review_form">
+    <div class="form__row">
+      <div class="form__item  form__item--1-of-2  form__item--responsive">
+        <label class="form__label  form__label--require" for="reviews__name">Имя</label>
+        <input class="form__input" id="reviews__name" name="review[author]" value="{{ review.author }}" type="text" required>
+      </div>
+      <div class="form__item  form__item--1-of-2  form__item--responsive">
+        <label class="form__label  form__label--require" for="reviews__email">Почта</label>
+        <input class="form__input" id="reviews__email" name="review[email]" value="{{ review.email }}" type="email" required>
+      </div>
+    </div>
+    <div class="form__item">
+      <label class="form__label  form__label--require" for="reviews__message">Отзыв</label>
+      <textarea class="form__input  form__input--textarea" id="reviews__message" name="review[content]" cols="30" rows="10" required></textarea>
+    </div>
+    <button class="form__submit" type="submit">Отправить</button>
+  </form>
+</div>

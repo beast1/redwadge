@@ -1,3 +1,25 @@
+.popup {
+  position: relative;
+
+  max-width: 500px;
+  width: auto;
+  padding: 30px;
+  margin: auto;
+
+  background-color: $color-main;  
+
+  .mfp-close {
+    @extend .remove-btn;
+    
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
 .modal {
   position: fixed;
   top: 0;

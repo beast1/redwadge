@@ -2,4 +2,8 @@
   @include wrapper;
   
   padding-bottom: 65px;
+
+  &--reviews {
+  	padding-bottom: 35px;
+  }
 }

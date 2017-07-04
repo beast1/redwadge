@@ -146,7 +146,20 @@
     @include react--color($color-action-main, $color-action-main);
     
     text-transform: uppercase;
-    
+
+    &-reviews {
+      &--left {
+        @media (min-width: $lg) {
+          display: none;
+        }
+      }
+
+      &--right {
+        @media (max-width: $lg) {
+          display: none;
+        }
+      }
+    }
     
     &--home {
       @include react--trs-default;

@@ -28,7 +28,6 @@
           <div class="alert__controls">
             <a class="alert__target" href="/">На главную</a>
             <span class="alert__controls-disc">или перейти в <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a></span>
-            
           </div>
         {% when 'cart' %}
           <span class="alert__title">Корзина пуста</span>
@@ -44,6 +43,14 @@
           <p class="alert__message">Нет товаров с названием "{% if search.query != empty %}{{ search.query }}{% endif %}". Попробуйте подобрать для себя что-то в каталоге или оформить предзаказ, если любимого вкуса нет на складе.</p>
           <div class="alert__controls">
             <a class="alert__target" href="/">На главную</a>
+            <span class="alert__controls-disc">или перейти в <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a></span>
+          </div>
+        {% when 'product.reviews' %}
+          <span class="alert__title">Отзывы</span>
+          <span class="alert__sub-title">Новая страница у нас на сайте</span>
+          <p class="alert__message">Станьте первым, кто поделиться своими впечатлениями. Или перейдите в каталог, чтобы познакомиться с новыми вкусами.</p>
+          <div class="alert__controls">
+            <a class="js-open-form  alert__target" href="#reviews-popup">Написать отзыв</a>
             <span class="alert__controls-disc">или перейти в <a class="link  link--yellow  alert__link" href="{{ collections.wadge-250-gr.url }}">каталог</a></span>
           </div>
       {% endcase %}

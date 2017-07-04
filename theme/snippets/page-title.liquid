@@ -196,6 +196,33 @@
         </div>
       </div>
     </div>
+  {% when 'product.reviews' %}
+    <div class="page-title">
+      <div class="page-title__wrapper">
+        <div class="index-target__wrap">
+          <a class="js-open-form  index-target  index-target--flex" href="#reviews-popup">
+            <span class="index-target__text">Ваш отзыв</span>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <h1 class="page-title__title">Отзывы</h1>
+        <span class="page-title__disc">Уникальная рецептура WADGE опережает время!</span>
+        <div class="page-title__controls">
+          <p class="page-title__breadcrumbs">
+            <a class="page-title__breadcrumbs-item" href="/">
+              Главная
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
+            </a>
+            <a class="page-title__breadcrumbs-item" href="{{ collections.wadge-250-gr.url }}">
+              Каталог
+              <i class="fa  fa-angle-right" aria-hidden="true"></i>
+            </a>
+            <a class="page-title__breadcrumbs-item  page-title__breadcrumbs-item--current">Отзывы</a>
+          </p>
+          <a class="page-title__back-link" href="/"><i class="fa  fa-angle-left" aria-hidden="true"></i>Предыдущая страница</a>
+        </div>
+      </div>
+    </div>
   {% when 'account.orders' %}
     <div class="page-title">
       <div class="page-title__wrapper">

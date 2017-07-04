@@ -9,6 +9,7 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'collection' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -17,24 +18,27 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'search' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
-    	<a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+    	  <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
         <a class="sidebar__nav-item  sidebar__nav-item--current">Результат поиска</a>
         <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'product' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
-    	<a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+    	  <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
         <a class="sidebar__nav-item  sidebar__nav-item--current">{{ product.title }}</a>
         <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'cart' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -43,6 +47,7 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'blog' or 'article' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -51,6 +56,7 @@
         <a class="sidebar__nav-item  sidebar__nav-item--current">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'page.about-us' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -59,6 +65,7 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item  sidebar__nav-item--current">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
       {% when 'page.contact-us' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -75,6 +82,7 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
         <a class="sidebar__nav-item  sidebar__nav-item--current">Представители</a>
       {% when 'page_404' %}
         <a class="sidebar__nav-item" href="/">Главная</a>
@@ -83,6 +91,17 @@
         <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
         <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
         <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item" href="/product/otzyvy">Отзывы</a>
+        <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
+      {% when 'product.reviews' %}
+        <a class="sidebar__nav-item" href="/">Главная</a>
+        <a class="sidebar__nav-item" href="{{ collections.wadge-250-gr.url }}">Каталог</a>
+        <a class="sidebar__nav-item">{{ product.title }}</a>
+        <a class="sidebar__nav-item" href="{{ cart_url }}">Корзина</a>
+        <a class="sidebar__nav-item" href="{{ blog.url }}">Блог</a>
+        <a class="sidebar__nav-item" href="/page/about-us">О нас</a>
+        <a class="sidebar__nav-item" href="/page/contacts">Контакты</a>
+        <a class="sidebar__nav-item  sidebar__nav-item--current">Отзывы</a>
         <a class="sidebar__nav-item" href="/page/representatives">Представители</a>
     {% endcase %}
   </nav>
